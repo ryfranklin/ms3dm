@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import Routes from './Routes';
 import Page from './components/Page';
 
@@ -12,9 +12,9 @@ import 'aos/dist/aos.css';
 const App = () => {
   return (
     <Page>
-      <BrowserRouter basename='/'>
+      <HashRouter basename='/'>
         <Routes />
-      </BrowserRouter>
+      </HashRouter>
     </Page>
   );
 };
