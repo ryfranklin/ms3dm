@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
-    "build": "cross-env GENERATE_SOURCEMAP=false npm install -g serve serve -s build",
+    "build": "cross-env GENERATE_SOURCEMAP=false react-scripts build",
     "prettier:fix": "prettier './src/**/*.js' --write",
     "eslint:fix": "eslint ./src --fix",
     "codeStyle:fix": "npm run prettier:fix && npm run eslint:fix",
@@ -76,5 +76,6 @@
     "prettier-eslint-cli": "^5.0.0",
     "rimraf": "^3.0.2",
     "typescript": "^4.5.4"
-  }
+  },
+  "homepage": "https://ms3dm.tech"
 }
