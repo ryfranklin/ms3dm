@@ -12,7 +12,7 @@ import 'aos/dist/aos.css';
 const App = () => {
   return (
     <Page>
-      <HashRouter basename='/'>
+      <HashRouter>
         <Routes />
       </HashRouter>
     </Page>
