@@ -12,7 +12,6 @@ import Zoom from '@mui/material/Zoom';
 import NoSsr from '@mui/material/NoSsr';
 
 import Container from 'components/Container';
-import TopNav from 'components/TopNav';
 
 import { Footer } from './components';
 
@@ -55,7 +54,6 @@ const Fluid = ({
           paddingTop={'8px !important'}
           paddingBottom={'0 !important'}
         >
-          <TopNav colorInvert={colorInvert} />
         </Container>
         <Container paddingY={1} maxWidth={1500}>
           <Box
