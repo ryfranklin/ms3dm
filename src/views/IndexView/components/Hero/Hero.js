@@ -106,9 +106,9 @@ const Hero = () => {
                 fontWeight: 700,
               }}
             >
-              Turn your ideas
+              ms3dm.tech
               <br />
-              into{' '}
+              :{' '}
               <Typography
                 color={'primary'}
                 component={'span'}
@@ -121,7 +121,7 @@ const Hero = () => {
                 }}
               >
                 <Typed
-                  strings={['startup.', 'future.', 'success.']}
+                  strings={['data engineering', 'cloud architecture', 'business intelligence']}
                   typeSpeed={80}
                   loop={true}
                 />
@@ -133,8 +133,7 @@ const Hero = () => {
               color="text.secondary"
               sx={{ fontWeight: 400 }}
             >
-              theFront will make your product look modern and professional while
-              saving you precious time.
+            3DM: Data Driven Decision Making
             </Typography>
             <Box
               display="flex"
@@ -148,9 +147,9 @@ const Hero = () => {
                 color="primary"
                 size="large"
                 fullWidth={isMd ? false : true}
-                href={'/home'}
+                href={'/about'}
               >
-                View pages
+                Learn More
               </Button>
               <Box
                 marginTop={{ xs: 2, sm: 0 }}
@@ -159,13 +158,13 @@ const Hero = () => {
               >
                 <Button
                   component={'a'}
-                  href={'/docs/introduction'}
+                  href={'/contact-page'}
                   variant="outlined"
                   color="primary"
                   size="large"
                   fullWidth={isMd ? false : true}
                 >
-                  Documentation
+                  Contact Us
                 </Button>
               </Box>
             </Box>

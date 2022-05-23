@@ -132,16 +132,6 @@ const Hero = () => {
             marginLeft={{ sm: 2 }}
             width={{ xs: '100%', md: 'auto' }}
           >
-            <Button
-              component={'a'}
-              href={'/docs/introduction'}
-              variant="outlined"
-              color="primary"
-              size="large"
-              fullWidth={isMd ? false : true}
-            >
-              View documentation
-            </Button>
           </Box>
         </Box>
       </Box>
