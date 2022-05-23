@@ -147,7 +147,7 @@ const Hero = () => {
                 color="primary"
                 size="large"
                 fullWidth={isMd ? false : true}
-                href={'/about'}
+                href={'about'}
               >
                 Learn More
               </Button>
@@ -158,7 +158,7 @@ const Hero = () => {
               >
                 <Button
                   component={'a'}
-                  href={'/contact-page'}
+                  href={'contact-page'}
                   variant="outlined"
                   color="primary"
                   size="large"
