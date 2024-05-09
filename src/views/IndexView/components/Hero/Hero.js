@@ -1,82 +1,13 @@
 import React from 'react';
 import Typed from 'react-typed';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { alpha, useTheme } from '@mui/material/styles';
+import ms3dmLogo from '../../../../assets/img/ms3dmlogo.png';
 
 import Container from 'components/Container';
-
-const images = [
-  {
-    group: [
-      {
-        cover:
-          'https://assets.maccarianagency.com/screenshots/the-front/img1.png',
-        coverDark:
-          'https://assets.maccarianagency.com/screenshots/the-front/img1--dark.png',
-      },
-      {
-        cover:
-          'https://assets.maccarianagency.com/screenshots/the-front/img4.png',
-        coverDark:
-          'https://assets.maccarianagency.com/screenshots/the-front/img4--dark.png',
-      },
-    ],
-  },
-  {
-    group: [
-      {
-        cover:
-          'https://assets.maccarianagency.com/screenshots/the-front/img13.png',
-        coverDark:
-          'https://assets.maccarianagency.com/screenshots/the-front/img13--dark.png',
-      },
-      {
-        cover:
-          'https://assets.maccarianagency.com/screenshots/the-front/img10.png',
-        coverDark:
-          'https://assets.maccarianagency.com/screenshots/the-front/img10--dark.png',
-      },
-      {
-        cover:
-          'https://assets.maccarianagency.com/screenshots/the-front/img7.png',
-        coverDark:
-          'https://assets.maccarianagency.com/screenshots/the-front/img7--dark.png',
-      },
-    ],
-  },
-  {
-    group: [
-      {
-        cover:
-          'https://assets.maccarianagency.com/screenshots/the-front/img6.png',
-        coverDark:
-          'https://assets.maccarianagency.com/screenshots/the-front/img6--dark.png',
-      },
-      {
-        cover:
-          'https://assets.maccarianagency.com/screenshots/the-front/img24.png',
-        coverDark:
-          'https://assets.maccarianagency.com/screenshots/the-front/img24--dark.png',
-      },
-      {
-        cover:
-          'https://assets.maccarianagency.com/screenshots/the-front/img17.png',
-        coverDark:
-          'https://assets.maccarianagency.com/screenshots/the-front/img17--dark.png',
-      },
-      {
-        cover:
-          'https://assets.maccarianagency.com/screenshots/the-front/img12.png',
-        coverDark:
-          'https://assets.maccarianagency.com/screenshots/the-front/img12--dark.png',
-      },
-    ],
-  },
-];
 
 const Hero = () => {
   const theme = useTheme();
@@ -95,6 +26,19 @@ const Hero = () => {
         position: 'relative',
       }}
     >
+      <Box
+        sx={{
+          display: { xs: 'none', sm: 'block' },
+        }}
+      >
+        <Box
+          component={'img'}
+          src={ms3dmLogo}
+          height={'15em'}
+          alt="..."
+        >
+        </Box>
+      </Box>
       <Box paddingY={{ xs: 0, sm: '4rem', md: '8rem' }}>
         <Container>
           <Box maxWidth={{ xs: 1, sm: '50%' }}>
@@ -106,9 +50,6 @@ const Hero = () => {
                 fontWeight: 700,
               }}
             >
-              ms3dm.tech
-              <br />
-              :{' '}
               <Typography
                 color={'primary'}
                 component={'span'}
@@ -147,7 +88,7 @@ const Hero = () => {
                 color="primary"
                 size="large"
                 fullWidth={isMd ? false : true}
-                href={'/about'}
+                href={'about'}
               >
                 Learn More
               </Button>
@@ -158,7 +99,7 @@ const Hero = () => {
               >
                 <Button
                   component={'a'}
-                  href={'/contact-page'}
+                  href={'contact-page'}
                   variant="outlined"
                   color="primary"
                   size="large"
@@ -170,47 +111,6 @@ const Hero = () => {
             </Box>
           </Box>
         </Container>
-        <Box
-          sx={{
-            transform: 'rotate(-20deg)',
-            display: { xs: 'none', sm: 'block' },
-          }}
-        >
-          <Box
-            display={'flex'}
-            width={'50rem'}
-            left={'50%'}
-            top={0}
-            position={'absolute'}
-            sx={{ transform: 'translate3d(20%, -50%, 0)' }}
-          >
-            {images.map((item, i) => (
-              <Box key={i} marginTop={{ sm: -(i * 16) }} marginX={1}>
-                {item.group.map((g, j) => (
-                  <Box
-                    key={j}
-                    padding={1}
-                    bgcolor={'background.paper'}
-                    borderRadius={2}
-                    boxShadow={3}
-                    marginTop={2}
-                  >
-                    <Box
-                      component={LazyLoadImage}
-                      effect="blur"
-                      src={
-                        theme.palette.mode === 'dark' ? g.coverDark : g.cover
-                      }
-                      height={1}
-                      width={1}
-                      maxWidth={320}
-                    />
-                  </Box>
-                ))}
-              </Box>
-            ))}
-          </Box>
-        </Box>
       </Box>
       <Box
         component={'svg'}

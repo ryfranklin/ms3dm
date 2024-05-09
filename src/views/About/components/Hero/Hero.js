@@ -38,7 +38,6 @@ const Hero = () => {
         sx={{
           position: 'absolute',
           objectFit: 'cover',
-          /* support for plugin https://github.com/bfred-it/object-fit-images */
           fontFamily: 'object-fit: cover;',
           top: 0,
           left: 0,
@@ -86,8 +85,11 @@ const Hero = () => {
               color: 'common.white',
             }}
           >
-            We are founded by a leading academic and researcher in the field of
-            Industrial Systems Engineering.
+            We are a team of data architects and software engineers who design 
+            and build data platforms that empower your business to 
+            make data-driven decisions. Our expertise lies in creating 
+            scalable and efficient solutions that leverage the power of 
+            data analytics and machine learning.
           </Typography>
         </Box>
       </Container>
