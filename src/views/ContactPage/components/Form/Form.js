@@ -62,9 +62,7 @@ const Form = () => {
           Can't find the answer you need?
         </Typography>
         <Typography color="text.secondary" align={'center'}>
-          Keep track of what's happening with your data, change permissions, and
-          run reports against your data anywhere in the world. Keep track of
-          what's happening with your data, change permissions.
+          For further inquiries, please fill out the form below.
         </Typography>
       </Box>
       <Box
