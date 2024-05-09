@@ -18,22 +18,15 @@ const Story = () => {
         <Grid item container alignItems={'center'} xs={12} md={6}>
           <Box>
             <Typography variant={'h4'} gutterBottom sx={{ fontWeight: 700 }}>
-              Our story
+              Our Story
             </Typography>
             <Typography component={'p'}>
-              Our focus is always on finding the best people to work with. Our
-              bar is high, but you look ready to take on the challenge.
+              At our company, we are dedicated to data architecture and engineering. We are passionate about working with top professionals in the field.
               <br />
-              We design and implement creative solutions to everyday business
-              problems.
+              We specialize in designing and implementing innovative solutions for complex business problems.
               <br />
               <br />
-              We are a team of creative consultants who help bridge the digital
-              gap between companies and their clients with websites that not
-              only serve as marketing platforms but also provide solutions to
-              online business problems and digital marketing strategies that
-              connect you with the ideal client and help create a loyal
-              customer.
+              Our team of expert consultants helps bridge the gap between companies and their clients by developing cutting-edge software solutions that not only serve as powerful tools but also provide practical solutions to online business challenges. We also offer digital marketing strategies that connect you with your ideal clients and foster customer loyalty.
             </Typography>
           </Box>
         </Grid>
