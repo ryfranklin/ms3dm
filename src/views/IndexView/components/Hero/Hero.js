@@ -39,7 +39,7 @@ const Hero = () => {
         >
         </Box>
       </Box>
-      <Box paddingY={{ xs: 0, sm: '4rem', md: '8rem' }}>
+      <Box >
         <Container>
           <Box maxWidth={{ xs: 1, sm: '50%' }}>
             <Typography
@@ -62,7 +62,7 @@ const Hero = () => {
                 }}
               >
                 <Typed
-                  strings={['data engineering', 'cloud architecture', 'business intelligence']}
+                  strings={['data engineering', 'data architecture', 'data science', 'data analytics', 'data visualization', 'data governance', 'data strategy', 'data management', 'data quality', 'data integration', 'data warehousing', 'data modeling', 'data migration', 'data transformation', 'data lake', 'data lakehouse', 'data mesh', 'data fabric', 'data pipeline', 'data platform', 'data catalog']}
                   typeSpeed={80}
                   loop={true}
                 />
