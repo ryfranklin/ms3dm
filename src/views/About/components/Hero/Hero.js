@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-
 import Container from 'components/Container';
+import dataCity from '../../../../assets/img/datacity_original.jpeg';
 
 const Hero = () => {
   useEffect(() => {
@@ -26,7 +26,7 @@ const Hero = () => {
       data-jarallax
       data-speed="0.2"
       position={'relative'}
-      minHeight={{ xs: 400, sm: 500, md: 600 }}
+      minHeight={{ xs: 400, sm: 500, md: 600 }}e
       display={'flex'}
       alignItems={'center'}
       marginTop={-13}
@@ -34,7 +34,6 @@ const Hero = () => {
       id="agency__portfolio-item--js-scroll"
     >
       <Box
-        className={'jarallax-img'}
         sx={{
           position: 'absolute',
           objectFit: 'cover',
@@ -47,8 +46,7 @@ const Hero = () => {
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
           backgroundPosition: 'center center',
-          backgroundImage:
-            'url(https://assets.maccarianagency.com/backgrounds/img52.jpg)',
+          backgroundImage: `url(${dataCity})`,
         }}
       />
       <Box
