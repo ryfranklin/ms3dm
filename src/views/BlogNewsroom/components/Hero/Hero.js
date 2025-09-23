@@ -15,10 +15,7 @@ const Hero = () => {
     <Box
       position={'relative'}
       sx={{
-        backgroundImage:
-          'url("https://assets.maccarianagency.com/backgrounds/img52.jpg")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundColor: 'primary.main',
         marginTop: -13,
         paddingTop: 13,
         '&:after': {

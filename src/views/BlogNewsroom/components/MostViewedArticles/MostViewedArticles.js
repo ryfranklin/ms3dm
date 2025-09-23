@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -8,59 +9,10 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Grid from '@mui/material/Grid';
 
-const mock = [
-  {
-    image: 'https://assets.maccarianagency.com/backgrounds/img21.jpg',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    title: 'Eiusmod tempor incididunt',
-    tags: ['UX', 'Design', 'Themes', 'Photography'],
-    author: {
-      name: 'Clara Bertoletti',
-      avatar: 'https://assets.maccarianagency.com/avatars/img1.jpg',
-    },
-    date: '10 Sep',
-  },
-  {
-    image: 'https://assets.maccarianagency.com/backgrounds/img22.jpg',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    title: 'Sed ut perspiciatis',
-    tags: ['UX', 'Design', 'Themes', 'Photography'],
-    author: {
-      name: 'Jhon Anderson',
-      avatar: 'https://assets.maccarianagency.com/avatars/img2.jpg',
-    },
-    date: '02 Aug',
-  },
-  {
-    image: 'https://assets.maccarianagency.com/backgrounds/img23.jpg',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    title: 'Unde omnis iste natus',
-    tags: ['UX', 'Design', 'Themes', 'Photography'],
-    author: {
-      name: 'Chary Smith',
-      avatar: 'https://assets.maccarianagency.com/avatars/img3.jpg',
-    },
-    date: '05 Mar',
-  },
-  {
-    image: 'https://assets.maccarianagency.com/backgrounds/img24.jpg',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    title: 'Eiusmod tempor incididunt',
-    tags: ['UX', 'Design', 'Themes', 'Photography'],
-    author: {
-      name: 'Clara Bertoletti',
-      avatar: 'https://assets.maccarianagency.com/avatars/img1.jpg',
-    },
-    date: '10 Sep',
-  },
-];
-
-const MostViewedArticles = () => {
+const MostViewedArticles = ({ posts = [] }) => {
   const theme = useTheme();
+  const validPosts = posts.filter(post => post?.Title);
+
   return (
     <Box>
       <Box
@@ -72,10 +24,10 @@ const MostViewedArticles = () => {
       >
         <Box>
           <Typography fontWeight={700} variant={'h6'} gutterBottom>
-            Latest stories
+            Most Viewed Articles
           </Typography>
           <Typography color={'text.secondary'}>
-            Here’s what we’ve been up to recently.
+            Our most popular articles
           </Typography>
         </Box>
         <Box display="flex" marginTop={{ xs: 2, md: 0 }}>
@@ -85,13 +37,14 @@ const MostViewedArticles = () => {
             color="primary"
             size="large"
             marginLeft={2}
+            href="/blog"
           >
             View all
           </Box>
         </Box>
       </Box>
       <Grid container spacing={4}>
-        {mock.map((item, i) => (
+        {validPosts.map((post, i) => (
           <Grid item xs={12} key={i}>
             <Box
               component={Card}
@@ -112,23 +65,41 @@ const MostViewedArticles = () => {
                   },
                 }}
               >
-                <Box
-                  component={LazyLoadImage}
-                  height={1}
-                  width={1}
-                  src={item.image}
-                  alt="..."
-                  effect="blur"
-                  sx={{
-                    objectFit: 'cover',
-                    maxHeight: 200,
-                    borderRadius: 2,
-                    filter:
-                      theme.palette.mode === 'dark'
-                        ? 'brightness(0.7)'
-                        : 'none',
-                  }}
-                />
+                {post.FeaturedImage?.data?.attributes?.url ? (
+                  <Box
+                    component={LazyLoadImage}
+                    height={1}
+                    width={1}
+                    src={`http://localhost:1337${post.FeaturedImage.data.attributes.url}`}
+                    alt={post.Title}
+                    effect="blur"
+                    sx={{
+                      objectFit: 'cover',
+                      maxHeight: 200,
+                      borderRadius: 2,
+                      filter:
+                        theme.palette.mode === 'dark'
+                          ? 'brightness(0.7)'
+                          : 'none',
+                    }}
+                  />
+                ) : (
+                  <Box
+                    sx={{
+                      height: 200,
+                      width: 1,
+                      bgcolor: 'alternate.main',
+                      borderRadius: 2,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    <Typography variant="body2" color="text.secondary">
+                      No image available
+                    </Typography>
+                  </Box>
+                )}
               </Box>
               <CardContent
                 sx={{
@@ -142,7 +113,7 @@ const MostViewedArticles = () => {
                   fontWeight={700}
                   sx={{ textTransform: 'uppercase' }}
                 >
-                  {item.title}
+                  {post.Title}
                 </Typography>
                 <Box marginY={1}>
                   <Typography
@@ -150,14 +121,15 @@ const MostViewedArticles = () => {
                     color={'text.secondary'}
                     component={'i'}
                   >
-                    {item.author.name} - {item.date}
+                    {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString() : ''}
                   </Typography>
                 </Box>
                 <Typography color="text.secondary">
-                  {item.description}
+                  {post.Summary || post.Content?.slice(0, 150) + '...'}
                 </Typography>
                 <Box marginTop={2} display={'flex'} justifyContent={'flex-end'}>
                   <Button
+                    href={`/blog/${post.Slug}`}
                     endIcon={
                       <Box
                         component={'svg'}
@@ -187,6 +159,10 @@ const MostViewedArticles = () => {
       </Grid>
     </Box>
   );
+};
+
+MostViewedArticles.propTypes = {
+  posts: PropTypes.array,
 };
 
 export default MostViewedArticles;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -7,60 +8,12 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Grid';
-import Chip from '@mui/material/Chip';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
-const mock = [
-  {
-    image: 'https://assets.maccarianagency.com/backgrounds/img1.jpg',
-    description:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem',
-    title: 'Eiusmod tempor incididunt',
-    tags: ['UX', 'Design', 'Themes', 'Photography'],
-    author: {
-      name: 'Clara Bertoletti',
-      avatar: 'https://assets.maccarianagency.com/avatars/img1.jpg',
-    },
-    date: '10 Sep',
-  },
-  {
-    image: 'https://assets.maccarianagency.com/backgrounds/img4.jpg',
-    description: 'At vero eos et accusamus et iusto odio dignissimos ducimus',
-    title: 'Sed ut perspiciatis',
-    tags: ['UX', 'Design', 'Themes', 'Photography'],
-    author: {
-      name: 'Jhon Anderson',
-      avatar: 'https://assets.maccarianagency.com/avatars/img2.jpg',
-    },
-    date: '02 Aug',
-  },
-  {
-    image: 'https://assets.maccarianagency.com/backgrounds/img2.jpg',
-    description:
-      'Qui blanditiis praesentium voluptatum deleniti atque corrupti',
-    title: 'Unde omnis iste natus',
-    tags: ['UX', 'Design', 'Themes', 'Photography'],
-    author: {
-      name: 'Chary Smith',
-      avatar: 'https://assets.maccarianagency.com/avatars/img3.jpg',
-    },
-    date: '05 Mar',
-  },
-  {
-    image: 'https://assets.maccarianagency.com/backgrounds/img3.jpg',
-    description:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem',
-    title: 'Eiusmod tempor incididunt',
-    tags: ['UX', 'Design', 'Themes', 'Photography'],
-    author: {
-      name: 'Clara Bertoletti',
-      avatar: 'https://assets.maccarianagency.com/avatars/img1.jpg',
-    },
-    date: '10 Sep',
-  },
-];
-
-const LatestStories = () => {
+const LatestStories = ({ posts = [] }) => {
   const theme = useTheme();
+  const validPosts = posts.filter(post => post?.Title);
+
   return (
     <Box>
       <Box
@@ -72,30 +25,30 @@ const LatestStories = () => {
       >
         <Box>
           <Typography fontWeight={700} variant={'h6'} gutterBottom>
-            Latest stories
+            Latest Stories
           </Typography>
           <Typography color={'text.secondary'}>
-            Here’s what we’ve been up to recently.
+            Our latest blog posts and updates
           </Typography>
         </Box>
         <Box display="flex" marginTop={{ xs: 2, md: 0 }}>
-          <Box
-            component={Button}
+          <Button
+            endIcon={<ChevronRightIcon />}
+            href={'/blog'}
             variant="outlined"
             color="primary"
             size="large"
-            marginLeft={2}
           >
             View all
-          </Box>
+          </Button>
         </Box>
       </Box>
       <Grid container spacing={4}>
-        {mock.map((item, i) => (
-          <Grid item xs={12} md={6} key={i}>
+        {validPosts.map((post, i) => (
+          <Grid item xs={12} key={i}>
             <Box
               component={'a'}
-              href={''}
+              href={`/blog/${post.Slug || ''}`}
               display={'block'}
               width={1}
               height={1}
@@ -103,74 +56,106 @@ const LatestStories = () => {
                 textDecoration: 'none',
                 transition: 'all .2s ease-in-out',
                 '&:hover': {
-                  transform: `translateY(-${theme.spacing(1 / 2)})`,
+                  transform: `translateY(-${theme.spacing(1/2)})`,
                 },
               }}
             >
-              <Box component={Card} width={1} height={1}>
+              <Card
+                sx={{
+                  display: 'flex',
+                  flexDirection: { xs: 'column', sm: 'row' },
+                }}
+              >
                 <CardMedia
-                  image={item.image}
-                  title={item.title}
+                  component="div"
+                  title={post.Title}
                   sx={{
-                    height: { xs: 300, md: 360 },
-                    position: 'relative',
-                    filter:
-                      theme.palette.mode === 'dark'
-                        ? 'brightness(0.7)'
-                        : 'none',
-                  }}
-                />
-                <CardContent
-                  sx={{
+                    height: 240,
+                    width: { xs: '100%', sm: 400 },
+                    bgcolor: 'alternate.main',
                     display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
                     alignItems: 'center',
+                    justifyContent: 'center',
+                    ...(post.FeaturedImage?.data?.attributes?.url && {
+                      backgroundImage: `url(http://localhost:1337${post.FeaturedImage.data.attributes.url})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                    }),
                   }}
                 >
-                  <Box
-                    display={'flex'}
-                    justifyContent={'center'}
-                    flexWrap={'wrap'}
-                  >
-                    {item.tags.map((item) => (
-                      <Chip
-                        key={item}
-                        label={item}
-                        size={'small'}
-                        sx={{ marginBottom: 1, marginRight: 1 }}
-                      />
+                  {!post.FeaturedImage?.data?.attributes?.url && (
+                    <Typography variant="h6" color="text.secondary">
+                      No image available
+                    </Typography>
+                  )}
+                </CardMedia>
+                <CardContent sx={{ flex: '1' }}>
+                  <Box>
+                    {post.categories?.map((category) => (
+                      <Typography
+                        key={category.id}
+                        variant={'caption'}
+                        color={'primary'}
+                        sx={{ marginRight: 2 }}
+                      >
+                        {category.Name}
+                      </Typography>
                     ))}
                   </Box>
                   <Typography
                     variant={'h6'}
                     fontWeight={700}
-                    align={'center'}
+                    gutterBottom
                     sx={{ textTransform: 'uppercase' }}
                   >
-                    {item.title}
+                    {post.Title}
+                  </Typography>
+                  <Typography color="text.secondary" gutterBottom>
+                    {post.Summary || post.Content?.slice(0, 200) + '...'}
                   </Typography>
                   <Box marginY={1}>
                     <Typography
                       variant={'caption'}
-                      align={'center'}
                       color={'text.secondary'}
                       component={'i'}
                     >
-                      {item.author.name} - {item.date}
+                      {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString() : ''}
                     </Typography>
                   </Box>
-                  <Typography color="text.secondary" align={'center'}>
-                    {item.description}
-                  </Typography>
+                  <Button
+                    endIcon={
+                      <Box
+                        component={'svg'}
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        width={24}
+                        height={24}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17 8l4 4m0 0l-4 4m4-4H3"
+                        />
+                      </Box>
+                    }
+                  >
+                    Read More
+                  </Button>
                 </CardContent>
-              </Box>
+              </Card>
             </Box>
           </Grid>
         ))}
       </Grid>
     </Box>
   );
+};
+
+LatestStories.propTypes = {
+  posts: PropTypes.array,
 };
 
 export default LatestStories;

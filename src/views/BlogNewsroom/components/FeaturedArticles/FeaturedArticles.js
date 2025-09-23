@@ -1,52 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
+import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Grid from '@mui/material/Grid';
-import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
-const mock = [
-  {
-    image: 'https://assets.maccarianagency.com/backgrounds/img13.jpg',
-    description:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem',
-    title: 'Eiusmod tempor incididunt',
-    author: {
-      name: 'Clara Bertoletti',
-      avatar: 'https://assets.maccarianagency.com/avatars/img1.jpg',
-    },
-    date: '10 Sep',
-  },
-  {
-    image: 'https://assets.maccarianagency.com/backgrounds/img14.jpg',
-    description: 'At vero eos et accusamus et iusto odio dignissimos ducimus',
-    title: 'Sed ut perspiciatis',
-    author: {
-      name: 'Jhon Anderson',
-      avatar: 'https://assets.maccarianagency.com/avatars/img2.jpg',
-    },
-    date: '02 Aug',
-  },
-  {
-    image: 'https://assets.maccarianagency.com/backgrounds/img17.jpg',
-    description:
-      'Qui blanditiis praesentium voluptatum deleniti atque corrupti',
-    title: 'Unde omnis iste natus',
-    author: {
-      name: 'Chary Smith',
-      avatar: 'https://assets.maccarianagency.com/avatars/img3.jpg',
-    },
-    date: '05 Mar',
-  },
-];
-
-const FeaturedArticles = () => {
+const FeaturedArticles = ({ posts = [] }) => {
   const theme = useTheme();
+  const validPosts = posts.filter(post => post?.Title);
+
   return (
     <Box>
       <Box
@@ -57,31 +24,40 @@ const FeaturedArticles = () => {
         marginBottom={4}
       >
         <Box>
-          <Typography fontWeight={700} variant={'h4'} gutterBottom>
-            Featured stories
+          <Typography fontWeight={700} variant={'h6'} gutterBottom>
+            Featured Articles
           </Typography>
           <Typography color={'text.secondary'}>
-            Here’s what we’ve been up to recently.
+            Latest featured articles from our blog
           </Typography>
         </Box>
         <Box display="flex" marginTop={{ xs: 2, md: 0 }}>
-          <Box
-            component={Button}
+          <Button
+            endIcon={<ChevronRightIcon />}
+            href={'/blog'}
             variant="outlined"
             color="primary"
             size="large"
-            marginLeft={2}
           >
             View all
-          </Box>
+          </Button>
         </Box>
       </Box>
       <Grid container spacing={4}>
-        {mock.map((item, i) => (
-          <Grid item xs={12} md={4} key={i}>
+        {validPosts.map((post, i) => (
+          <Grid
+            item
+            xs={12}
+            md={6}
+            key={i}
+            data-aos={'fade-up'}
+            data-aos-delay={i * 200}
+            data-aos-offset={100}
+            data-aos-duration={600}
+          >
             <Box
               component={'a'}
-              href={''}
+              href={`/blog/${post.Slug || ''}`}
               display={'block'}
               width={1}
               height={1}
@@ -89,7 +65,7 @@ const FeaturedArticles = () => {
                 textDecoration: 'none',
                 transition: 'all .2s ease-in-out',
                 '&:hover': {
-                  transform: `translateY(-${theme.spacing(1 / 2)})`,
+                  transform: `translateY(-${theme.spacing(1/2)})`,
                 },
               }}
             >
@@ -97,64 +73,80 @@ const FeaturedArticles = () => {
                 component={Card}
                 width={1}
                 height={1}
-                boxShadow={0}
-                sx={{ bgcolor: 'transparent', backgroundImage: 'none' }}
+                boxShadow={4}
+                display={'flex'}
+                flexDirection={'column'}
+                sx={{ backgroundImage: 'none' }}
               >
                 <CardMedia
-                  image={item.image}
-                  title={item.title}
+                  component="div"
+                  title={post.Title}
                   sx={{
                     height: { xs: 300, md: 360 },
                     position: 'relative',
-                    filter:
-                      theme.palette.mode === 'dark'
-                        ? 'brightness(0.7)'
-                        : 'none',
+                    bgcolor: 'alternate.main',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    ...(post.FeaturedImage?.data?.attributes?.url && {
+                      backgroundImage: `url(http://localhost:1337${post.FeaturedImage.data.attributes.url})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                    }),
                   }}
-                />
-                <Box
-                  width={'90%'}
-                  margin={'0 auto'}
-                  display={'flex'}
-                  flexDirection={'column'}
-                  boxShadow={3}
-                  borderRadius={2}
-                  bgcolor={'background.paper'}
-                  position={'relative'}
-                  zIndex={3}
-                  sx={{ transform: 'translateY(-30px)' }}
                 >
-                  <Box component={CardContent} position={'relative'}>
-                    <Typography variant={'h6'} gutterBottom>
-                      {item.title}
+                  {!post.FeaturedImage?.data?.attributes?.url && (
+                    <Typography variant="h6" color="text.secondary">
+                      No image available
                     </Typography>
-                    <Typography color="text.secondary">
-                      {item.description}
+                  )}
+                </CardMedia>
+                <Box component={CardContent}>
+                  <Typography variant={'h6'} fontWeight={700} gutterBottom>
+                    {post.Title}
+                  </Typography>
+                  <Typography color="text.secondary">
+                    {post.Summary || post.Content?.slice(0, 150) + '...'}
+                  </Typography>
+                </Box>
+                <Box flexGrow={1} />
+                <Box padding={2} display={'flex'} flexDirection={'column'}>
+                  <Box marginBottom={2}>
+                    <Typography
+                      variant={'caption'}
+                      color={'text.secondary'}
+                      component={'i'}
+                    >
+                      {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString() : ''}
                     </Typography>
                   </Box>
-                  <Box flexGrow={1} />
-                  <Box padding={2} display={'flex'} flexDirection={'column'}>
-                    <Box marginBottom={2}>
-                      <Divider />
-                    </Box>
-                    <Box
-                      display={'flex'}
-                      justifyContent={'space-between'}
-                      alignItems={'center'}
+                  <Box
+                    marginTop={2}
+                    display={'flex'}
+                    justifyContent={'flex-end'}
+                  >
+                    <Button
+                      endIcon={
+                        <Box
+                          component={'svg'}
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          width={24}
+                          height={24}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                          />
+                        </Box>
+                      }
                     >
-                      <Box display={'flex'} alignItems={'center'}>
-                        <Avatar
-                          src={item.author.avatar}
-                          sx={{ marginRight: 1 }}
-                        />
-                        <Typography color={'text.secondary'}>
-                          {item.author.name}
-                        </Typography>
-                      </Box>
-                      <Typography color={'text.secondary'}>
-                        {item.date}
-                      </Typography>
-                    </Box>
+                      Read More
+                    </Button>
                   </Box>
                 </Box>
               </Box>
@@ -164,6 +156,10 @@ const FeaturedArticles = () => {
       </Grid>
     </Box>
   );
+};
+
+FeaturedArticles.propTypes = {
+  posts: PropTypes.array,
 };
 
 export default FeaturedArticles;

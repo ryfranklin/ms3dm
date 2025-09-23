@@ -1,11 +1,11 @@
 import React from 'react';
-import Typed from 'react-typed';
+import { ReactTyped } from 'react-typed';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { alpha, useTheme } from '@mui/material/styles';
-import ms3dmLogo from '../../../../assets/img/ms3dmlogo.png';
+import ms3dmLogo from '../../../../assets/img/ms3dm_transparent.png';
 
 import Container from 'components/Container';
 
@@ -39,7 +39,7 @@ const Hero = () => {
         >
         </Box>
       </Box>
-      <Box paddingY={{ xs: 0, sm: '4rem', md: '8rem' }}>
+      <Box >
         <Container>
           <Box maxWidth={{ xs: 1, sm: '50%' }}>
             <Typography
@@ -61,8 +61,8 @@ const Hero = () => {
                   )} 0%)`,
                 }}
               >
-                <Typed
-                  strings={['data engineering', 'cloud architecture', 'business intelligence']}
+                <ReactTyped
+                  strings={['data engineering', 'data architecture', 'data science', 'data analytics', 'data visualization', 'data governance', 'data strategy', 'data management', 'data quality', 'data integration', 'data warehousing', 'data modeling', 'data migration', 'data transformation', 'data lake', 'data lakehouse', 'data mesh', 'data fabric', 'data pipeline', 'data platform', 'data catalog']}
                   typeSpeed={80}
                   loop={true}
                 />
