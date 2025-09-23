@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { alpha, useTheme } from '@mui/material/styles';
-import ms3dmLogo from '../../../../assets/img/ms3dmlogo.png';
+import ms3dmLogo from '../../../../assets/img/ms3dm_transparent.png';
 
 import Container from 'components/Container';
 
