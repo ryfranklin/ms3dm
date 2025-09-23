@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import Typed from 'react-typed';
+import { ReactTyped } from 'react-typed';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
@@ -174,7 +174,7 @@ const Contact = () => {
                   component={'span'}
                   variant={'inherit'}
                 >
-                  <Typed
+                  <ReactTyped
                     strings={['startup.', 'future.', 'success.']}
                     typeSpeed={80}
                     loop={true}

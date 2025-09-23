@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -8,44 +9,58 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Grid';
-import Avatar from '@mui/material/Avatar';
+import CircularProgress from '@mui/material/CircularProgress';
+import { Link as RouterLink } from 'react-router-dom';
 
-const mock = [
-  {
-    image: 'https://assets.maccarianagency.com/backgrounds/img23.jpg',
-    description:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem',
-    title: 'Eiusmod tempor incididunt',
-    author: {
-      name: 'Clara Bertoletti',
-      avatar: 'https://assets.maccarianagency.com/avatars/img1.jpg',
-    },
-  },
-  {
-    image: 'https://assets.maccarianagency.com/backgrounds/img24.jpg',
-    description: 'At vero eos et accusamus et iusto odio dignissimos ducimus',
-    title: 'Sed ut perspiciatis',
-    author: {
-      name: 'Jhon Anderson',
-      avatar: 'https://assets.maccarianagency.com/avatars/img2.jpg',
-    },
-    date: '02 Aug',
-  },
-  {
-    image: 'https://assets.maccarianagency.com/backgrounds/img25.jpg',
-    description:
-      'Qui blanditiis praesentium voluptatum deleniti atque corrupti',
-    title: 'Unde omnis iste natus',
-    author: {
-      name: 'Chary Smith',
-      avatar: 'https://assets.maccarianagency.com/avatars/img3.jpg',
-    },
-    date: '05 Mar',
-  },
-];
+import { getBlogPosts } from 'services/strapi';
 
-const SimilarStories = () => {
+const SimilarStories = ({ post }) => {
   const theme = useTheme();
+  const [similarPosts, setSimilarPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchSimilarPosts = async () => {
+      try {
+        if (!post?.categories?.length) {
+          setLoading(false);
+          return;
+        }
+
+        const response = await getBlogPosts();
+        if (response.data) {
+          // Filter posts that share at least one category with the current post
+          // and exclude the current post
+          const filtered = response.data.filter(p => 
+            p.id !== post.id && 
+            p.categories?.some(cat => 
+              post.categories.some(currentCat => currentCat.id === cat.id)
+            )
+          );
+          setSimilarPosts(filtered.slice(0, 3)); // Show up to 3 similar posts
+        }
+      } catch (error) {
+        console.error('Error fetching similar posts:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchSimilarPosts();
+  }, [post]);
+
+  if (loading) {
+    return (
+      <Box display="flex" justifyContent="center" padding={4}>
+        <CircularProgress />
+      </Box>
+    );
+  }
+
+  if (similarPosts.length === 0) {
+    return null;
+  }
+
   return (
     <Box>
       <Box
@@ -60,27 +75,28 @@ const SimilarStories = () => {
             Similar stories
           </Typography>
           <Typography color={'text.secondary'}>
-            Here’s what we’ve been up to recently.
+            More articles in {post.categories.map(cat => cat.Name).join(', ')}
           </Typography>
         </Box>
         <Box display="flex" marginTop={{ xs: 2, md: 0 }}>
-          <Box
-            component={Button}
+          <Button
+            component={RouterLink}
+            to="/blog"
             variant="outlined"
             color="primary"
             size="large"
             marginLeft={2}
           >
             View all
-          </Box>
+          </Button>
         </Box>
       </Box>
       <Grid container spacing={4}>
-        {mock.map((item, i) => (
+        {similarPosts.map((item, i) => (
           <Grid item xs={12} md={4} key={i}>
             <Box
-              component={'a'}
-              href={''}
+              component={RouterLink}
+              to={`/blog/${item.slug}`}
               display={'block'}
               width={1}
               height={1}
@@ -102,8 +118,11 @@ const SimilarStories = () => {
                 sx={{ backgroundImage: 'none' }}
               >
                 <CardMedia
-                  image={item.image}
-                  title={item.title}
+                  image={item.FeaturedImage?.data?.attributes?.url ? 
+                    `http://localhost:1337${item.FeaturedImage.data.attributes.url}` :
+                    'https://via.placeholder.com/400x300'
+                  }
+                  title={item.Title}
                   sx={{
                     height: { xs: 300, md: 360 },
                     position: 'relative',
@@ -134,10 +153,10 @@ const SimilarStories = () => {
                 </CardMedia>
                 <Box component={CardContent} position={'relative'}>
                   <Typography variant={'h6'} gutterBottom>
-                    {item.title}
+                    {item.Title}
                   </Typography>
                   <Typography color="text.secondary">
-                    {item.description}
+                    {item.Summary}
                   </Typography>
                 </Box>
                 <Box flexGrow={1} />
@@ -151,16 +170,12 @@ const SimilarStories = () => {
                     alignItems={'center'}
                   >
                     <Box display={'flex'} alignItems={'center'}>
-                      <Avatar
-                        src={item.author.avatar}
-                        sx={{ marginRight: 1 }}
-                      />
                       <Typography color={'text.secondary'}>
-                        {item.author.name}
+                        {item.author?.name || 'Author'}
                       </Typography>
                     </Box>
                     <Typography color={'text.secondary'}>
-                      {item.date}
+                      {new Date(item.publishedAt).toLocaleDateString()}
                     </Typography>
                   </Box>
                 </Box>
@@ -171,6 +186,10 @@ const SimilarStories = () => {
       </Grid>
     </Box>
   );
+};
+
+SimilarStories.propTypes = {
+  post: PropTypes.object.isRequired,
 };
 
 export default SimilarStories;

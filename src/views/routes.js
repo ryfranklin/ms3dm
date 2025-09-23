@@ -31,11 +31,19 @@ const routes = [
     renderer: (params = {}) => <AboutView {...params} />,
   },
   {
+    path: '/blog',
+    renderer: (params = {}) => <BlogNewsroomView {...params} />,
+  },
+  {
     path: '/blog-newsroom',
     renderer: (params = {}) => <BlogNewsroomView {...params} />,
   },
   {
-    path: '/blog-article',
+    path: '/blog/:slug',
+    renderer: (params = {}) => <BlogArticleView {...params} />,
+  },
+  {
+    path: '/blog-article/:slug',
     renderer: (params = {}) => <BlogArticleView {...params} />,
   },
   {

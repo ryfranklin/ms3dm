@@ -1,59 +1,27 @@
-import React, { useEffect } from 'react';
-import { alpha } from '@mui/material/styles';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import ListItemText from '@mui/material/ListItemText';
-import Avatar from '@mui/material/Avatar';
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Link from '@mui/material/Link';
 
-import Container from 'components/Container';
-
-const Hero = () => {
-  useEffect(() => {
-    const jarallaxInit = async () => {
-      const jarallaxElems = document.querySelectorAll('.jarallax');
-      if (!jarallaxElems || (jarallaxElems && jarallaxElems.length === 0)) {
-        return;
-      }
-
-      const { jarallax } = await import('jarallax');
-      jarallax(jarallaxElems, { speed: 0.2 });
-    };
-
-    jarallaxInit();
-  });
+const Hero = ({ post }) => {
+  if (!post) return null;
 
   return (
     <Box
-      className={'jarallax'}
-      data-jarallax
-      data-speed="0.2"
       position={'relative'}
-      minHeight={{ xs: 400, sm: 500, md: 600 }}
-      display={'flex'}
-      marginTop={-13}
-      paddingTop={13}
-      alignItems={'center'}
-      id="agency__portfolio-item--js-scroll"
+      sx={{
+        backgroundImage: post.FeaturedImage?.data?.attributes?.url
+          ? `url(http://localhost:1337${post.FeaturedImage.data.attributes.url})`
+          : 'none',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundColor: 'alternate.main',
+        marginTop: -13,
+        paddingTop: 13,
+      }}
     >
-      <Box
-        className={'jarallax-img'}
-        sx={{
-          position: 'absolute',
-          objectFit: 'cover',
-          /* support for plugin https://github.com/bfred-it/object-fit-images */
-          fontFamily: 'object-fit: cover;',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          zIndex: -1,
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center center',
-          backgroundImage:
-            'url(https://assets.maccarianagency.com/backgrounds/img3.jpg)',
-        }}
-      />
       <Box
         sx={{
           position: 'absolute',
@@ -63,44 +31,79 @@ const Hero = () => {
           bottom: 0,
           width: 1,
           height: 1,
-          background: alpha('#161c2d', 0.6),
+          background: 'rgba(0,0,0,0.5)',
           zIndex: 1,
         }}
       />
-      <Container position={'relative'} zIndex={2}>
+      <Box
+        position={'relative'}
+        zIndex={2}
+        sx={{
+          padding: { xs: 4, sm: 6 },
+          paddingTop: { xs: 6, sm: 8 },
+        }}
+      >
         <Box>
+          <Breadcrumbs aria-label="breadcrumb" sx={{ color: 'common.white' }}>
+            <Link
+              underline="hover"
+              color="inherit"
+              href="/"
+              sx={{ '&:hover': { color: 'primary.main' } }}
+            >
+              Home
+            </Link>
+            <Link
+              underline="hover"
+              color="inherit"
+              href="/blog"
+              sx={{ '&:hover': { color: 'primary.main' } }}
+            >
+              Blog
+            </Link>
+            <Typography color="common.white">
+              {post.Title}
+            </Typography>
+          </Breadcrumbs>
+        </Box>
+        <Box marginTop={4}>
           <Typography
             variant="h3"
+            gutterBottom
             sx={{
-              fontWeight: 400,
               color: 'common.white',
-              marginBottom: 2,
+              fontWeight: 700,
             }}
           >
-            Remote work is the future, but should you go remote?
+            {post.Title}
           </Typography>
-          <Box display={'flex'} alignItems={'center'}>
-            <Avatar
-              sx={{ width: 60, height: 60, marginRight: 2 }}
-              src={'https://assets.maccarianagency.com/avatars/img3.jpg'}
-            />
-            <ListItemText
-              sx={{ margin: 0 }}
-              primary={'Jhon Anderson'}
-              secondary={'May 19, 2021'}
-              primaryTypographyProps={{
-                variant: 'h6',
-                sx: { color: 'common.white' },
-              }}
-              secondaryTypographyProps={{
-                sx: { color: alpha('#ffffff', 0.8) },
-              }}
-            />
-          </Box>
+          <Typography
+            variant="h6"
+            component="p"
+            color="text.secondary"
+            sx={{
+              color: 'common.white',
+              opacity: 0.8,
+            }}
+          >
+            {post.Summary}
+          </Typography>
         </Box>
-      </Container>
+        <Box marginTop={4}>
+          <Typography variant="body1" sx={{ color: 'common.white' }}>
+            {new Date(post.publishedAt).toLocaleDateString()} 
+            {post.categories?.length > 0 && (
+              <span> · {post.categories.map(cat => cat.Name).join(', ')}</span>
+            )}
+          </Typography>
+        </Box>
+      </Box>
     </Box>
   );
+};
+
+Hero.propTypes = {
+  post: PropTypes.object.isRequired,
 };
 
 export default Hero;
