@@ -13,7 +13,7 @@ import Container from 'components/Container';
 const mock = [
   {
     label: 'Phone',
-    value: '(505)-215-7695',
+    value: '(480)973-6281',
     icon: (
       <svg
         width={20}
@@ -44,7 +44,7 @@ const mock = [
   },
   {
     label: 'Address',
-    value: 'Scottsdale, Arizona, USA',
+    value: 'Peoria, Arizona, USA',
     icon: (
       <svg
         width={20}
@@ -74,7 +74,7 @@ const Contact = () => {
             Contact us
           </Typography>
           <Typography color="text.secondary">
-          Located in Sunny Scottsdale, Arizona
+          Located in Downtown Phoenix, Arizona
           </Typography>
         </Box>
         <Box
@@ -122,7 +122,7 @@ const Contact = () => {
         marginHeight={0}
         marginWidth={0}
         scrolling="no"
-        src="https://maps.google.com/maps?width=100%&height=100%&hl=en&q=Scottsdale,%20Arizona&ie=UTF8&t=&z=14&iwloc=B&output=embed"
+        src="https://maps.google.com/maps?width=100%&height=100%&hl=en&q=Phoenix,%20Arizona&ie=UTF8&t=&z=14&iwloc=B&output=embed"
         style={{
           minHeight: 300,
           filter:

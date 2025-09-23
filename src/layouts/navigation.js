@@ -10,10 +10,18 @@ const pages = {
     },
   ],
   blog: [
-    // {
-    //   title: 'Newsroom',
-    //   href: '/blog-newsroom',
-    // },
+    {
+      title: 'Blog Home',
+      href: '/blog',
+    },
+    {
+      title: 'Latest Posts',
+      href: '/blog-newsroom',
+    },
+    {
+      title: 'Search Articles',
+      href: '/blog-search',
+    },
   ],
   portfolio: [
     // {

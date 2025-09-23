@@ -13,7 +13,7 @@ import Container from 'components/Container';
 const mock = [
   {
     label: 'Phone',
-    value: '(505)215-7695',
+    value: '(480)973-6281',
     icon: (
       <svg
         width={20}
@@ -44,7 +44,7 @@ const mock = [
   },
   {
     label: 'Address',
-    value: 'Scottsdale, Arizona, USA',
+    value: 'Peoria, Arizona, USA',
     icon: (
       <svg
         width={20}
@@ -122,7 +122,7 @@ const Contact = () => {
         marginHeight={0}
         marginWidth={0}
         scrolling="no"
-        src="https://maps.google.com/maps?width=100%&height=100%&hl=en&q=Scottsdale,%20Arizona,%20USA&ie=UTF8&t=&z=14&iwloc=B&output=embed"
+        src="https://maps.google.com/maps?width=100%&height=100%&hl=en&q=Peoria,%20Arizona,%20USA&ie=UTF8&t=&z=14&iwloc=B&output=embed"
         style={{
           minHeight: 300,
           filter:
