@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { vs2015 } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+import vs2015 from 'react-syntax-highlighter/dist/styles/vs2015';
 import { alpha, useTheme } from '@mui/material/styles';
 import { colors } from '@mui/material';
 import Link from '@mui/material/Link';

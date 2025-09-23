@@ -44,7 +44,7 @@ const mock = [
   },
   {
     label: 'Address',
-    value: 'Peoria, Arizona, USA',
+    value: '310 S 4th St, Phoenix, AZ 85004',
     icon: (
       <svg
         width={20}
@@ -122,7 +122,7 @@ const Contact = () => {
         marginHeight={0}
         marginWidth={0}
         scrolling="no"
-        src="https://maps.google.com/maps?width=100%&height=100%&hl=en&q=Peoria,%20Arizona,%20USA&ie=UTF8&t=&z=14&iwloc=B&output=embed"
+        src="https://maps.google.com/maps?width=100%&height=100%&hl=en&q=310%20S%204th%20St,%20Phoenix,%20AZ%2085004&ie=UTF8&t=&z=14&iwloc=B&output=embed"
         style={{
           minHeight: 300,
           filter:
