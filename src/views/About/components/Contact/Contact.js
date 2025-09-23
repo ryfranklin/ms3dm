@@ -44,7 +44,7 @@ const mock = [
   },
   {
     label: 'Address',
-    value: 'Peoria, Arizona, USA',
+    value: '310 S 4th St, Phoenix, AZ 85004',
     icon: (
       <svg
         width={20}

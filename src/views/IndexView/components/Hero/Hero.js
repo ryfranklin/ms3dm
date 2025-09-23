@@ -1,5 +1,5 @@
 import React from 'react';
-import Typed from 'react-typed';
+import { ReactTyped } from 'react-typed';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
@@ -61,7 +61,7 @@ const Hero = () => {
                   )} 0%)`,
                 }}
               >
-                <Typed
+                <ReactTyped
                   strings={['data engineering', 'data architecture', 'data science', 'data analytics', 'data visualization', 'data governance', 'data strategy', 'data management', 'data quality', 'data integration', 'data warehousing', 'data modeling', 'data migration', 'data transformation', 'data lake', 'data lakehouse', 'data mesh', 'data fabric', 'data pipeline', 'data platform', 'data catalog']}
                   typeSpeed={80}
                   loop={true}

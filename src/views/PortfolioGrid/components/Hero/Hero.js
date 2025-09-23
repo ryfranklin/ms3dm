@@ -1,5 +1,5 @@
 import React from 'react';
-import Typed from 'react-typed';
+import { ReactTyped } from 'react-typed';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
@@ -27,7 +27,7 @@ const Hero = () => {
           }}
         >
           We{' '}
-          <Typed
+          <ReactTyped
             strings={[
               'design and develop web apps',
               'promote your business',
