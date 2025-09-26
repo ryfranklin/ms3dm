@@ -23,24 +23,7 @@ const pages = {
       href: '/blog-search',
     },
   ],
-  portfolio: [
-    // {
-    //   title: 'Grid View',
-    //   href: '/portfolio-grid',
-    // },
-    // {
-    //   title: 'Masonry',
-    //   href: '/portfolio-masonry',
-    // },
-    // {
-    //   title: 'Basic',
-    //   href: '/portfolio-page',
-    // },
-    // {
-    //   title: 'Parallax',
-    //   href: '/agency',
-    // },
-  ],
+  portfolio: [],
 };
 
 export default pages;

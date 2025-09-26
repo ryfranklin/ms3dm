@@ -11,6 +11,8 @@ import {
   SigninSimple as SigninSimpleView,
   SignupSimple as SignupSimpleView,
   NotFound as NotFoundView,
+  PortfolioPage as PortfolioPageView,
+  PortfolioGrid as PortfolioGridView,
 } from 'views';
 
 const routes = [
@@ -29,6 +31,14 @@ const routes = [
   {
     path: '/about',
     renderer: (params = {}) => <AboutView {...params} />,
+  },
+  {
+    path: '/portfolio-page',
+    renderer: (params = {}) => <PortfolioPageView {...params} />,
+  },
+  {
+    path: '/portfolio-grid',
+    renderer: (params = {}) => <PortfolioGridView {...params} />,
   },
   {
     path: '/blog',

@@ -527,9 +527,9 @@ const PageReferences = () => {
           color={'text.secondary'}
           align={'center'}
         >
-          theFront is an ever-growing system of composable components. We’re
-          consistently adding landing examples, improving components, and
-          gathering feedback from customers to make their experience better.
+          ms3dm.tech is committed to delivering innovative technology solutions. We&apos;re
+          consistently expanding our portfolio, improving our services, and
+          gathering feedback from clients to provide exceptional experiences.
         </Typography>
       </Box>
     </Box>
