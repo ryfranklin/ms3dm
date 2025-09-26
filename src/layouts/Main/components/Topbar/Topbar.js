@@ -12,7 +12,6 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
   const theme = useTheme();
   const {
     company: companyPages,
-    portfolio: portfolioPages,
     blog: blogPages,
   } = pages;
 
@@ -51,14 +50,6 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
             title={'Blog'}
             id={'blog-pages'}
             items={blogPages}
-            colorInvert={colorInvert}
-          />
-        </Box>
-        <Box marginLeft={4}>
-          <NavItem
-            title={'Portfolio'}
-            id={'portfolio-pages'}
-            items={portfolioPages}
             colorInvert={colorInvert}
           />
         </Box>

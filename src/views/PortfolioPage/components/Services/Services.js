@@ -10,9 +10,9 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 
 const mock = [
   {
-    title: 'Idea',
+    title: 'Web Development',
     subtitle:
-      'We meet with your team to know more about your idea, project and goal. After that, our team sits to create an action plan and proposal for your project.',
+      'Custom web applications built with modern frameworks and technologies. We create responsive, scalable, and high-performance solutions tailored to your business needs.',
     icon: (
       <svg
         width={42}
@@ -26,15 +26,15 @@ const mock = [
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={2}
-          d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01"
+          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
         />
       </svg>
     ),
   },
   {
-    title: 'Design',
+    title: 'Mobile Solutions',
     subtitle:
-      'We start by designing a mockup or prototype of your website/app, and present it to you. Once with the initial mockup, we start the revision process to perfect it.',
+      'Native and cross-platform mobile applications that deliver exceptional user experiences. From iOS to Android, we build apps that engage and convert.',
     icon: (
       <svg
         width={42}
@@ -54,9 +54,9 @@ const mock = [
     ),
   },
   {
-    title: 'Development',
+    title: 'Cloud Architecture',
     subtitle:
-      'We develop your website using the best practices and standards, so you have a perfectly responsive, lightning fast, and super scalable website.',
+      'Scalable cloud solutions and infrastructure design. We help businesses migrate to the cloud and optimize their existing systems for better performance and cost efficiency.',
     icon: (
       <svg
         width={42}
@@ -70,15 +70,15 @@ const mock = [
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={2}
-          d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+          d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
         />
       </svg>
     ),
   },
   {
-    title: 'Launch & Maintenance',
+    title: 'Data Analytics',
     subtitle:
-      'When the project is ready, we help you to launch it and push it live. After that, we meet with your team to train them on how to edit, update and scale it.',
+      'Transform your data into actionable insights. We build analytics dashboards, implement data pipelines, and help you make data-driven decisions for business growth.',
     icon: (
       <svg
         width={42}
@@ -92,7 +92,7 @@ const mock = [
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={2}
-          d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+          d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
         />
       </svg>
     ),
@@ -123,7 +123,7 @@ const Services = () => {
           gutterBottom
           data-aos={'fade-up'}
         >
-          We are a small agency of talented designers & developers.
+          We deliver innovative technology solutions for modern businesses.
         </Typography>
         <Typography
           variant={'h6'}
@@ -132,9 +132,9 @@ const Services = () => {
           align={'center'}
           data-aos={'fade-up'}
         >
-          Unlike teams from big agencies, we will treat your project as ours.
+          From concept to deployment, we provide comprehensive technology solutions
           <br />
-          We will walk you through our smooth and simple process.
+          that drive business growth and digital transformation.
         </Typography>
         <Box
           marginTop={2}
@@ -142,8 +142,8 @@ const Services = () => {
           justifyContent={'center'}
           data-aos={'fade-up'}
         >
-          <Button color={'primary'} variant={'contained'} size={'large'}>
-            Contact us
+          <Button color={'primary'} variant={'contained'} size={'large'} href={'/contact-page'}>
+            Get Started
           </Button>
         </Box>
       </Box>

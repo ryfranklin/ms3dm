@@ -10,9 +10,9 @@ import Grid from '@mui/material/Grid';
 
 const mock = [
   {
-    title: 'Built for developers',
+    title: 'Innovative Solutions',
     subtitle:
-      'theFront is built to make your life easier. Variables, build tooling, documentation, and reusable components.',
+      'ms3dm.tech delivers cutting-edge technology solutions that transform businesses and drive digital innovation.',
     icon: (
       <svg
         height={24}
@@ -26,15 +26,15 @@ const mock = [
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={2}
-          d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
+          d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
         />
       </svg>
     ),
   },
   {
-    title: 'Designed to be modern',
+    title: 'Modern Design',
     subtitle:
-      'Designed with the latest design trends in mind. theFront feels modern, minimal, and beautiful.',
+      'We create beautiful, responsive, and user-friendly applications using the latest design trends and technologies.',
     icon: (
       <svg
         height={24}
@@ -54,9 +54,9 @@ const mock = [
     ),
   },
   {
-    title: 'Documentation for everything',
+    title: 'Comprehensive Support',
     subtitle:
-      'We\'ve written extensive documentation for components and tools, so you never have to reverse engineer anything.',
+      'From initial concept to deployment and beyond, we provide complete documentation and ongoing support for all our projects.',
     icon: (
       <svg
         height={24}
@@ -70,7 +70,7 @@ const mock = [
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={2}
-          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+          d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
         />
       </svg>
     ),
@@ -95,9 +95,9 @@ const Hero = () => {
               fontWeight: 700,
             }}
           >
-            Welcome to theFront.
+            Welcome to ms3dm.tech
             <br />
-            Develop anything your business needs.
+            Innovative technology solutions for your business.
           </Typography>
           <Typography
             variant="h6"
@@ -106,8 +106,8 @@ const Hero = () => {
             sx={{ fontWeight: 400 }}
             align={'center'}
           >
-            Build a beautiful, modern website with flexible, fully customizable,
-            atomic MUI components.
+            We specialize in creating cutting-edge web applications, mobile solutions,
+            and digital platforms that drive business growth and innovation.
           </Typography>
         </Box>
         <Box
@@ -122,16 +122,25 @@ const Hero = () => {
             color="primary"
             size="large"
             fullWidth={isMd ? false : true}
-            href={'https://mui.com/store/items/the-front-landing-page/'}
-            target={'_blank'}
+            href={'/contact-page'}
           >
-            Purchase now
+            Get Started
           </Button>
           <Box
             marginTop={{ xs: 2, sm: 0 }}
             marginLeft={{ sm: 2 }}
             width={{ xs: '100%', md: 'auto' }}
           >
+            <Button
+              component={'a'}
+              variant="outlined"
+              color="primary"
+              size="large"
+              fullWidth={isMd ? false : true}
+              href={'/about'}
+            >
+              Learn More
+            </Button>
           </Box>
         </Box>
       </Box>

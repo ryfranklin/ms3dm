@@ -61,17 +61,16 @@ const Features = () => {
                 Monitor and analyze usage patterns.
               </Typography>
               <Typography sx={{ color: 'common.white' }} variant={'h6'}>
-                Keep track of what's happening with your data, change
-                permissions, and run reports against your data anywhere in the
-                world.
+                Advanced analytics and monitoring solutions that provide real-time
+                insights into your applications, user behavior, and system performance.
               </Typography>
             </Box>
             <Grid container spacing={1}>
               {[
-                'Affordable, scalable and performant. The perfect solution for small apps.',
-                'A mid-sized solution for businesses undergoing rapid user growth.',
-                'A farm of machines entirely dedicated to your company\'s storage needs.',
-                'A mid-sized solution for businesses undergoing rapid user growth.',
+                'Real-time application monitoring and performance tracking.',
+                'User behavior analytics and conversion optimization.',
+                'Custom dashboards and automated reporting systems.',
+                'Scalable infrastructure monitoring and alerting.',
               ].map((item, i) => (
                 <Grid item xs={12} key={i}>
                   <Box

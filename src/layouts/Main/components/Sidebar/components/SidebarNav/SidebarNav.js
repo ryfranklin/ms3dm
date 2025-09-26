@@ -1,17 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
-import { useTheme } from '@mui/material/styles';
+import logo from 'assets/img/ms3dm_transparent.png';
 
 import NavItem from './components/NavItem';
 
 const SidebarNav = ({ pages }) => {
-  const theme = useTheme();
-  const { mode } = theme.palette;
 
   const {
     company: companyPages,
-    portfolio: portfolioPages,
     blog: blogPages,
   } = pages;
 
@@ -22,16 +19,12 @@ const SidebarNav = ({ pages }) => {
           display={'flex'}
           component="a"
           href="/"
-          title="theFront"
+          title="ms3dm.tech"
           width={{ xs: 100, md: 120 }}
         >
           <Box
             component={'img'}
-            src={
-              mode === 'light'
-                ? 'https://assets.maccarianagency.com/the-front/logos/logo.svg'
-                : 'https://assets.maccarianagency.com/the-front/logos/logo-negative.svg'
-            }
+            src={logo}
             height={1}
             width={1}
           />
@@ -43,9 +36,6 @@ const SidebarNav = ({ pages }) => {
         </Box>
         <Box>
           <NavItem title={'Blog'} items={blogPages} />
-        </Box>
-        <Box>
-          <NavItem title={'Portfolio'} items={portfolioPages} />
         </Box>
       </Box>
     </Box>
