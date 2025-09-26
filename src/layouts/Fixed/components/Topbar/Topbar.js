@@ -23,7 +23,7 @@ const Topbar = ({ onSidebarOpen }) => {
         display={'flex'}
         component="a"
         href="/"
-        title="theFront"
+        title="ms3dm.tech"
         width={{ xs: 100, md: 120 }}
       >
         <Box

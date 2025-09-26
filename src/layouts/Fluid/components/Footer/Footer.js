@@ -12,7 +12,7 @@ const Footer = () => {
           color="text.secondary"
           gutterBottom
         >
-          &copy; ms3dm.tech. 2022;  UI/UX Template By: theFront - Multipurpose Template + UI Kit
+          &copy; ms3dm.tech. 2024. All rights reserved.
         </Typography>
       </Grid>
     </Grid>

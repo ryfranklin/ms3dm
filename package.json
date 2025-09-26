@@ -1,8 +1,8 @@
 {
-  "name": "thefront-js--react-scripts",
-  "author": "maccarian",
-  "email": "hi@maccarianagency.com",
-  "version": "4.6.0",
+  "name": "ms3dm-tech-website",
+  "author": "ms3dm.tech",
+  "email": "ryan.franklin@ms3dm.tech",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
