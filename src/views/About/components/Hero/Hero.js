@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from 'components/Container';
@@ -26,7 +25,7 @@ const Hero = () => {
       data-jarallax
       data-speed="0.2"
       position={'relative'}
-      minHeight={{ xs: 400, sm: 500, md: 600 }}e
+      minHeight={{ xs: 80, sm: 90, md: 100 }}
       display={'flex'}
       alignItems={'center'}
       marginTop={-13}
@@ -58,36 +57,52 @@ const Hero = () => {
           bottom: 0,
           width: 1,
           height: 1,
-          background: alpha('#161c2d', 0.4),
+          background: 'rgba(255, 255, 255, 0.95)',
           zIndex: 1,
         }}
       />
       <Container position={'relative'} zIndex={2}>
-        <Box>
+        <Box
+          sx={{
+            textAlign: 'center',
+            maxWidth: 500,
+            margin: '0 auto',
+            padding: { xs: 1.5, md: 2 },
+            background: 'white',
+            borderRadius: 2,
+            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+          }}
+        >
           <Typography
-            variant="h2"
+            variant="h4"
             gutterBottom
             sx={{
-              fontWeight: 900,
-              color: 'common.white',
+              fontWeight: 700,
+              color: '#2d3748',
               textTransform: 'uppercase',
+              fontSize: { xs: '1.2rem', md: '1.4rem' },
+              letterSpacing: '0.05em',
+              marginBottom: 0.5,
             }}
           >
             About us
           </Typography>
           <Typography
-            variant="h6"
+            variant="body2"
             component="p"
-            color="text.primary"
             sx={{
-              color: 'common.white',
+              color: '#2d3748',
+              lineHeight: 1.4,
+              fontWeight: 400,
+              fontSize: { xs: '0.8rem', md: '0.9rem' },
+              textAlign: 'center',
+              maxWidth: 400,
+              margin: '0 auto',
             }}
           >
             We are a team of data architects and software engineers who design 
             and build data platforms that empower your business to 
-            make data-driven decisions. Our expertise lies in creating 
-            scalable and efficient solutions that leverage the power of 
-            data analytics and machine learning.
+            make data-driven decisions.
           </Typography>
         </Box>
       </Container>

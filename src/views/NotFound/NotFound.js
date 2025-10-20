@@ -9,6 +9,7 @@ import Grid from '@mui/material/Grid';
 
 import Main from 'layouts/Main';
 import Container from 'components/Container';
+import { PerformanceMetrics } from 'components/DataVisualizations';
 
 const NotFound = () => {
   const theme = useTheme();
@@ -80,20 +81,7 @@ const NotFound = () => {
             </Grid>
             <Grid item container justifyContent={'center'} xs={12} md={6}>
               <Box height={1} width={1} maxWidth={500}>
-                <Box
-                  component={'img'}
-                  src={
-                    'https://assets.maccarianagency.com/svg/illustrations/drawkit-illustration6.svg'
-                  }
-                  width={1}
-                  height={1}
-                  sx={{
-                    filter:
-                      theme.palette.mode === 'dark'
-                        ? 'brightness(0.8)'
-                        : 'none',
-                  }}
-                />
+                <PerformanceMetrics size={400} />
               </Box>
             </Grid>
           </Grid>

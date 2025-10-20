@@ -68,19 +68,41 @@ const Contact = () => {
 
   const LeftSide = () => {
     return (
-      <Box>
-        <Box marginBottom={2}>
-          <Typography variant={'h4'} sx={{ fontWeight: 700 }} gutterBottom>
-            Contact us
+      <Box
+        sx={{
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          borderRadius: 4,
+          padding: 6,
+          marginBottom: 4,
+        }}
+      >
+        <Box marginBottom={4}>
+          <Typography 
+            variant={'h3'} 
+            sx={{ 
+              fontWeight: 700,
+              color: 'white',
+              marginBottom: 3,
+            }} 
+            gutterBottom
+          >
+            Let&apos;s Connect
           </Typography>
-          <Typography color="text.secondary">
-          Located in Downtown Phoenix, Arizona
+          <Typography 
+            sx={{
+              color: 'rgba(255, 255, 255, 0.9)',
+              fontSize: '1.1rem',
+              lineHeight: 1.8,
+            }}
+          >
+            Ready to transform your data into a strategic asset? We&apos;re here to help. Reach out to discuss how we can accelerate your journey to data-driven decision making.
           </Typography>
         </Box>
         <Box
           display={'flex'}
           flexDirection={'column'}
           justifyContent={'space-between'}
+          gap={3}
         >
           {mock.map((item, i) => (
             <Box
@@ -89,22 +111,60 @@ const Contact = () => {
               disableGutters
               width={'auto'}
               padding={0}
+              sx={{
+                backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                borderRadius: 3,
+                padding: 3,
+                boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
+                backdropFilter: 'blur(10px)',
+                transition: 'transform 0.2s ease-in-out',
+                '&:hover': {
+                  transform: 'translateY(-2px)',
+                },
+              }}
             >
               <Box
                 component={ListItemAvatar}
                 minWidth={'auto !important'}
-                marginRight={2}
+                marginRight={3}
               >
                 <Box
                   component={Avatar}
-                  bgcolor={theme.palette.secondary.main}
-                  width={40}
-                  height={40}
+                  bgcolor="#667eea"
+                  width={50}
+                  height={50}
+                  sx={{
+                    boxShadow: '0 4px 15px rgba(102, 126, 234, 0.3)',
+                  }}
                 >
                   {item.icon}
                 </Box>
               </Box>
-              <ListItemText primary={item.label} secondary={item.value} />
+              <ListItemText 
+                primary={
+                  <Typography 
+                    variant="h6" 
+                    sx={{ 
+                      fontWeight: 600, 
+                      color: '#2d3748',
+                      marginBottom: 0.5,
+                    }}
+                  >
+                    {item.label}
+                  </Typography>
+                } 
+                secondary={
+                  <Typography 
+                    variant="body1" 
+                    sx={{ 
+                      color: '#4a5568',
+                      fontWeight: 500,
+                    }}
+                  >
+                    {item.value}
+                  </Typography>
+                } 
+              />
             </Box>
           ))}
         </Box>
@@ -122,7 +182,7 @@ const Contact = () => {
         marginHeight={0}
         marginWidth={0}
         scrolling="no"
-        src="https://maps.google.com/maps?width=100%&height=100%&hl=en&q=Phoenix,%20Arizona&ie=UTF8&t=&z=14&iwloc=B&output=embed"
+        src="https://maps.google.com/maps?width=100%&height=100%&hl=en&q=310%20S%204th%20St,%20Phoenix,%20AZ%2085004&ie=UTF8&t=&z=14&iwloc=B&output=embed"
         style={{
           minHeight: 300,
           filter:
@@ -147,8 +207,14 @@ const Contact = () => {
           display={'flex'}
           flexDirection={{ xs: 'column', md: 'row' }}
           position={'relative'}
+          gap={4}
         >
-          <Box width={1} order={{ xs: 2, md: 1 }}>
+          <Box
+            display={'flex'}
+            alignItems={'center'}
+            width={1}
+            order={{ xs: 2, md: 1 }}
+          >
             <Container>
               <LeftSide />
             </Container>
@@ -158,7 +224,11 @@ const Contact = () => {
               flex: { xs: '0 0 100%', md: '0 0 50%' },
               position: 'relative',
               maxWidth: { xs: '100%', md: '50%' },
+              minHeight: { xs: 300, md: 500 },
               order: { xs: 1, md: 2 },
+              borderRadius: 4,
+              overflow: 'hidden',
+              boxShadow: '0 20px 60px rgba(102, 126, 234, 0.2)',
             }}
           >
             <Box

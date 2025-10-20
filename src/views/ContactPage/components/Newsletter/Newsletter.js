@@ -31,15 +31,17 @@ const Newsletter = () => {
                 color: theme.palette.common.white,
               }}
             >
-              Subscribe to the ms3dm.tech newsletter
+              Stay Ahead with Data Insights
             </Typography>
             <Typography
               variant="h6"
               align={'center'}
               sx={{
                 color: theme.palette.common.white,
+                fontWeight: 400,
               }}
             >
+              Subscribe to receive the latest trends, best practices, and strategies in data-driven decision making
             </Typography>
           </Box>
           <Box width={1} display={'flex'} justifyContent={'center'}>
