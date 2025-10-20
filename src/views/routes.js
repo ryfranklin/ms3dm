@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {
-  IndexView,
+  Home as HomeView,
   ContactPage as ContactPageView,
   WebBasic as WebBasicView,
   About as AboutView,
@@ -18,7 +18,7 @@ import {
 const routes = [
   {
     path: '/',
-    renderer: (params = {}) => <IndexView {...params} />,
+    renderer: (params = {}) => <HomeView {...params} />,
   },
   {
     path: '/contact-page',

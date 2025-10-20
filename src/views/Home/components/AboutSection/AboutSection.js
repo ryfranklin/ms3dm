@@ -45,26 +45,36 @@ const AboutSection = () => {
               Why ms3dm.tech?
             </Typography>
             <Typography
-              variant="h6"
+              variant="h5"
               component="p"
-              color="text.secondary"
+              color="text.primary"
               sx={{
-                fontWeight: 400,
+                fontWeight: 500,
                 marginBottom: 3,
                 lineHeight: 1.6,
               }}
             >
-              We combine deep 3D data expertise with modern software engineering to help enterprises transform how they manage, analyze, and use spatial data.
+              We combine deep data analytics expertise with modern engineering to help enterprises transform how they capture, analyze, and leverage data for strategic advantage.
             </Typography>
             <Typography
               variant="body1"
               color="text.secondary"
               sx={{
                 marginBottom: 3,
-                lineHeight: 1.6,
+                lineHeight: 1.8,
               }}
             >
-              Our team brings together decades of experience in 3D data processing, enterprise software development, and data analytics. We understand the unique challenges of working with complex 3D datasets and have built solutions that seamlessly integrate with your existing workflows.
+              In today&apos;s fast-paced business environment, the ability to make informed decisions quickly is the difference between leading and following. Yet many organizations struggle with disconnected data sources, complex legacy systems, and insights that arrive too late to matter. Our team brings together decades of experience in data engineering, business intelligence, and advanced analytics to solve these challenges.
+            </Typography>
+            <Typography
+              variant="body1"
+              color="text.secondary"
+              sx={{
+                marginBottom: 3,
+                lineHeight: 1.8,
+              }}
+            >
+              We understand that successful data transformation requires more than just technology—it requires deep domain expertise, proven methodologies, and solutions that seamlessly integrate with your existing workflows. That&apos;s why industry leaders across retail, finance, healthcare, and manufacturing trust us to accelerate their journey to becoming truly data-driven organizations.
             </Typography>
             <Box
               display="flex"
@@ -90,11 +100,11 @@ const AboutSection = () => {
                   }}
                 >
                   <Typography variant="caption" color="white" sx={{ fontWeight: 600 }}>
-                    3D
+                    📊
                   </Typography>
                 </Avatar>
                 <Typography variant="body2" color="text.primary" sx={{ fontWeight: 500 }}>
-                  Data Expertise
+                  Data Analytics Expertise
                 </Typography>
               </Box>
               <Box
@@ -115,11 +125,11 @@ const AboutSection = () => {
                   }}
                 >
                   <Typography variant="caption" color="white" sx={{ fontWeight: 600 }}>
-                    AI
+                    🤖
                   </Typography>
                 </Avatar>
                 <Typography variant="body2" color="text.primary" sx={{ fontWeight: 500 }}>
-                  AI & Automation
+                  AI & Machine Learning
                 </Typography>
               </Box>
               <Box
