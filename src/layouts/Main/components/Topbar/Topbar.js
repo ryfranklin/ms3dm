@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { alpha, useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
-import logo from '../../../../assets/img/ms3dm_transparent.png';
+import Logo from 'components/Logo';
 
 import { NavItem } from './components';
 
@@ -27,14 +27,9 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
         component="a"
         href="/"
         title="ms3dm.tech"
-        width={{ xs: 100, md: 120 }}
+        sx={{ textDecoration: 'none' }}
       >
-        <Box
-          component={'img'}
-          src={logo}
-          height={1}
-          width={1}
-        />
+        <Logo size="medium" colorInvert={colorInvert} />
       </Box>
       <Box sx={{ display: { xs: 'none', md: 'flex' } }} alignItems={'center'}>
         <Box marginLeft={4}>

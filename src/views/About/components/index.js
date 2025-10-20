@@ -6,3 +6,4 @@ export { default as Story } from './Story';
 export { default as Team } from './Team';
 export { default as WhoWeAre } from './WhoWeAre';
 export { default as Application } from './Application';
+export { default as DataQuote } from './DataQuote';

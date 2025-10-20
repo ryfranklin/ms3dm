@@ -1,12 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
+import { AnalyticsDashboard } from 'components/DataVisualizations';
 
 const Hero = () => {
-  const theme = useTheme();
 
   return (
     <Grid container spacing={4}>
@@ -45,18 +44,7 @@ const Hero = () => {
           alignItems={'center'}
         >
           <Box height={1} width={1} maxWidth={500}>
-            <Box
-              component={'img'}
-              src={
-                'https://assets.maccarianagency.com/svg/illustrations/drawkit-illustration6.svg'
-              }
-              width={1}
-              height={1}
-              sx={{
-                filter:
-                  theme.palette.mode === 'dark' ? 'brightness(0.8)' : 'none',
-              }}
-            />
+            <AnalyticsDashboard size={400} />
           </Box>
         </Box>
       </Grid>
