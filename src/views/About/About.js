@@ -5,17 +5,17 @@ import Main from 'layouts/Main';
 import Container from 'components/Container';
 import {
   Contact,
-  Hero,
   Story,
+  DataQuote,
 } from './components';
 
 const About = () => {
   return (
     <Main colorInvert={true}>
-      <Hero />
       <Container>
         <Story />
       </Container>
+      <DataQuote />
       <Container maxWidth={800} paddingY={'0 !important'}>
         <Divider />
       </Container>
