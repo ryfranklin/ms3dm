@@ -9,28 +9,34 @@ import Button from '@mui/material/Button';
 
 const caseStudies = [
   {
-    client: 'Industrial Engineering Firm',
-    challenge: 'Slow model generation from lidar scans',
-    solution: 'Automated point cloud processing + integration with ERP',
-    outcome: '30% faster turnaround and unified data access',
-    metric: '30%',
-    metricLabel: 'Faster Turnaround',
+    client: 'Global Retail Corporation',
+    sector: 'Retail & E-Commerce',
+    challenge: 'Disconnected sales, inventory, and customer data across 200+ stores prevented real-time decision-making and resulted in stockouts and excess inventory.',
+    solution: 'Implemented unified data platform with real-time analytics, predictive inventory modeling, and automated dashboards across all touchpoints.',
+    outcome: 'Reduced stockouts by 35%, optimized inventory levels saving $3M annually, and improved customer satisfaction scores by 40%.',
+    metric: '35%',
+    metricLabel: 'Fewer Stockouts',
+    additionalMetrics: '$3M+ annual savings',
   },
   {
-    client: 'Manufacturing Company',
-    challenge: 'Disconnected 3D data across multiple systems',
-    solution: 'Unified 3D data platform with real-time synchronization',
-    outcome: 'Eliminated data silos and improved decision-making speed',
-    metric: '50%',
+    client: 'Financial Services Firm',
+    sector: 'Banking & Finance',
+    challenge: 'Manual reporting processes took weeks to complete, preventing timely strategic decisions and regulatory compliance challenges.',
+    solution: 'Built automated BI platform with self-service analytics, real-time KPI dashboards, and compliance monitoring integrated with core systems.',
+    outcome: 'Reduced reporting time from 3 weeks to 2 hours, improved regulatory compliance, and accelerated strategic decision-making by 60%.',
+    metric: '60%',
     metricLabel: 'Faster Decisions',
+    additionalMetrics: '99.5% compliance rate',
   },
   {
-    client: 'Construction Firm',
-    challenge: 'Manual 3D model quality checks',
-    solution: 'AI-powered automated quality assessment',
-    outcome: 'Reduced manual review time and improved accuracy',
-    metric: '75%',
-    metricLabel: 'Time Saved',
+    client: 'Healthcare System',
+    sector: 'Healthcare & Medical',
+    challenge: 'Patient data scattered across 15+ systems made it impossible to get holistic views, impacting care quality and operational efficiency.',
+    solution: 'Deployed integrated analytics platform with patient journey visualization, predictive risk modeling, and automated quality metrics.',
+    outcome: 'Improved patient outcomes by 25%, reduced readmission rates by 30%, and saved 500+ clinical hours per month on reporting.',
+    metric: '25%',
+    metricLabel: 'Better Outcomes',
+    additionalMetrics: '30% fewer readmissions',
   },
 ];
 
@@ -63,7 +69,7 @@ const CaseStudies = () => {
           align={'center'}
           sx={{ fontWeight: 400 }}
         >
-          See how enterprises are transforming their 3D data workflows
+          See how enterprises are transforming their business with data-driven decision making
         </Typography>
       </Box>
       <Grid container spacing={4}>
@@ -90,39 +96,76 @@ const CaseStudies = () => {
                     color="primary"
                     sx={{
                       fontWeight: 600,
-                      marginBottom: 2,
+                      marginBottom: 1,
                     }}
                   >
                     {study.client}
+                  </Typography>
+                  <Typography
+                    variant="caption"
+                    color="text.secondary"
+                    sx={{
+                      fontWeight: 500,
+                      textTransform: 'uppercase',
+                      letterSpacing: 1,
+                      marginBottom: 3,
+                      display: 'block',
+                    }}
+                  >
+                    {study.sector}
                   </Typography>
                   <Box
                     sx={{
                       display: 'flex',
                       alignItems: 'center',
-                      justifyContent: 'center',
-                      width: 60,
-                      height: 60,
-                      borderRadius: '50%',
-                      backgroundColor: alpha(theme.palette.primary.main, 0.1),
-                      marginBottom: 2,
+                      justifyContent: 'space-between',
+                      padding: 2,
+                      backgroundColor: alpha(theme.palette.primary.main, 0.05),
+                      borderRadius: 2,
+                      marginTop: 2,
+                      marginBottom: 3,
                     }}
                   >
-                    <Typography
-                      variant="h4"
-                      color="primary"
-                      sx={{ fontWeight: 700 }}
-                    >
-                      {study.metric}
-                    </Typography>
+                    <Box sx={{ textAlign: 'center', flex: 1 }}>
+                      <Typography
+                        variant="h3"
+                        color="primary"
+                        sx={{ fontWeight: 700, fontSize: '2.5rem' }}
+                      >
+                        {study.metric}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        sx={{ fontWeight: 500 }}
+                      >
+                        {study.metricLabel}
+                      </Typography>
+                    </Box>
+                    <Box
+                      sx={{
+                        width: 1,
+                        height: 40,
+                        backgroundColor: alpha(theme.palette.divider, 0.3),
+                        marginX: 2,
+                      }}
+                    />
+                    <Box sx={{ textAlign: 'center', flex: 1 }}>
+                      <Typography
+                        variant="h6"
+                        color="primary"
+                        sx={{ fontWeight: 600, fontSize: '1rem' }}
+                      >
+                        {study.additionalMetrics}
+                      </Typography>
+                      <Typography
+                        variant="caption"
+                        color="text.secondary"
+                      >
+                        Additional Impact
+                      </Typography>
+                    </Box>
                   </Box>
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    align="center"
-                    sx={{ fontWeight: 500 }}
-                  >
-                    {study.metricLabel}
-                  </Typography>
                 </Box>
                 
                 <Box marginBottom={2}>
@@ -131,7 +174,7 @@ const CaseStudies = () => {
                     color="text.primary"
                     sx={{ fontWeight: 600, marginBottom: 1 }}
                   >
-                    Challenge:
+                    Challenge
                   </Typography>
                   <Typography variant="body2" color="text.secondary" marginBottom={2}>
                     {study.challenge}
@@ -142,7 +185,7 @@ const CaseStudies = () => {
                     color="text.primary"
                     sx={{ fontWeight: 600, marginBottom: 1 }}
                   >
-                    Solution:
+                    Solution
                   </Typography>
                   <Typography variant="body2" color="text.secondary" marginBottom={2}>
                     {study.solution}
@@ -153,7 +196,7 @@ const CaseStudies = () => {
                     color="text.primary"
                     sx={{ fontWeight: 600, marginBottom: 1 }}
                   >
-                    Outcome:
+                    Outcome
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
                     {study.outcome}
