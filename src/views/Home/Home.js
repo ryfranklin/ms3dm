@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 
 import Main from 'layouts/Main';
 import Container from 'components/Container';
-import { PageReferences, Hero } from './components';
+import { PageReferences, Hero, ProofSection, CaseStudies, AboutSection } from './components';
 
 const Home = () => {
   const theme = useTheme();
@@ -34,6 +34,13 @@ const Home = () => {
           <Hero />
         </Box>
       </Container>
+      
+      <ProofSection />
+      
+      <CaseStudies />
+      
+      <AboutSection />
+      
       <Box
         position={'relative'}
         sx={{

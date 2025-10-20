@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
+import { PointCloud3D } from 'components/DataVisualizations';
 
 const Hero = () => {
   const theme = useTheme();
@@ -82,18 +83,7 @@ const Hero = () => {
           alignItems={'center'}
         >
           <Box height={1} width={1} maxWidth={500}>
-            <Box
-              component={'img'}
-              src={
-                'https://assets.maccarianagency.com/svg/illustrations/drawkit-illustration4.svg'
-              }
-              width={1}
-              height={1}
-              sx={{
-                filter:
-                  theme.palette.mode === 'dark' ? 'brightness(0.8)' : 'none',
-              }}
-            />
+            <PointCloud3D size={400} />
           </Box>
         </Box>
       </Grid>

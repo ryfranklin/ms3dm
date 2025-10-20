@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
+import { DataArchitectureInsights } from 'components/DataVisualizations';
 
 const Story = () => {
   const theme = useTheme();
@@ -13,19 +14,47 @@ const Story = () => {
   });
 
   return (
-    <Box>
-      <Grid container spacing={4} direction={isMd ? 'row' : 'column'}>
-        <Grid item container alignItems={'center'} xs={12} md={6}>
+    <Box
+      sx={{
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        borderRadius: 4,
+        padding: 6,
+        marginBottom: 4,
+      }}
+    >
+      <Grid container spacing={6} direction={isMd ? 'row' : 'column'}>
+        <Grid item container alignItems={'flex-start'} xs={12} md={6}>
           <Box>
-            <Typography variant={'h4'} gutterBottom sx={{ fontWeight: 700 }}>
+            <Typography 
+              variant={'h3'} 
+              gutterBottom 
+              sx={{ 
+                fontWeight: 700,
+                color: 'white',
+                marginBottom: 3,
+              }}
+            >
               Our Story
             </Typography>
-            <Typography component={'p'}>
+            <Typography 
+              component={'p'}
+              sx={{
+                color: 'rgba(255, 255, 255, 0.9)',
+                fontSize: '1.1rem',
+                lineHeight: 1.8,
+                marginBottom: 2,
+              }}
+            >
               At our company, we are dedicated to data architecture and engineering. We are passionate about working with top professionals in the field.
-              <br />
-              We specialize in designing and implementing innovative solutions for complex business problems.
-              <br />
-              <br />
+            </Typography>
+            <Typography 
+              component={'p'}
+              sx={{
+                color: 'rgba(255, 255, 255, 0.9)',
+                fontSize: '1.1rem',
+                lineHeight: 1.8,
+              }}
+            >
               Our team of expert consultants helps bridge the gap between companies and their clients by developing cutting-edge software solutions that not only serve as powerful tools but also provide practical solutions to online business challenges. We also offer digital marketing strategies that connect you with your ideal clients and foster customer loyalty.
             </Typography>
           </Box>
@@ -38,19 +67,8 @@ const Story = () => {
           xs={12}
           md={6}
         >
-          <Box maxWidth={500} width={1}>
-            <Box
-              component={'img'}
-              src={
-                'https://assets.maccarianagency.com/svg/illustrations/drawkit-illustration1.svg'
-              }
-              width={1}
-              height={1}
-              sx={{
-                filter:
-                  theme.palette.mode === 'dark' ? 'brightness(0.8)' : 'none',
-              }}
-            />
+          <Box width={1}>
+            <DataArchitectureInsights size={500} />
           </Box>
         </Grid>
       </Grid>
