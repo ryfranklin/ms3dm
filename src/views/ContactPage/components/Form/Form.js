@@ -59,10 +59,10 @@ const Form = () => {
           gutterBottom
           align={'center'}
         >
-          Can't find the answer you need?
+          Start Your Data Transformation Journey
         </Typography>
         <Typography color="text.secondary" align={'center'}>
-          For further inquiries, please fill out the form below.
+          Tell us about your data challenges and goals. We&apos;ll get back to you within 24 hours to discuss how we can help.
         </Typography>
       </Box>
       <Box
@@ -135,7 +135,7 @@ const Form = () => {
               Message
             </Typography>
             <TextField
-              placeholder="Your question about our services"
+              placeholder="Tell us about your data challenges, goals, or questions"
               variant="outlined"
               name="message"
               fullWidth
@@ -153,8 +153,12 @@ const Form = () => {
               type="submit"
               color="primary"
               size="large"
+              sx={{
+                paddingX: 4,
+                paddingY: 1.5,
+              }}
             >
-              Send the question
+              Get Started
             </Button>
           </Grid>
         </Grid>

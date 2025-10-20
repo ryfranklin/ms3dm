@@ -45,7 +45,18 @@ const Story = () => {
                 marginBottom: 2,
               }}
             >
-              At our company, we are dedicated to data architecture and engineering. We are passionate about working with top professionals in the field.
+              Founded on the belief that every organization deserves access to world-class data capabilities, ms3dm.tech emerged from a simple observation: most companies have data, but few truly leverage it for competitive advantage.
+            </Typography>
+            <Typography 
+              component={'p'}
+              sx={{
+                color: 'rgba(255, 255, 255, 0.9)',
+                fontSize: '1.1rem',
+                lineHeight: 1.8,
+                marginBottom: 2,
+              }}
+            >
+              Our team of expert data engineers, analytics specialists, and business intelligence consultants brings together decades of experience transforming complex data challenges into strategic opportunities. We&apos;ve helped organizations across retail, finance, healthcare, and manufacturing unlock the power of their data to drive measurable business outcomes.
             </Typography>
             <Typography 
               component={'p'}
@@ -55,7 +66,7 @@ const Story = () => {
                 lineHeight: 1.8,
               }}
             >
-              Our team of expert consultants helps bridge the gap between companies and their clients by developing cutting-edge software solutions that not only serve as powerful tools but also provide practical solutions to online business challenges. We also offer digital marketing strategies that connect you with your ideal clients and foster customer loyalty.
+              What sets us apart is our commitment to practical, results-driven solutions. We don&apos;t just implement technology—we partner with you to build data capabilities that evolve with your business, ensuring you stay ahead in an increasingly data-driven world.
             </Typography>
           </Box>
         </Grid>

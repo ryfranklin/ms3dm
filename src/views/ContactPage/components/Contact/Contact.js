@@ -86,7 +86,7 @@ const Contact = () => {
             }} 
             gutterBottom
           >
-            Contact details
+            Get In Touch
           </Typography>
           <Typography 
             sx={{
@@ -95,7 +95,7 @@ const Contact = () => {
               lineHeight: 1.8,
             }}
           >
-            We are here to help and answer any question you might have. We look forward to hearing from you.
+            Ready to unlock the power of your data? Let&apos;s start a conversation about transforming your organization into a data-driven enterprise. Reach out today.
           </Typography>
         </Box>
         <Box
