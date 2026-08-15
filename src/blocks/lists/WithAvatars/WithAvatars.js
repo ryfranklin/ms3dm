@@ -43,7 +43,7 @@ const WithAvatars = () => {
                   >
                     Ali Connors
                   </Typography>
-                  {' — I\'ll be in your neighborhood doing errands this…'}
+                  {': I\'ll be in your neighborhood doing errands this…'}
                 </React.Fragment>
               }
             />
@@ -68,7 +68,7 @@ const WithAvatars = () => {
                   >
                     to Scott, Alex, Jennifer
                   </Typography>
-                  {' — Wish I could come, but I\'m out of town this…'}
+                  {': Wish I could come, but I\'m out of town this…'}
                 </React.Fragment>
               }
             />
@@ -93,7 +93,7 @@ const WithAvatars = () => {
                   >
                     Sandra Adams
                   </Typography>
-                  {' — Do you have Paris recommendations? Have you ever…'}
+                  {': Do you have Paris recommendations? Have you ever…'}
                 </React.Fragment>
               }
             />

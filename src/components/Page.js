@@ -7,31 +7,22 @@ import getTheme from 'theme';
 import AOS from 'aos';
 
 export const useDarkMode = () => {
-  const [themeMode, setTheme] = useState('light');
+  // Homebase is a dark-first, near-black instrument. The palette resolves to the
+  // same monochrome system in either mode, so we lock the app to dark to keep the
+  // aesthetic consistent. themeToggler is retained for API compatibility.
+  const [themeMode] = useState('dark');
   const [mountedComponent, setMountedComponent] = useState(false);
 
-  const setMode = (mode) => {
-    try {
-      window.localStorage.setItem('themeMode', mode);
-    } catch {
-      /* do nothing */
-    }
-
-    setTheme(mode);
-  };
-
   const themeToggler = () => {
-    themeMode === 'light' ? setMode('dark') : setMode('light');
+    /* Homebase is dark-only; toggling is intentionally a no-op. */
   };
 
   useEffect(() => {
     try {
-      const localTheme = window.localStorage.getItem('themeMode');
-      localTheme ? setTheme(localTheme) : setMode('light');
+      window.localStorage.setItem('themeMode', 'dark');
     } catch {
-      setMode('light');
+      /* do nothing */
     }
-
     setMountedComponent(true);
   }, []);
 
@@ -65,7 +56,10 @@ export default function Page({ children }) {
     <ThemeProvider theme={getTheme(themeMode, themeToggler)}>
       {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
       <CssBaseline />
-      <Paper elevation={0}>{children}</Paper>
+      {/* Transparent shell so the body atmosphere (glow + grain) shows through. */}
+      <Paper elevation={0} sx={{ backgroundColor: 'transparent' }}>
+        {children}
+      </Paper>
     </ThemeProvider>
   );
 }

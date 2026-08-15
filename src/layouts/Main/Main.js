@@ -13,7 +13,7 @@ import { Topbar, Sidebar, Footer } from './components';
 
 import pages from '../navigation';
 
-const Main = ({ children, colorInvert = false, bgcolor = 'transparent' }) => {
+const Main = ({ children, colorInvert = false }) => {
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true,
@@ -42,9 +42,7 @@ const Main = ({ children, colorInvert = false, bgcolor = 'transparent' }) => {
         position={'sticky'}
         sx={{
           top: 0,
-          backgroundColor: trigger ? theme.palette.background.paper : bgcolor,
         }}
-        elevation={trigger ? 1 : 0}
       >
         <Container paddingY={1}>
           <Topbar
@@ -74,7 +72,6 @@ const Main = ({ children, colorInvert = false, bgcolor = 'transparent' }) => {
 Main.propTypes = {
   children: PropTypes.node,
   colorInvert: PropTypes.bool,
-  bgcolor: PropTypes.string,
 };
 
 export default Main;

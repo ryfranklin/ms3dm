@@ -16,57 +16,58 @@ const Story = () => {
   return (
     <Box
       sx={{
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        borderRadius: 4,
-        padding: 6,
+        border: '1px solid var(--border)',
+        borderRadius: 'var(--radius)',
+        backgroundColor: 'var(--surface)',
+        padding: { xs: 3, md: 6 },
         marginBottom: 4,
       }}
     >
       <Grid container spacing={6} direction={isMd ? 'row' : 'column'}>
         <Grid item container alignItems={'flex-start'} xs={12} md={6}>
           <Box>
-            <Typography 
-              variant={'h3'} 
-              gutterBottom 
-              sx={{ 
-                fontWeight: 700,
-                color: 'white',
+            <Typography
+              variant={'h3'}
+              gutterBottom
+              sx={{
+                fontWeight: 600,
+                color: 'text.primary',
                 marginBottom: 3,
               }}
             >
-              Our Story
+              About the Practice
             </Typography>
-            <Typography 
+            <Typography
               component={'p'}
               sx={{
-                color: 'rgba(255, 255, 255, 0.9)',
-                fontSize: '1.1rem',
+                color: 'text.secondary',
+                fontSize: '1.05rem',
                 lineHeight: 1.8,
                 marginBottom: 2,
               }}
             >
-              Founded on the belief that every organization deserves access to world-class data capabilities, ms3dm.tech emerged from a simple observation: most companies have data, but few truly leverage it for competitive advantage.
+              ms3dm.tech is an independent practice run by a single senior data architect and AI/ML engineer. I design and build the systems myself, from the lakehouse foundation up to the agents that run on top of it, without the layers that usually sit between the problem and the person solving it.
             </Typography>
-            <Typography 
+            <Typography
               component={'p'}
               sx={{
-                color: 'rgba(255, 255, 255, 0.9)',
-                fontSize: '1.1rem',
+                color: 'text.secondary',
+                fontSize: '1.05rem',
                 lineHeight: 1.8,
                 marginBottom: 2,
               }}
             >
-              Our team of expert data engineers, analytics specialists, and business intelligence consultants brings together decades of experience transforming complex data challenges into strategic opportunities. We&apos;ve helped organizations across retail, finance, healthcare, and manufacturing unlock the power of their data to drive measurable business outcomes.
+              On the data side I build medallion lakehouse architectures on AWS: S3 and Apache Iceberg for storage, Glue and Spark for transformation, Fivetran for change data capture, Step Functions for orchestration, and Terraform to keep it all reproducible. The result is a governed catalog and pipelines you can actually trust.
             </Typography>
-            <Typography 
+            <Typography
               component={'p'}
               sx={{
-                color: 'rgba(255, 255, 255, 0.9)',
-                fontSize: '1.1rem',
+                color: 'text.secondary',
+                fontSize: '1.05rem',
                 lineHeight: 1.8,
               }}
             >
-              What sets us apart is our commitment to practical, results-driven solutions. We don&apos;t just implement technology—we partner with you to build data capabilities that evolve with your business, ensuring you stay ahead in an increasingly data-driven world.
+              On the AI side I work in agentic and multi-agent systems, RAG done properly (semantic retrieval with vector search and reranking), and Amazon Bedrock integrations that run guardrailed on every call. I also handle the ML signal engineering, momentum, churn, and next-best-action prediction, and the MLOps to keep those models running on SageMaker.
             </Typography>
           </Box>
         </Grid>

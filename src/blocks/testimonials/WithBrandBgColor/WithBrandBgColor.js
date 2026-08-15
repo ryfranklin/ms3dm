@@ -50,7 +50,7 @@ const WithBrandBgColor = () => {
                 color: 'common.white',
               }}
             >
-              Trusted by the world’s most innovative businesses – big and small
+              Trusted by the world’s most innovative businesses, big and small
             </Typography>
             <Typography
               variant="h6"

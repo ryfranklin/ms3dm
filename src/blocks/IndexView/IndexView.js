@@ -82,7 +82,7 @@ const IndexView = () => {
             <OverviewSection
               title={'Marketing'}
               description={
-                'Landing page heroes, feature sections, newsletter sign up forms — everything you need to build beautiful marketing websites.'
+                'Landing page heroes, feature sections, newsletter sign up forms: everything you need to build beautiful marketing websites.'
               }
               items={marketing}
             />
@@ -91,7 +91,7 @@ const IndexView = () => {
             <OverviewSection
               title={'Application UI'}
               description={
-                'Form layouts, tables, modal windows — everything you need to build beautiful responsive web applications.'
+                'Form layouts, tables, modal windows: everything you need to build beautiful responsive web applications.'
               }
               items={application}
             />
@@ -100,7 +100,7 @@ const IndexView = () => {
             <OverviewSection
               title={'E-commerce'}
               description={
-                'E-commerce sections — everything you need to build beautiful e-commerce websites and shop applications.'
+                'E-commerce sections: everything you need to build beautiful e-commerce websites and shop applications.'
               }
               items={ecommerce}
             />

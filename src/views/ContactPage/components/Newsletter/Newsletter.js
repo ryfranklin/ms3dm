@@ -5,16 +5,20 @@ import Typography from '@mui/material/Typography';
 import FormControl from '@mui/material/FormControl';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputAdornment from '@mui/material/InputAdornment';
-import { useTheme } from '@mui/material/styles';
 
 import Container from 'components/Container';
 
 const Newsletter = () => {
-  const theme = useTheme();
-
   return (
-    <Box bgcolor={'primary.main'} borderRadius={2}>
-      <Container>
+    <Box
+      sx={{
+        border: '1px solid var(--border)',
+        borderRadius: 'var(--radius)',
+        backgroundColor: 'var(--surface)',
+        paddingY: { xs: 5, md: 7 },
+      }}
+    >
+      <Container paddingY={'0 !important'}>
         <Box
           display={'flex'}
           flexDirection={'column'}
@@ -27,21 +31,21 @@ const Newsletter = () => {
               align={'center'}
               gutterBottom
               sx={{
-                fontWeight: 700,
-                color: theme.palette.common.white,
+                fontWeight: 600,
+                color: 'text.primary',
               }}
             >
-              Stay Ahead with Data Insights
+              Notes on Data and AI Engineering
             </Typography>
             <Typography
               variant="h6"
               align={'center'}
               sx={{
-                color: theme.palette.common.white,
+                color: 'text.secondary',
                 fontWeight: 400,
               }}
             >
-              Subscribe to receive the latest trends, best practices, and strategies in data-driven decision making
+              Occasional notes on AWS lakehouses, reliable pipelines, RAG, and agentic AI, straight from the work.
             </Typography>
           </Box>
           <Box width={1} display={'flex'} justifyContent={'center'}>
@@ -51,23 +55,6 @@ const Newsletter = () => {
               sx={{
                 maxWidth: 400,
                 width: 1,
-                '& .MuiOutlinedInput-root': {
-                  '& fieldset': {
-                    borderColor: 'white',
-                  },
-                  '&:hover fieldset': {
-                    borderColor: 'white',
-                  },
-                  '&.Mui-focused fieldset': {
-                    borderColor: 'white',
-                  },
-                },
-                '& .MuiInputBase-root': {
-                  color: 'white',
-                },
-                '& .MuiInputAdornment-root svg': {
-                  color: 'white !important',
-                },
               }}
             >
               <OutlinedInput

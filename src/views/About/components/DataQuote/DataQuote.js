@@ -8,67 +8,54 @@ const DataQuote = () => {
   return (
     <Box
       sx={{
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        paddingY: 8,
+        borderTop: '1px solid var(--border)',
+        borderBottom: '1px solid var(--border)',
+        backgroundColor: 'var(--bg-soft)',
+        paddingY: { xs: 8, md: 12 },
         position: 'relative',
         overflow: 'hidden',
-        '&::before': {
-          content: '""',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: 'linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)',
-          pointerEvents: 'none',
-        },
       }}
     >
       <Container>
         <Box
           sx={{
             textAlign: 'center',
-            maxWidth: 800,
+            maxWidth: 820,
             margin: '0 auto',
             position: 'relative',
             zIndex: 1,
           }}
         >
           <Typography
-            variant="h2"
-            sx={{
-              fontWeight: 700,
-              color: 'white',
-              marginBottom: 3,
-              fontStyle: 'italic',
-              fontSize: { xs: '2rem', md: '3rem' },
-              textShadow: '0 4px 8px rgba(0,0,0,0.3)',
-            }}
+            variant="overline"
+            component="p"
+            sx={{ color: 'text.disabled', marginBottom: 3 }}
           >
-            &quot;Without data, you&apos;re just another person with an opinion.&quot;
+            The principle this practice is built on
           </Typography>
           <Typography
-            variant="h4"
+            variant="h2"
             sx={{
-              color: 'rgba(255, 255, 255, 0.9)',
-              fontWeight: 500,
+              fontWeight: 600,
+              color: 'text.primary',
               marginBottom: 4,
-              fontSize: { xs: '1.2rem', md: '1.5rem' },
+              letterSpacing: '-0.02em',
+              fontSize: { xs: '1.9rem', md: '2.75rem' },
             }}
           >
-            - W. Edwards Deming
+            &quot;A model is only as trustworthy as the data and the guardrails behind it.&quot;
           </Typography>
           <Typography
             variant="h6"
             component="p"
             sx={{
-              color: 'rgba(255, 255, 255, 0.9)',
+              color: 'text.secondary',
               lineHeight: 1.8,
               fontWeight: 400,
-              fontSize: { xs: '1rem', md: '1.2rem' },
+              fontSize: { xs: '1rem', md: '1.15rem' },
             }}
           >
-            In today&apos;s competitive landscape, intuition alone isn&apos;t enough. Organizations that thrive are those that harness data to inform every decision, optimize every process, and predict every opportunity. At ms3dm.tech, we transform raw data into the strategic insights that separate industry leaders from the rest.
+            Good AI starts with a governed lakehouse and reliable pipelines, then adds retrieval that actually returns the right context and guardrails that hold on every call. I build both halves: the Iceberg-backed data foundation on AWS and the guardrailed, agentic systems that reason over it. No hand-waving, no black boxes you cannot inspect.
           </Typography>
         </Box>
       </Container>

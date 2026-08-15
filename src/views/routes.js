@@ -2,11 +2,11 @@ import React from 'react';
 
 import {
   Home as HomeView,
+  Homebase as HomebaseView,
+  Writing as CompendiumView,
   ContactPage as ContactPageView,
   WebBasic as WebBasicView,
   About as AboutView,
-  BlogNewsroom as BlogNewsroomView,
-  BlogArticle as BlogArticleView,
   PasswordResetSimple as PasswordResetSimpleView,
   SigninSimple as SigninSimpleView,
   SignupSimple as SignupSimpleView,
@@ -19,6 +19,14 @@ const routes = [
   {
     path: '/',
     renderer: (params = {}) => <HomeView {...params} />,
+  },
+  {
+    path: '/homebase',
+    renderer: (params = {}) => <HomebaseView {...params} />,
+  },
+  {
+    path: '/compendium',
+    renderer: (params = {}) => <CompendiumView {...params} />,
   },
   {
     path: '/contact-page',
@@ -39,22 +47,6 @@ const routes = [
   {
     path: '/portfolio-grid',
     renderer: (params = {}) => <PortfolioGridView {...params} />,
-  },
-  {
-    path: '/blog',
-    renderer: (params = {}) => <BlogNewsroomView {...params} />,
-  },
-  {
-    path: '/blog-newsroom',
-    renderer: (params = {}) => <BlogNewsroomView {...params} />,
-  },
-  {
-    path: '/blog/:slug',
-    renderer: (params = {}) => <BlogArticleView {...params} />,
-  },
-  {
-    path: '/blog-article/:slug',
-    renderer: (params = {}) => <BlogArticleView {...params} />,
   },
   {
     path: '/password-reset-simple',
