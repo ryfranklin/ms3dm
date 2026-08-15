@@ -9,20 +9,6 @@ const pages = {
       href: '/contact-page',
     },
   ],
-  blog: [
-    {
-      title: 'Blog Home',
-      href: '/blog',
-    },
-    {
-      title: 'Latest Posts',
-      href: '/blog-newsroom',
-    },
-    {
-      title: 'Search Articles',
-      href: '/blog-search',
-    },
-  ],
   portfolio: [],
 };
 

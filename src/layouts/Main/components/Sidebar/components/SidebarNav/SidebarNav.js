@@ -1,16 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import Logo from 'components/Logo';
 
 import NavItem from './components/NavItem';
 
 const SidebarNav = ({ pages }) => {
 
-  const {
-    company: companyPages,
-    blog: blogPages,
-  } = pages;
+  const { company: companyPages } = pages;
 
   return (
     <Box>
@@ -26,11 +24,30 @@ const SidebarNav = ({ pages }) => {
         </Box>
       </Box>
       <Box paddingX={2} paddingY={2}>
-        <Box>
-          <NavItem title={'Company'} items={companyPages} />
+        <Box marginBottom={1}>
+          <Typography
+            component={'a'}
+            href={'/homebase'}
+            fontWeight={400}
+            color={'text.primary'}
+            sx={{ textDecoration: 'none' }}
+          >
+            Homebase
+          </Typography>
+        </Box>
+        <Box marginBottom={1}>
+          <Typography
+            component={'a'}
+            href={'/compendium'}
+            fontWeight={400}
+            color={'text.primary'}
+            sx={{ textDecoration: 'none' }}
+          >
+            Compendium
+          </Typography>
         </Box>
         <Box>
-          <NavItem title={'Blog'} items={blogPages} />
+          <NavItem title={'Company'} items={companyPages} />
         </Box>
       </Box>
     </Box>

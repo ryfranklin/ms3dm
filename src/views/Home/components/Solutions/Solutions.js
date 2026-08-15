@@ -1,160 +1,97 @@
 import React from 'react';
-import { alpha, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Avatar from '@mui/material/Avatar';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import { DataIntegrationChart, AnalyticsDashboard, PointCloud3D } from 'components/DataVisualizations';
 
-const solutions = [
+/*
+ * "What I build" - three hairline cards covering the practice: data platforms,
+ * agentic AI, and ML systems. Copy is grounded in real capability, no adjectives
+ * standing in for specifics.
+ */
+const pillars = [
   {
-    title: 'Data Integration & Governance',
-    subtitle:
-      'Unify data sources across your enterprise to create a single source of truth. Connect disparate systems, ensure data quality, and eliminate silos for better decision-making.',
-    icon: <DataIntegrationChart size={80} />,
-    benefits: [
-      'Enterprise data unification',
-      'Data quality & governance',
-      'Real-time synchronization',
-    ],
+    index: '01',
+    title: 'Data Platforms',
+    body:
+      'Medallion lakehouse architecture on AWS: S3 plus Apache Iceberg tables, Glue and Spark transforms, Fivetran CDC ingestion, and Step Functions orchestration. Governed catalogs and reliable pipelines, provisioned as Terraform.',
+    tags: ['S3 + Iceberg', 'Glue / Spark', 'Fivetran CDC', 'Step Functions'],
   },
   {
-    title: 'Advanced Analytics & AI',
-    subtitle:
-      'Leverage cutting-edge analytics and AI to uncover hidden patterns, predict outcomes, and automate insights. Transform raw data into strategic advantages.',
-    icon: <PointCloud3D size={80} />,
-    benefits: [
-      'Predictive modeling & forecasting',
-      'Machine learning automation',
-      'Pattern recognition & anomaly detection',
-    ],
+    index: '02',
+    title: 'Agentic AI',
+    body:
+      'Multi-agent orchestration with plan-and-execute control loops. Retrieval done properly: semantic search with vector stores and reranking, Bedrock model integration, and guardrails enforced on every call.',
+    tags: ['Bedrock', 'RAG + rerank', 'Guardrails', 'Multi-agent'],
   },
   {
-    title: 'Business Intelligence & Visualization',
-    subtitle:
-      'Turn complex data into clear, actionable insights with intuitive dashboards and custom reporting. Empower every stakeholder with the information they need.',
-    icon: <AnalyticsDashboard size={80} />,
-    benefits: [
-      'Interactive dashboards',
-      'Custom KPI tracking',
-      'Self-service analytics',
-    ],
+    index: '03',
+    title: 'ML Systems',
+    body:
+      'Signal engineering and predictive models: momentum, churn, and next-best-action style signals. Trained, tracked, and deployed with MLOps on SageMaker, from feature pipelines to monitored inference.',
+    tags: ['SageMaker', 'MLOps', 'Signal engineering', 'Monitoring'],
   },
 ];
 
 const Solutions = () => {
-  const theme = useTheme();
-
   return (
-    <Box
-      sx={{
-        paddingY: 8,
-        backgroundColor: theme.palette.background.paper,
-      }}
-    >
-      <Box marginBottom={6}>
-        <Typography
-          variant="h4"
-          color="text.primary"
-          align={'center'}
-          sx={{
-            fontWeight: 700,
-            marginBottom: 2,
-          }}
-        >
-          Our Solutions
+    <Box sx={{ paddingY: { xs: 8, md: 12 } }}>
+      <Box marginBottom={6} sx={{ maxWidth: 740 }}>
+        <Typography variant="overline" component="p" color="text.secondary" gutterBottom>
+          What I build
         </Typography>
-        <Typography
-          variant="h6"
-          component="p"
-          color="text.secondary"
-          align={'center'}
-          sx={{ fontWeight: 400, maxWidth: 800, margin: '0 auto' }}
-        >
-          Comprehensive data solutions that transform how enterprises make decisions
+        <Typography variant="h4" color="text.primary" sx={{ fontWeight: 600 }}>
+          Three disciplines, one delivery model.
         </Typography>
       </Box>
-      <Grid container spacing={4}>
-        {solutions.map((item, i) => (
-          <Grid item xs={12} md={4} key={i}>
+
+      <Grid container spacing={3}>
+        {pillars.map((item, i) => (
+          <Grid item xs={12} md={4} key={item.index}>
             <Card
-              sx={{
-                height: '100%',
-                backgroundColor: theme.palette.background.paper,
-                boxShadow: `0 4px 20px ${alpha(theme.palette.primary.main, 0.08)}`,
-                transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
-                '&:hover': {
-                  transform: 'translateY(-4px)',
-                  boxShadow: `0 8px 30px ${alpha(theme.palette.primary.main, 0.12)}`,
-                },
-              }}
-              data-aos={'fade-up'}
-              data-aos-delay={i * 200}
+              sx={{ height: '100%' }}
+              data-aos="fade-up"
+              data-aos-delay={i * 120}
             >
-              <CardContent sx={{ padding: 3 }}>
-                <Box
-                  component={Avatar}
-                  width={80}
-                  height={80}
-                  marginBottom={3}
-                  bgcolor={alpha(theme.palette.primary.main, 0.1)}
-                  color={theme.palette.primary.main}
-                  sx={{ margin: '0 auto 24px auto' }}
-                >
-                  {item.icon}
-                </Box>
+              <CardContent sx={{ padding: 3.5 }}>
                 <Typography
-                  variant={'h5'}
-                  gutterBottom
-                  sx={{ fontWeight: 600, marginBottom: 2 }}
-                  align={'center'}
+                  sx={{
+                    fontFamily: 'var(--font-mono)',
+                    color: 'text.disabled',
+                    letterSpacing: '0.08em',
+                    marginBottom: 2,
+                  }}
+                >
+                  {item.index}
+                </Typography>
+                <Typography
+                  variant="h5"
+                  sx={{ fontWeight: 600, marginBottom: 1.5 }}
                 >
                   {item.title}
                 </Typography>
-                <Typography 
-                  align={'center'} 
-                  color="text.secondary"
-                  sx={{ marginBottom: 3, lineHeight: 1.6 }}
-                >
-                  {item.subtitle}
+                <Typography color="text.secondary" sx={{ marginBottom: 3, lineHeight: 1.65 }}>
+                  {item.body}
                 </Typography>
-                <Box sx={{ marginTop: 2 }}>
-                  {item.benefits.map((benefit, idx) => (
+                <Box display="flex" flexWrap="wrap" gap={1}>
+                  {item.tags.map((tag) => (
                     <Box
-                      key={idx}
+                      key={tag}
+                      component="span"
                       sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        marginBottom: 1,
+                        fontFamily: 'var(--font-mono)',
+                        fontSize: '0.72rem',
+                        color: 'text.secondary',
+                        border: '1px solid var(--border)',
+                        borderRadius: 999,
+                        paddingX: 1.2,
+                        paddingY: 0.4,
                       }}
                     >
-                      <Box
-                        sx={{
-                          width: 6,
-                          height: 6,
-                          borderRadius: '50%',
-                          backgroundColor: theme.palette.primary.main,
-                          marginRight: 1.5,
-                        }}
-                      />
-                      <Typography variant="body2" color="text.secondary">
-                        {benefit}
-                      </Typography>
+                      {tag}
                     </Box>
                   ))}
-                </Box>
-                <Box sx={{ marginTop: 3, textAlign: 'center' }}>
-                  <Button
-                    variant="text"
-                    color="primary"
-                    href="/contact-page"
-                    sx={{ fontWeight: 600 }}
-                  >
-                    Learn More →
-                  </Button>
                 </Box>
               </CardContent>
             </Card>
@@ -166,4 +103,3 @@ const Solutions = () => {
 };
 
 export default Solutions;
-

@@ -5,7 +5,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Logo from 'components/Logo';
+import ServiceNetwork from 'components/ServiceNetwork';
 
 const Hero = () => {
   const theme = useTheme();
@@ -14,79 +14,83 @@ const Hero = () => {
   });
 
   return (
-    <Box>
-      <Box marginBottom={6} textAlign="center">
-        <Box marginBottom={4}>
-          <Logo size="xlarge" />
-        </Box>
-      </Box>
-      <Box marginBottom={4}>
-        <Box marginBottom={3}>
-          <Typography
-            variant="h2"
-            color="text.primary"
-            align={'center'}
-            sx={{
-              fontWeight: 700,
-              marginBottom: 3,
-              fontSize: { xs: '2.5rem', md: '3.5rem' },
-            }}
-          >
-            Transform Data into Smarter Decisions
-          </Typography>
-          <Typography
-            variant="h5"
-            component="p"
-            color="text.secondary"
-            sx={{ 
-              fontWeight: 400,
-              maxWidth: 900,
-              margin: '0 auto',
-              lineHeight: 1.6,
-            }}
-            align={'center'}
-          >
-            ms3dm.tech empowers enterprises with data-driven decision making — turning complex business data into actionable insights that accelerate growth and operational excellence.
-          </Typography>
-        </Box>
+    <Box paddingY={{ xs: 6, md: 10 }}>
+      <Box
+        className="hb-rise"
+        sx={{ maxWidth: 820, margin: '0 auto', textAlign: 'center' }}
+      >
+        <Typography
+          variant="overline"
+          component="p"
+          sx={{ color: 'text.secondary', marginBottom: 3 }}
+        >
+          Data platforms / Agentic AI / AWS
+        </Typography>
+
+        <Typography
+          variant="h2"
+          component="h1"
+          color="text.primary"
+          sx={{
+            fontWeight: 600,
+            marginBottom: 3,
+            fontSize: { xs: '2.4rem', md: '3.4rem' },
+          }}
+        >
+          Production data platforms and agentic AI systems, built on AWS.
+        </Typography>
+
+        <Typography
+          variant="h6"
+          component="p"
+          color="text.secondary"
+          sx={{
+            fontWeight: 400,
+            maxWidth: 680,
+            margin: '0 auto',
+            lineHeight: 1.65,
+          }}
+        >
+          ms3dm.tech is an independent practice. I design medallion lakehouse
+          architectures on S3 and Apache Iceberg, and ship guardrailed, agentic
+          AI: plan-and-execute agents grounded in retrieval, checked on every
+          call.
+        </Typography>
+
         <Box
           display="flex"
           flexDirection={{ xs: 'column', sm: 'row' }}
-          alignItems={{ xs: 'stretched', sm: 'center' }}
-          justifyContent={'center'}
+          alignItems="center"
+          justifyContent="center"
           gap={2}
+          marginTop={4}
         >
           <Button
-            component={'a'}
+            component="a"
             variant="contained"
             color="primary"
             size="large"
             fullWidth={isMd ? false : true}
-            href={'/contact-page'}
-            sx={{
-              paddingX: 4,
-              paddingY: 1.5,
-              fontSize: '1.1rem',
-            }}
+            href="mailto:ryan.franklin@ms3dm.tech"
           >
-            See How It Works
+            Start a conversation
           </Button>
           <Button
-            component={'a'}
-            variant="outlined"
+            component="a"
+            variant="text"
             color="primary"
             size="large"
             fullWidth={isMd ? false : true}
-            href={'/contact-page'}
-            sx={{
-              paddingX: 4,
-              paddingY: 1.5,
-              fontSize: '1.1rem',
-            }}
+            href="#selected-work"
           >
-            Schedule a Demo
+            See selected work
           </Button>
         </Box>
+      </Box>
+
+      {/* The service-network node graph is the visual identity. */}
+      <Box marginTop={{ xs: 4, md: 6 }}>
+        <ServiceNetwork height={isMd ? 380 : 300} />
       </Box>
     </Box>
   );

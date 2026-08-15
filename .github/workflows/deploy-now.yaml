@@ -4,8 +4,13 @@
 name: Deploy Now
 
 on:
-  - push
-  - workflow_dispatch
+  push:
+  workflow_dispatch:
+  # Daily rebuild so new Substack posts (baked in at build time by the
+  # prebuild step) appear without a manual push. Cron is UTC. Note: GitHub
+  # auto-disables scheduled workflows after 60 days with no repo activity.
+  schedule:
+    - cron: '0 12 * * *'
 
 jobs:
   deploy-now:
@@ -34,9 +39,9 @@ jobs:
 
       - name: Setup Node
         if: ${{ steps.project.outputs.deployment-enabled == 'true' }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
-          node-version: v16.x
+          node-version: 20.x
 
       - name: Build Node assets
         env:

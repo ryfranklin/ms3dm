@@ -6,6 +6,8 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
+    "fetch:substack": "node scripts/fetch-substack.js",
+    "prebuild": "node scripts/fetch-substack.js",
     "build": "cross-env GENERATE_SOURCEMAP=false react-scripts build && npm install -g serve serve -s build",
     "prettier:fix": "prettier './src/**/*.js' --write",
     "eslint:fix": "eslint ./src --fix",
@@ -42,6 +44,7 @@
     "card-validator": "^8.1.1",
     "formik": "^2.2.6",
     "jarallax": "^1.12.8",
+    "mermaid": "^11.16.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-countup": "^6.1.0",
@@ -76,6 +79,7 @@
     "prettier-eslint": "^13.0.0",
     "prettier-eslint-cli": "^8.0.1",
     "rimraf": "^3.0.2",
+    "rss-parser": "^3.13.0",
     "typescript": "^4.5.4"
   },
   "homepage": "https://ms3dm.tech",
