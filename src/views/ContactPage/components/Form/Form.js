@@ -59,10 +59,10 @@ const Form = () => {
           gutterBottom
           align={'center'}
         >
-          Start Your Data Transformation Journey
+          Tell Me About Your Project
         </Typography>
         <Typography color="text.secondary" align={'center'}>
-          Tell us about your data challenges and goals. We&apos;ll get back to you within 24 hours to discuss how we can help.
+          Describe your data engineering or AI/ML challenge: lakehouse modernization, pipeline reliability, RAG, or agentic AI. I read every message myself and will reply personally.
         </Typography>
       </Box>
       <Box
@@ -135,7 +135,7 @@ const Form = () => {
               Message
             </Typography>
             <TextField
-              placeholder="Tell us about your data challenges, goals, or questions"
+              placeholder="Tell me about your data platform, pipelines, or AI/ML goals"
               variant="outlined"
               name="message"
               fullWidth
@@ -158,7 +158,7 @@ const Form = () => {
                 paddingY: 1.5,
               }}
             >
-              Get Started
+              Send Message
             </Button>
           </Grid>
         </Grid>

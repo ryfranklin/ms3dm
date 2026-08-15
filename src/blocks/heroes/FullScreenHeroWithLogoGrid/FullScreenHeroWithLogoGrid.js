@@ -47,7 +47,7 @@ const FullScreenHeroWithLogoGrid = () => {
                 >
                   Tell us your project requirements, budget, and timeline,
                   <br /> and we will connect you with up to four companies that
-                  match your needs – all for free.
+                  match your needs, all for free.
                 </Typography>
               </Box>
             </Box>

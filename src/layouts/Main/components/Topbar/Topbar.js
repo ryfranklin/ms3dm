@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 import { alpha, useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import Logo from 'components/Logo';
@@ -10,10 +11,7 @@ import { NavItem } from './components';
 
 const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
   const theme = useTheme();
-  const {
-    company: companyPages,
-    blog: blogPages,
-  } = pages;
+  const { company: companyPages } = pages;
 
   return (
     <Box
@@ -33,18 +31,30 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
       </Box>
       <Box sx={{ display: { xs: 'none', md: 'flex' } }} alignItems={'center'}>
         <Box marginLeft={4}>
+          <Typography
+            component={'a'}
+            href={'/homebase'}
+            color={colorInvert ? 'common.white' : 'text.primary'}
+            sx={{ textDecoration: 'none', cursor: 'pointer' }}
+          >
+            Homebase
+          </Typography>
+        </Box>
+        <Box marginLeft={4}>
+          <Typography
+            component={'a'}
+            href={'/compendium'}
+            color={colorInvert ? 'common.white' : 'text.primary'}
+            sx={{ textDecoration: 'none', cursor: 'pointer' }}
+          >
+            Compendium
+          </Typography>
+        </Box>
+        <Box marginLeft={4}>
           <NavItem
             title={'Company'}
             id={'company-pages'}
             items={companyPages}
-            colorInvert={colorInvert}
-          />
-        </Box>
-        <Box marginLeft={4}>
-          <NavItem
-            title={'Blog'}
-            id={'blog-pages'}
-            items={blogPages}
             colorInvert={colorInvert}
           />
         </Box>

@@ -1,0 +1,143 @@
+{
+  "channel": {
+    "title": "Ryan Franklin",
+    "description": "Building modern data systems, one micro-project at a time.",
+    "url": "https://ryanfranklin3.substack.com",
+    "image": "https://substackcdn.com/image/fetch/$s_!d4Zw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F68ba9fa3-9717-4f24-985a-55066dd9686e_1024x1024.png"
+  },
+  "fetchedAt": "2026-08-15T23:37:45.929Z",
+  "posts": [
+    {
+      "title": "Stood up an evaulation pipeline for my LLM project. Now what?",
+      "url": "https://ryanfranklin3.substack.com/p/stood-up-an-evaulation-pipeline-for",
+      "guid": "https://ryanfranklin3.substack.com/p/stood-up-an-evaulation-pipeline-for",
+      "date": "2026-07-25T22:33:12.000Z",
+      "dateDisplay": "Jul 25, 2026",
+      "author": "Ryan Franklin",
+      "summary": "Third in a series on the concepts behind Mission Control, my project for running coding agents like production systems.",
+      "image": "https://substackcdn.com/image/fetch/$s_!d4Zw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F68ba9fa3-9717-4f24-985a-55066dd9686e_1024x1024.png",
+      "readingMins": 5
+    },
+    {
+      "title": "You can't unit-test an LLM. So I built CI for a system that isn't deterministic.",
+      "url": "https://ryanfranklin3.substack.com/p/you-cant-unit-test-an-llm-so-i-built",
+      "guid": "https://ryanfranklin3.substack.com/p/you-cant-unit-test-an-llm-so-i-built",
+      "date": "2026-07-24T04:26:20.000Z",
+      "dateDisplay": "Jul 23, 2026",
+      "author": "Ryan Franklin",
+      "summary": "Second in a series of the concepts behind Mission Control, my runtime for running coding agents like production systems. Evaluation pipelines.",
+      "image": "https://substackcdn.com/image/fetch/$s_!CEui!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F68e0c7c8-99ae-43a7-9936-f29e6d41b56d_1062x1344.png",
+      "readingMins": 7
+    },
+    {
+      "title": "I've learned to run my coding agents like production systems, not like a chat window. Here's the orchestration layer that makes it all happen",
+      "url": "https://ryanfranklin3.substack.com/p/ive-learned-to-run-my-coding-agents",
+      "guid": "https://ryanfranklin3.substack.com/p/ive-learned-to-run-my-coding-agents",
+      "date": "2026-07-24T00:22:15.000Z",
+      "dateDisplay": "Jul 23, 2026",
+      "author": "Ryan Franklin",
+      "summary": "Most developers are not running their agents like production systems: isolated, gated, durable, resumable. This is a series displaying how I control my agentic workflow.",
+      "image": "https://substackcdn.com/image/fetch/$s_!qfsx!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F291ba1d5-6334-4fd9-9397-d141de4ca575_2078x1430.png",
+      "readingMins": 8
+    },
+    {
+      "title": "When I changed my AI agent's dataset, every test broke. Here's how I knew which ones to trust.",
+      "url": "https://ryanfranklin3.substack.com/p/when-i-changed-my-ai-agents-dataset",
+      "guid": "https://ryanfranklin3.substack.com/p/when-i-changed-my-ai-agents-dataset",
+      "date": "2026-05-09T16:30:57.000Z",
+      "dateDisplay": "May 9, 2026",
+      "author": "Ryan Franklin",
+      "summary": "*The previous post explained why I pivoted my AI agent's dataset from synthetic ambassadors to HVAC home services. This is the part nobody talks about: the moment you change the schema, breakage!",
+      "image": "https://substackcdn.com/image/fetch/$s_!d4Zw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F68ba9fa3-9717-4f24-985a-55066dd9686e_1024x1024.png",
+      "readingMins": 11
+    },
+    {
+      "title": "Why I changed my AI agent's dataset before I opened it to the public.",
+      "url": "https://ryanfranklin3.substack.com/p/why-i-changed-my-ai-agents-dataset",
+      "guid": "https://ryanfranklin3.substack.com/p/why-i-changed-my-ai-agents-dataset",
+      "date": "2026-05-09T03:24:45.000Z",
+      "dateDisplay": "May 8, 2026",
+      "author": "Ryan Franklin",
+      "summary": "*The synthetic ambassador schema was good enough for a private demo. It would have crashed into ethical and legal questions the moment a stranger signed up and asked for an email address.\"",
+      "image": "https://substackcdn.com/image/fetch/$s_!d4Zw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F68ba9fa3-9717-4f24-985a-55066dd9686e_1024x1024.png",
+      "readingMins": 12
+    },
+    {
+      "title": "AWS Lake Formation data gate. The AI agent does not decide what you can see.",
+      "url": "https://ryanfranklin3.substack.com/p/aws-lake-formation-data-gate-the",
+      "guid": "https://ryanfranklin3.substack.com/p/aws-lake-formation-data-gate-the",
+      "date": "2026-04-28T06:23:01.000Z",
+      "dateDisplay": "Apr 27, 2026",
+      "author": "Ryan Franklin",
+      "summary": "Per-column ABAC, session tags that ride through every hop, and the moment in the demo where Analyst sees REDACTED and Admin sees full PII through the same prompt and the same agent.",
+      "image": "https://substackcdn.com/image/fetch/$s_!d4Zw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F68ba9fa3-9717-4f24-985a-55066dd9686e_1024x1024.png",
+      "readingMins": 12
+    },
+    {
+      "title": "The AWS structure for an AI consulting practice. Accounts, not domains.",
+      "url": "https://ryanfranklin3.substack.com/p/the-aws-structure-for-an-ai-consulting",
+      "guid": "https://ryanfranklin3.substack.com/p/the-aws-structure-for-an-ai-consulting",
+      "date": "2026-04-26T20:52:02.000Z",
+      "dateDisplay": "Apr 26, 2026",
+      "author": "Ryan Franklin",
+      "summary": "What four topologies look like, why I picked one of them, and the most common mistakes I’ve seen so far.",
+      "image": "https://substackcdn.com/image/fetch/$s_!LoGW!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7d977c31-8df3-4f0b-a3c6-d764a990a4d8_1450x1088.png",
+      "readingMins": 9
+    },
+    {
+      "title": "I rebuilt the agent in AWS-native managed services. Here’s what I gave up and what AWS taught me on the way.",
+      "url": "https://ryanfranklin3.substack.com/p/i-rebuilt-the-agent-in-aws-native",
+      "guid": "https://ryanfranklin3.substack.com/p/i-rebuilt-the-agent-in-aws-native",
+      "date": "2026-04-26T19:51:41.000Z",
+      "dateDisplay": "Apr 26, 2026",
+      "author": "Ryan Franklin",
+      "summary": "The Bedrock-native stack I promised at the end of last week’s post-mortem, with the seven things I learned between terraform validate and a working demo.",
+      "image": "https://substackcdn.com/image/fetch/$s_!zryR!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F89045024-0711-4d28-bad9-5961362fad14_662x643.png",
+      "readingMins": 10
+    },
+    {
+      "title": "I built an AI agent on EC2. Here’s why I deleted it before any client saw it.",
+      "url": "https://ryanfranklin3.substack.com/p/i-built-an-ai-agent-on-ec2-heres",
+      "guid": "https://ryanfranklin3.substack.com/p/i-built-an-ai-agent-on-ec2-heres",
+      "date": "2026-04-26T03:42:21.000Z",
+      "dateDisplay": "Apr 25, 2026",
+      "author": "Ryan Franklin",
+      "summary": "Outline",
+      "image": "https://substackcdn.com/image/fetch/$s_!d4Zw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F68ba9fa3-9717-4f24-985a-55066dd9686e_1024x1024.png",
+      "readingMins": 6
+    },
+    {
+      "title": "OOP Python Challenge: Building a Mini Data Pipeline Framework",
+      "url": "https://ryanfranklin3.substack.com/p/oop-python-challenge-building-a-mini",
+      "guid": "https://ryanfranklin3.substack.com/p/oop-python-challenge-building-a-mini",
+      "date": "2025-10-23T04:59:03.000Z",
+      "dateDisplay": "Oct 22, 2025",
+      "author": "Ryan Franklin",
+      "summary": "Author: Ryan Franklin | MS3DM.Tech",
+      "image": "https://substackcdn.com/image/fetch/$s_!6A1w!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb780e892-f367-41bd-b45d-3682493b8a5f_1570x478.png",
+      "readingMins": 4
+    },
+    {
+      "title": "Building a Production-Ready Event Bus in Python: A Deep Dive into Decoupled Architecture",
+      "url": "https://ryanfranklin3.substack.com/p/building-a-production-ready-event",
+      "guid": "https://ryanfranklin3.substack.com/p/building-a-production-ready-event",
+      "date": "2025-09-05T05:17:06.000Z",
+      "dateDisplay": "Sep 4, 2025",
+      "author": "Ryan Franklin",
+      "summary": "Part of the - 30 Day Journey to Revisit Concepts with Python in my Data Engineering Career",
+      "image": "https://substackcdn.com/image/fetch/$s_!d4Zw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F68ba9fa3-9717-4f24-985a-55066dd9686e_1024x1024.png",
+      "readingMins": 6
+    },
+    {
+      "title": "Setting Up Liquibase with MySQL Using Docker and Docker Compose",
+      "url": "https://ryanfranklin3.substack.com/p/setting-up-liquibase-with-mysql-using",
+      "guid": "https://ryanfranklin3.substack.com/p/setting-up-liquibase-with-mysql-using",
+      "date": "2025-04-11T03:39:11.000Z",
+      "dateDisplay": "Apr 10, 2025",
+      "author": "Ryan Franklin",
+      "summary": "Data Engineering Toolbox Series",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/789714ba-5f82-403d-8f99-a1b825cf30ab_1024x1024.png",
+      "readingMins": 3
+    }
+  ]
+}
