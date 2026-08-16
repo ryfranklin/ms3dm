@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from 'react';
+import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { useTheme } from '@mui/material/styles';
@@ -9,6 +9,9 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import config from 'config/environment';
+
+const OWNER_EMAIL = 'ryan.franklin@ms3dm.tech';
 
 const validationSchema = yup.object({
   fullName: yup
@@ -28,27 +31,110 @@ const validationSchema = yup.object({
     .required('Email is required'),
 });
 
+// When no backend endpoint is configured, open the visitor's mail client so the
+// form always does something useful.
+const mailtoFallback = ({ fullName, email, message }) => {
+  const subject = encodeURIComponent(`Contact from ${fullName}`);
+  const body = encodeURIComponent(`${message}\n\nFrom: ${fullName} (${email})`);
+  window.location.href = `mailto:${OWNER_EMAIL}?subject=${subject}&body=${body}`;
+};
+
 const Form = () => {
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true,
   });
 
+  // status: idle | submitting | success | error
+  const [status, setStatus] = useState('idle');
+  const [errorMsg, setErrorMsg] = useState('');
+
   const initialValues = {
     fullName: '',
     message: '',
     email: '',
+    // Honeypot: hidden from users; bots that fill it are silently dropped.
+    company: '',
   };
 
-  const onSubmit = (values) => {
-    return values;
+  const onSubmit = async (values, { resetForm }) => {
+    setErrorMsg('');
+
+    // Bot caught by the honeypot: pretend success, send nothing.
+    if (values.company) {
+      setStatus('success');
+      resetForm();
+      return;
+    }
+
+    const endpoint = config.contactEndpoint;
+
+    // No backend configured: fall back to a mailto compose.
+    if (!endpoint) {
+      mailtoFallback(values);
+      setStatus('success');
+      resetForm();
+      return;
+    }
+
+    setStatus('submitting');
+    try {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fullName: values.fullName,
+          email: values.email,
+          message: values.message,
+          company: values.company,
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error || 'Something went wrong. Please try again.');
+      }
+      setStatus('success');
+      resetForm();
+    } catch (err) {
+      setStatus('error');
+      setErrorMsg(
+        `${err.message} You can also email ${OWNER_EMAIL} directly.`,
+      );
+    }
   };
 
   const formik = useFormik({
     initialValues,
-    validationSchema: validationSchema,
+    validationSchema,
     onSubmit,
   });
+
+  const submitting = status === 'submitting';
+
+  if (status === 'success') {
+    return (
+      <Box
+        sx={{
+          maxWidth: 600,
+          margin: '0 auto',
+          border: '1px solid var(--border)',
+          borderRadius: 'var(--radius)',
+          backgroundColor: 'var(--surface)',
+          padding: { xs: 4, md: 6 },
+          textAlign: 'center',
+        }}
+        role="status"
+      >
+        <Typography variant="h5" sx={{ fontWeight: 600, marginBottom: 1.5 }}>
+          Message sent.
+        </Typography>
+        <Typography color="text.secondary" sx={{ lineHeight: 1.7 }}>
+          Thanks for reaching out. I read every message myself and will reply to
+          you personally.
+        </Typography>
+      </Box>
+    );
+  }
 
   return (
     <Box>
@@ -147,18 +233,55 @@ const Form = () => {
               helperText={formik.touched.message && formik.errors.message}
             />
           </Grid>
+
+          {/* Honeypot: visually hidden, off the tab order, ignored by humans. */}
+          <Box
+            aria-hidden="true"
+            sx={{ position: 'absolute', left: '-5000px' }}
+          >
+            <label htmlFor="company-website">Company</label>
+            <input
+              id="company-website"
+              name="company"
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              value={formik.values.company}
+              onChange={formik.handleChange}
+            />
+          </Box>
+
+          {status === 'error' && (
+            <Grid item xs={12}>
+              <Box
+                role="alert"
+                sx={{
+                  border: '1px solid var(--border-strong)',
+                  borderRadius: 'var(--radius-sm)',
+                  backgroundColor: 'var(--surface)',
+                  padding: 2,
+                }}
+              >
+                <Typography variant="body2" color="text.secondary">
+                  {errorMsg}
+                </Typography>
+              </Box>
+            </Grid>
+          )}
+
           <Grid item container justifyContent="center" xs={12}>
             <Button
               variant="contained"
               type="submit"
               color="primary"
               size="large"
+              disabled={submitting}
               sx={{
                 paddingX: 4,
                 paddingY: 1.5,
               }}
             >
-              Send Message
+              {submitting ? 'Sending…' : 'Send Message'}
             </Button>
           </Grid>
         </Grid>
