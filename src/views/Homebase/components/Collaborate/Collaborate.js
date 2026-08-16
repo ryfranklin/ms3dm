@@ -8,7 +8,6 @@ import { useTheme } from '@mui/material/styles';
 
 const GITHUB_URL = 'https://github.com/ryfranklin/Homebase';
 const ISSUES_URL = 'https://github.com/ryfranklin/Homebase/issues';
-const EMAIL = 'mailto:ryan.franklin@ms3dm.tech';
 
 const ways = [
   {
@@ -27,9 +26,9 @@ const ways = [
   },
   {
     label: 'Start a conversation',
-    body: 'Prefer email? Reach me directly and I will reply personally.',
-    href: EMAIL,
-    cta: 'ryan.franklin@ms3dm.tech',
+    body: 'Send a message and I will reply personally, or email ryan.franklin@ms3dm.tech directly.',
+    href: '/contact-page',
+    cta: 'Send a message',
     external: false,
   },
 ];

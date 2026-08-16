@@ -71,7 +71,7 @@ const Hero = () => {
             color="primary"
             size="large"
             fullWidth={isMd ? false : true}
-            href="mailto:ryan.franklin@ms3dm.tech"
+            href="/contact-page"
           >
             Start a conversation
           </Button>

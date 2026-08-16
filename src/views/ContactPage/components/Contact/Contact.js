@@ -71,9 +71,9 @@ const Contact = () => {
             variant="contained"
             color="primary"
             size="large"
-            href="mailto:ryan.franklin@ms3dm.tech"
+            href="#contact-form"
           >
-            Email the practice
+            Send a message
           </Button>
         </Grid>
 

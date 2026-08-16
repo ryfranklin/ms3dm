@@ -41,10 +41,25 @@ const Contact = () => {
           variant="contained"
           color="primary"
           size="large"
-          href="mailto:ryan.franklin@ms3dm.tech"
+          href="/contact-page"
         >
-          ryan.franklin@ms3dm.tech
+          Start a conversation
         </Button>
+        <Typography
+          component="a"
+          href="mailto:ryan.franklin@ms3dm.tech"
+          sx={{
+            display: 'block',
+            marginTop: 2,
+            fontFamily: 'var(--font-mono)',
+            fontSize: '0.82rem',
+            color: 'text.secondary',
+            textDecoration: 'none',
+            '&:hover': { color: 'text.primary' },
+          }}
+        >
+          or email ryan.franklin@ms3dm.tech
+        </Typography>
       </Box>
     </Container>
   );

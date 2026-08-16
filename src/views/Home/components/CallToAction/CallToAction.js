@@ -58,9 +58,9 @@ const CallToAction = () => {
             color="primary"
             size="large"
             fullWidth={isMd ? false : true}
-            href="mailto:ryan.franklin@ms3dm.tech"
+            href="/contact-page"
           >
-            ryan.franklin@ms3dm.tech
+            Start a conversation
           </Button>
           <Button
             component="a"
@@ -68,9 +68,9 @@ const CallToAction = () => {
             color="primary"
             size="large"
             fullWidth={isMd ? false : true}
-            href="/contact-page"
+            href="mailto:ryan.franklin@ms3dm.tech"
           >
-            Contact form
+            ryan.franklin@ms3dm.tech
           </Button>
         </Box>
       </Box>
