@@ -1,12 +1,16 @@
-/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import FormControl from '@mui/material/FormControl';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputAdornment from '@mui/material/InputAdornment';
 
 import Container from 'components/Container';
+
+/*
+ * Substack subscription block. The writing lives on Substack (the canonical
+ * channel), so this links out to the Substack subscribe page rather than
+ * capturing email here (a static SPA cannot post to Substack cross-origin).
+ */
+const SUBSTACK_SUBSCRIBE_URL = 'https://ryanfranklin3.substack.com/subscribe';
 
 const Newsletter = () => {
   return (
@@ -25,66 +29,43 @@ const Newsletter = () => {
           justifyContent={'center'}
           alignItems={'center'}
         >
-          <Box marginBottom={4}>
+          <Box marginBottom={4} sx={{ maxWidth: 620 }}>
+            <Typography
+              variant="overline"
+              component="p"
+              align={'center'}
+              color="text.secondary"
+              gutterBottom
+            >
+              Compendium
+            </Typography>
             <Typography
               variant="h4"
               align={'center'}
               gutterBottom
-              sx={{
-                fontWeight: 600,
-                color: 'text.primary',
-              }}
+              sx={{ fontWeight: 600, color: 'text.primary' }}
             >
               Notes on Data and AI Engineering
             </Typography>
             <Typography
               variant="h6"
               align={'center'}
-              sx={{
-                color: 'text.secondary',
-                fontWeight: 400,
-              }}
+              sx={{ color: 'text.secondary', fontWeight: 400 }}
             >
-              Occasional notes on AWS lakehouses, reliable pipelines, RAG, and agentic AI, straight from the work.
+              Occasional notes on AWS lakehouses, reliable pipelines, RAG, and agentic AI, straight from the work. Subscribe on Substack to get them in your inbox.
             </Typography>
           </Box>
-          <Box width={1} display={'flex'} justifyContent={'center'}>
-            <FormControl
-              fullWidth
-              variant="outlined"
-              sx={{
-                maxWidth: 400,
-                width: 1,
-              }}
-            >
-              <OutlinedInput
-                endAdornment={
-                  <InputAdornment position="end">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      width={24}
-                      height={24}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 
-                        14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 
-                        10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 
-                        .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 
-                        3 0 11-6 0v-1m6 0H9"
-                      />
-                    </svg>
-                  </InputAdornment>
-                }
-                placeholder="Enter your email"
-              />
-            </FormControl>
-          </Box>
+          <Button
+            component="a"
+            variant="contained"
+            color="primary"
+            size="large"
+            href={SUBSTACK_SUBSCRIBE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Subscribe on Substack
+          </Button>
         </Box>
       </Container>
     </Box>
