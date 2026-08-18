@@ -10,6 +10,28 @@ import Container from 'components/Container';
  */
 const groups = [
   {
+    label: 'Data & BI',
+    tags: [
+      'SQL Server',
+      'SSIS',
+      'Power BI',
+      'Dimensional modeling',
+      'Always On AG',
+      'Azure SQL',
+    ],
+  },
+  {
+    label: 'Governance',
+    tags: [
+      'Data cataloging',
+      'Lineage',
+      'Access control',
+      'Liquibase schema-as-code',
+      'Data dictionary',
+      'Lake Formation',
+    ],
+  },
+  {
     label: 'Lakehouse',
     tags: [
       'Amazon S3',

@@ -6,27 +6,38 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 
 /*
- * "What I build" - three hairline cards covering the practice: data platforms,
- * agentic AI, and ML systems. Copy is grounded in real capability, no adjectives
- * standing in for specifics.
+ * "What I build" - four hairline cards covering the practice: the proven data
+ * warehousing and BI foundation first, then data platforms, agentic AI, and ML
+ * systems. Copy is grounded in real capability, no adjectives standing in for
+ * specifics.
  */
 const pillars = [
   {
     index: '01',
+    title: 'Data Warehousing & BI',
+    body:
+      'Dimensional data warehouses and the reporting layer the business runs on: ' +
+      'SQL Server star schemas, SSIS ETL from POS and line-of-business systems, and ' +
+      'Power BI models. High availability with SQL Server Always On, and database ' +
+      'releases governed as code with Liquibase across multiple engines.',
+    tags: ['SQL Server', 'SSIS ETL', 'Power BI', 'Always On AG', 'Liquibase'],
+  },
+  {
+    index: '02',
     title: 'Data Platforms',
     body:
       'Medallion lakehouse architecture on AWS: S3 plus Apache Iceberg tables, Glue and Spark transforms, Fivetran CDC ingestion, and Step Functions orchestration. Governed catalogs and reliable pipelines, provisioned as Terraform.',
     tags: ['S3 + Iceberg', 'Glue / Spark', 'Fivetran CDC', 'Step Functions'],
   },
   {
-    index: '02',
+    index: '03',
     title: 'Agentic AI',
     body:
       'Multi-agent orchestration with plan-and-execute control loops. Retrieval done properly: semantic search with vector stores and reranking, Bedrock model integration, and guardrails enforced on every call.',
     tags: ['Bedrock', 'RAG + rerank', 'Guardrails', 'Multi-agent'],
   },
   {
-    index: '03',
+    index: '04',
     title: 'ML Systems',
     body:
       'Signal engineering and predictive models: momentum, churn, and next-best-action style signals. Trained, tracked, and deployed with MLOps on SageMaker, from feature pipelines to monitored inference.',
@@ -42,13 +53,13 @@ const Solutions = () => {
           What I build
         </Typography>
         <Typography variant="h4" color="text.primary" sx={{ fontWeight: 600 }}>
-          Three disciplines, one delivery model.
+          Four disciplines, one delivery model.
         </Typography>
       </Box>
 
       <Grid container spacing={3}>
         {pillars.map((item, i) => (
-          <Grid item xs={12} md={4} key={item.index}>
+          <Grid item xs={12} sm={6} md={3} key={item.index}>
             <Card
               sx={{ height: '100%' }}
               data-aos="fade-up"

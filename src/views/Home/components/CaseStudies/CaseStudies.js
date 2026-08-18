@@ -25,6 +25,42 @@ const work = [
     link: null,
   },
   {
+    kicker: 'Enterprise data warehouse and BI',
+    title: 'An enterprise data warehouse, built from the ground up',
+    body:
+      'A SQL Server enterprise data warehouse designed and built from scratch: a ' +
+      'dimensional model fed by SSIS pipelines from point-of-sale, document ' +
+      'management, and logistics systems, with a Power BI reporting layer the ' +
+      'business runs on daily. Ongoing engineering keeps facts, dimensions, and ' +
+      'reporting views correct as source systems change.',
+    tags: ['SQL Server', 'Dimensional model', 'SSIS', 'Power BI'],
+    link: null,
+  },
+  {
+    kicker: 'Custom LOB application',
+    title: 'An operations app with a private, self-hosted assistant',
+    body:
+      'A custom line-of-business web application (React and Express on Azure SQL) ' +
+      'that consolidates daily operations into one workflow, extended with a ' +
+      'self-hosted LLM assistant that answers from internal data through ' +
+      'function-calling stored procedures. Self-hosted by design so regulated data ' +
+      'never leaves the environment.',
+    tags: ['React / Express', 'Azure SQL', 'Self-hosted LLM', 'Function calling'],
+    link: null,
+  },
+  {
+    kicker: 'Pipelines at enterprise scale',
+    title: 'Enterprise ingestion and orchestration on a governed lakehouse',
+    body:
+      'Ingestion and orchestration for high-volume enterprise programs feeding an ' +
+      'AWS medallion lakehouse: CDC and batch sources landed to S3 and Apache ' +
+      'Iceberg, transformed with Glue and Spark, orchestrated on Airflow, with ' +
+      'schema changes released as code through Liquibase across multiple database ' +
+      'engines.',
+    tags: ['S3 + Iceberg', 'Airflow', 'Fivetran CDC', 'Liquibase'],
+    link: null,
+  },
+  {
     kicker: 'Guardrailed-agent demo',
     title: 'AI that clears legal and compliance constraints safely',
     body:
@@ -53,8 +89,8 @@ const CaseStudies = () => {
           Proof, not adjectives.
         </Typography>
         <Typography color="text.secondary" sx={{ lineHeight: 1.65 }}>
-          A sample of production and demonstration systems across agentic AI and
-          gated delivery. Each is guardrailed by design.
+          Production systems across data warehousing, BI, enterprise pipelines,
+          and agentic AI. Delivered, not slideware.
         </Typography>
       </Box>
 

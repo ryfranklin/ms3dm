@@ -8,6 +8,7 @@ import {
   Solutions,
   ProofSection,
   CaseStudies,
+  Engagements,
   LatestWriting,
   AboutSection,
   CallToAction,
@@ -29,6 +30,10 @@ const Home = () => {
 
       <Container>
         <CaseStudies />
+      </Container>
+
+      <Container paddingTop={'0 !important'}>
+        <Engagements />
       </Container>
 
       {/* Full-bleed latest-writing strip (Substack). Renders nothing if empty. */}
