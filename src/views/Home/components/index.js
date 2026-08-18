@@ -3,6 +3,7 @@ export { default as Solutions } from './Solutions';
 export { default as PageReferences } from './PageReferences';
 export { default as ProofSection } from './ProofSection';
 export { default as CaseStudies } from './CaseStudies';
+export { default as Engagements } from './Engagements';
 export { default as LatestWriting } from './LatestWriting';
 export { default as AboutSection } from './AboutSection';
 export { default as CallToAction } from './CallToAction';

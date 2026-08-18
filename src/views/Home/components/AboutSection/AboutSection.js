@@ -12,7 +12,7 @@ import ServiceNetwork from 'components/ServiceNetwork';
 const principles = [
   {
     label: 'Governed by default',
-    body: 'Catalogs, lineage, and access are part of the design, not a later cleanup.',
+    body: 'Catalogs, lineage, access control, and schema-as-code are part of the design, not a later cleanup. It is how a warehouse stays trustworthy and how an agent stays inside its bounds.',
   },
   {
     label: 'Guardrailed on every call',
@@ -68,7 +68,9 @@ const AboutSection = () => {
               Spark, Step Functions, SageMaker Unified Studio) and agentic
               systems built with retrieval, reranking, and Bedrock guardrails.
               The through-line is engineering discipline: things that run in
-              production, not slideware.
+              production, not slideware. The same discipline runs through a SQL
+              Server warehouse with SSIS and Power BI as through a lakehouse on
+              S3 and Iceberg: model it right, govern it, and ship it as code.
             </Typography>
 
             <Box display="flex" flexDirection="column" gap={2}>
