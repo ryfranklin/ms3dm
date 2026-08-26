@@ -24,7 +24,7 @@ const Hero = () => {
           component="p"
           sx={{ color: 'text.secondary', marginBottom: 3 }}
         >
-          Data warehousing &amp; BI / Data platforms / Agentic AI / AWS
+          Data &amp; AI architecture / Platform engineering / Fractional CTO / AWS
         </Typography>
 
         <Typography
@@ -51,12 +51,12 @@ const Hero = () => {
             lineHeight: 1.65,
           }}
         >
-          ms3dm.tech is an independent practice. I design medallion lakehouse
-          architectures on S3 and Apache Iceberg, and ship guardrailed, agentic
-          AI: plan-and-execute agents grounded in retrieval, checked on every
-          call. The foundation comes first: dimensional warehouses, governed
-          pipelines, and BI the business runs on, with agentic AI built on top
-          of it, not instead of it.
+          ms3dm.tech is a principal-level data and AI architecture practice. I
+          design and deliver medallion lakehouse architectures on S3 and Apache
+          Iceberg, and guardrailed agentic AI: plan-and-execute agents grounded
+          in retrieval and governed on every call. Foundations come first:
+          dimensional warehouses, governed pipelines, and the BI the business
+          runs on, with agentic AI layered on top, not in place of it.
         </Typography>
 
         <Box

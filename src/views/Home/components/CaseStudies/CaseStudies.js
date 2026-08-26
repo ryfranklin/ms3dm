@@ -7,7 +7,7 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 
 /*
- * Selected work. Flagship projects described at capability level. No invented
+ * Selected work. Flagship engagements described at capability level. No invented
  * metrics, client names, or logos: the specifics of the systems do the selling.
  *
  * To surface a live demo, set `link` on the relevant entry to its URL. Left null
@@ -15,13 +15,13 @@ import Button from '@mui/material/Button';
  */
 const work = [
   {
-    kicker: 'Flagship project / Homebase',
-    title: 'Homebase: a production personal AI platform',
+    kicker: 'Flagship platform / Homebase',
+    title: 'Homebase: a production AI platform',
     body:
-      'A production personal AI platform. A plan-and-execute agent reasons over a private knowledge base using semantic retrieval, then acts through tools, with a Bedrock Guardrail on every call so the system stays inside its constraints. Built in the open on AWS.',
+      'A production AI platform. A plan-and-execute agent reasons over a governed knowledge base using semantic retrieval, then acts through tools, with a Bedrock Guardrail on every call so the system stays inside its constraints. Delivered end to end on AWS.',
     tags: ['Bedrock AgentCore', 'RAG', 'Guardrails', 'Terraform'],
     to: '/homebase',
-    cta: 'Explore the project',
+    cta: 'Explore the platform',
     link: null,
   },
   {

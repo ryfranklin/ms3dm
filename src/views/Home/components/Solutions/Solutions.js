@@ -6,10 +6,10 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 
 /*
- * "What I build" - four hairline cards covering the practice: the proven data
+ * "What I do" - five hairline cards covering the practice: the proven data
  * warehousing and BI foundation first, then data platforms, agentic AI, and ML
- * systems. Copy is grounded in real capability, no adjectives standing in for
- * specifics.
+ * systems, closing with fractional CTO and technical advisory. Copy is grounded
+ * in real capability, no adjectives standing in for specifics.
  */
 const pillars = [
   {
@@ -43,6 +43,16 @@ const pillars = [
       'Signal engineering and predictive models: momentum, churn, and next-best-action style signals. Trained, tracked, and deployed with MLOps on SageMaker, from feature pipelines to monitored inference.',
     tags: ['SageMaker', 'MLOps', 'Signal engineering', 'Monitoring'],
   },
+  {
+    index: '05',
+    title: 'Fractional CTO & Advisory',
+    body:
+      'Principal-level technical leadership without the headcount: architecture ' +
+      'direction, technology strategy, build-vs-buy and roadmap calls, and ' +
+      'engineering standards. Hands-on in the design and the codebase, not the ' +
+      'org chart, with clear ownership from decision to production.',
+    tags: ['Architecture', 'Tech strategy', 'Roadmap', 'Standards', 'Due diligence'],
+  },
 ];
 
 const Solutions = () => {
@@ -50,16 +60,16 @@ const Solutions = () => {
     <Box sx={{ paddingY: { xs: 8, md: 12 } }}>
       <Box marginBottom={6} sx={{ maxWidth: 740 }}>
         <Typography variant="overline" component="p" color="text.secondary" gutterBottom>
-          What I build
+          What I do
         </Typography>
         <Typography variant="h4" color="text.primary" sx={{ fontWeight: 600 }}>
-          Four disciplines, one delivery model.
+          Five disciplines, one delivery standard.
         </Typography>
       </Box>
 
       <Grid container spacing={3}>
         {pillars.map((item, i) => (
-          <Grid item xs={12} sm={6} md={3} key={item.index}>
+          <Grid item xs={12} sm={6} md={4} key={item.index}>
             <Card
               sx={{ height: '100%' }}
               data-aos="fade-up"
