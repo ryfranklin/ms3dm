@@ -8,7 +8,8 @@ import Button from '@mui/material/Button';
 
 /*
  * Selected work. Flagship engagements described at capability level. No invented
- * metrics, client names, or logos: the specifics of the systems do the selling.
+ * metrics or logos; named engagements (e.g. Plexus) cite real, delivered work,
+ * and otherwise the specifics of the systems do the selling.
  *
  * To surface a live demo, set `link` on the relevant entry to its URL. Left null
  * where no public link is provided.
@@ -58,6 +59,17 @@ const work = [
       'schema changes released as code through Liquibase across multiple database ' +
       'engines.',
     tags: ['S3 + Iceberg', 'Airflow', 'Fivetran CDC', 'Liquibase'],
+    link: null,
+  },
+  {
+    kicker: 'Snowflake pipelines / Plexus',
+    title: 'Snowflake pipelines and Cortex forecasting at Plexus',
+    body:
+      'Production data pipelines on Snowflake, built at Plexus: Fivetran CDC ' +
+      'ingestion transformed with Snowpark and Coalesce into governed analytics ' +
+      'models, plus Snowflake Cortex churn and revenue-forecasting pipelines that ' +
+      'put predictions in front of the business.',
+    tags: ['Snowflake', 'Snowpark', 'Coalesce', 'Fivetran CDC', 'Cortex'],
     link: null,
   },
   {
