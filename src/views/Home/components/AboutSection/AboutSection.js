@@ -73,6 +73,8 @@ const AboutSection = () => {
               production, not slideware. The same discipline runs through a SQL
               Server warehouse with SSIS and Power BI as through a lakehouse on
               S3 and Iceberg: model it right, govern it, and ship it as code.
+              AWS is home base; the same approach carries to Snowflake, Azure,
+              and GCP where the data already lives.
             </Typography>
 
             <Box display="flex" flexDirection="column" gap={2}>

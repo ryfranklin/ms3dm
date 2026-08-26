@@ -24,7 +24,7 @@ const Hero = () => {
           component="p"
           sx={{ color: 'text.secondary', marginBottom: 3 }}
         >
-          Data &amp; AI architecture / Platform engineering / Fractional CTO / AWS
+          Data &amp; AI architecture / Platform engineering / Fractional CTO / AWS, Azure &amp; GCP
         </Typography>
 
         <Typography
@@ -56,7 +56,9 @@ const Hero = () => {
           Iceberg, and guardrailed agentic AI: plan-and-execute agents grounded
           in retrieval and governed on every call. Foundations come first:
           dimensional warehouses, governed pipelines, and the BI the business
-          runs on, with agentic AI layered on top, not in place of it.
+          runs on, with agentic AI layered on top, not in place of it. AWS is
+          home base, with the same patterns delivered on Snowflake, Azure, and
+          GCP when that is where the data already lives.
         </Typography>
 
         <Box

@@ -26,8 +26,8 @@ const pillars = [
     index: '02',
     title: 'Data Platforms',
     body:
-      'Medallion lakehouse architecture on AWS: S3 plus Apache Iceberg tables, Glue and Spark transforms, Fivetran CDC ingestion, and Step Functions orchestration. Governed catalogs and reliable pipelines, provisioned as Terraform.',
-    tags: ['S3 + Iceberg', 'Glue / Spark', 'Fivetran CDC', 'Step Functions'],
+      'Medallion lakehouse architecture, AWS-first: S3 plus Apache Iceberg tables, Glue and Spark transforms, Fivetran CDC ingestion, and Step Functions orchestration. Governed catalogs and reliable pipelines, provisioned as Terraform, with Snowflake, Azure, and GCP delivery when the data lives there.',
+    tags: ['S3 + Iceberg', 'Glue / Spark', 'Snowflake', 'Fivetran CDC', 'Step Functions'],
   },
   {
     index: '03',
