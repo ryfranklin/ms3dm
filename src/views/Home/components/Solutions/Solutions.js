@@ -25,16 +25,19 @@ const pillars = [
   {
     index: '02',
     title: 'Data Platforms',
-    body:
-      'Medallion lakehouse architecture, AWS-first: S3 plus Apache Iceberg tables, Glue and Spark transforms, Fivetran CDC ingestion, and Step Functions orchestration. Governed catalogs and reliable pipelines, provisioned as Terraform, with Snowflake, Azure, and GCP delivery when the data lives there.',
-    tags: ['S3 + Iceberg', 'Glue / Spark', 'Snowflake', 'Fivetran CDC', 'Step Functions'],
+    body: [
+      'Medallion lakehouse architecture, AWS-first: S3 plus Apache Iceberg tables, Glue and Spark transforms, Fivetran CDC ingestion, and Airflow orchestration. Governed catalogs and reliable pipelines, provisioned as Terraform.',
+      'Medallion lakehouse architecture, Snowflake with AWS S3 Apache Iceberg tables, transformations with Coalesce, and Cortex ML pipelines.',
+      'Experience with Azure and GCP delivery when the data lives there.',
+    ],
+    tags: ['AWS', 'S3 + Iceberg', 'Glue / Spark', 'Snowflake', 'Fivetran CDC', 'Airflow', 'Terraform'],
   },
   {
     index: '03',
     title: 'Agentic AI',
     body:
       'Multi-agent orchestration with plan-and-execute control loops. Retrieval done properly: semantic search with vector stores and reranking, Bedrock model integration, and guardrails enforced on every call.',
-    tags: ['Bedrock', 'RAG + rerank', 'Guardrails', 'Multi-agent'],
+    tags: ['Bedrock', 'RAG + rerank', 'Guardrails', 'Multi-agent', 'Agent Core', 'LangGraph'],
   },
   {
     index: '04',
@@ -92,9 +95,33 @@ const Solutions = () => {
                 >
                   {item.title}
                 </Typography>
-                <Typography color="text.secondary" sx={{ marginBottom: 3, lineHeight: 1.65 }}>
-                  {item.body}
-                </Typography>
+                {Array.isArray(item.body) ? (
+                  <Box
+                    component="ul"
+                    sx={{
+                      marginTop: 0,
+                      marginBottom: 3,
+                      paddingLeft: 2.5,
+                      color: 'text.secondary',
+                      lineHeight: 1.65,
+                    }}
+                  >
+                    {item.body.map((line, idx) => (
+                      <Typography
+                        key={idx}
+                        component="li"
+                        color="text.secondary"
+                        sx={{ marginBottom: 1, lineHeight: 1.65 }}
+                      >
+                        {line}
+                      </Typography>
+                    ))}
+                  </Box>
+                ) : (
+                  <Typography color="text.secondary" sx={{ marginBottom: 3, lineHeight: 1.65 }}>
+                    {item.body}
+                  </Typography>
+                )}
                 <Box display="flex" flexWrap="wrap" gap={1}>
                   {item.tags.map((tag) => (
                     <Box
