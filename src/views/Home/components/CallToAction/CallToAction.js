@@ -40,9 +40,10 @@ const CallToAction = () => {
           color="text.secondary"
           sx={{ maxWidth: 620, margin: '0 auto 32px', lineHeight: 1.7 }}
         >
-          Tell me what you are working on: a lakehouse to modernize, a pipeline to
-          make reliable, or an agentic system that has to stay inside its
-          guardrails. I read every message.
+          Tell me what you are working on: a lakehouse to modernize, a pipeline
+          to make reliable, an agentic system that has to stay inside its
+          guardrails, or fractional technical leadership to set the direction.
+          Every inquiry gets a direct, principal-level response.
         </Typography>
 
         <Box

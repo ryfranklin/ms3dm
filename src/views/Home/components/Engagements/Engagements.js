@@ -57,7 +57,9 @@ const Engagements = () => {
           Most work starts with a readiness assessment so the roadmap is grounded
           before anything gets built. From there the sequence is deliberate: get
           the data trustworthy, modernize the platform and reporting, then put
-          predictive ML and guardrailed agents on top.
+          predictive ML and guardrailed agents on top. For teams that need
+          direction more than delivery, the same experience is available as
+          fractional CTO and technical advisory engagements.
         </Typography>
       </Box>
 

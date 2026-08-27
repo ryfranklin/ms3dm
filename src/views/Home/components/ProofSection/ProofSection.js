@@ -64,6 +64,15 @@ const groups = [
       'Model monitoring',
     ],
   },
+  {
+    label: 'Cloud platforms',
+    tags: [
+      'AWS (primary)',
+      'Azure',
+      'Google Cloud',
+      'Snowflake',
+    ],
+  },
 ];
 
 // Shared sx for a mono capability tag.

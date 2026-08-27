@@ -26,15 +26,16 @@ const Contact = () => {
           Let&apos;s connect
         </Typography>
         <Typography variant="h4" sx={{ fontWeight: 600, marginBottom: 2 }} color="text.primary">
-          Work directly with the engineer doing the work.
+          Work directly with the principal delivering the engagement.
         </Typography>
         <Typography
           color="text.secondary"
           sx={{ maxWidth: 600, margin: '0 auto 32px', lineHeight: 1.7 }}
         >
-          Have a lakehouse to modernize, a pipeline to make reliable, or an
-          agentic AI system to build and guardrail? Reach out. There is no
-          account layer; you talk to me.
+          Have a lakehouse to modernize, a pipeline to make reliable, an agentic
+          AI system to build and guardrail, or a fractional CTO to set technical
+          direction? Reach out. You work directly with the principal delivering
+          the engagement, with no account layer in between.
         </Typography>
         <Button
           component="a"

@@ -46,7 +46,7 @@ const Story = () => {
                 marginBottom: 2,
               }}
             >
-              ms3dm.tech is an independent practice run by a single senior data architect and AI/ML engineer. I design and build the systems myself, from the lakehouse foundation up to the agents that run on top of it, without the layers that usually sit between the problem and the person solving it.
+              ms3dm.tech is an independent consultancy led by a principal data architect and AI/ML engineer. Engagements run from hands-on delivery to fractional CTO and technical advisory work: architecture direction, technical strategy, and standards, without the management overhead. The work spans the full stack, from the lakehouse foundation up to the agents that run on top of it, with principal-level ownership and none of the layers that usually sit between the problem and the person solving it.
             </Typography>
             <Typography
               component={'p'}
@@ -57,7 +57,7 @@ const Story = () => {
                 marginBottom: 2,
               }}
             >
-              On the data side I build medallion lakehouse architectures on AWS: S3 and Apache Iceberg for storage, Glue and Spark for transformation, Fivetran for change data capture, Step Functions for orchestration, and Terraform to keep it all reproducible. The result is a governed catalog and pipelines you can actually trust.
+              On the data side I build medallion lakehouse architectures on AWS: S3 and Apache Iceberg for storage, Glue and Spark for transformation, Fivetran for change data capture, Step Functions for orchestration, and Terraform to keep it all reproducible. The result is a governed catalog and pipelines you can actually trust. AWS is the main focus, but the same patterns carry to Snowflake, Azure, and GCP when that is where the data already lives.
             </Typography>
             <Typography
               component={'p'}

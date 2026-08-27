@@ -6,8 +6,8 @@ import Container from 'components/Container';
 import ServiceNetwork from 'components/ServiceNetwork';
 
 /*
- * About the practice. Independent, senior-level, AWS-native. Direct and precise,
- * no consultancy filler.
+ * About the practice. Independent, principal-level, AWS-native. Direct and
+ * precise, no consultancy filler.
  */
 const principles = [
   {
@@ -49,16 +49,18 @@ const AboutSection = () => {
               color="text.primary"
               sx={{ fontWeight: 600, marginBottom: 3 }}
             >
-              An independent data and AI practice, operating at senior level.
+              An independent data and AI consultancy, operating at principal level.
             </Typography>
             <Typography
               color="text.secondary"
               sx={{ marginBottom: 2.5, lineHeight: 1.8 }}
             >
-              ms3dm.tech is a one-person practice run by a data architect and
-              AI/ML engineer. The work spans two connected problems: making
-              enterprise data trustworthy and queryable, and putting agentic AI
-              on top of it without giving up control.
+              ms3dm.tech is an independent consultancy led by a principal data
+              architect and AI/ML engineer. Engagements range from hands-on
+              delivery to fractional CTO and technical advisory work, and span
+              two connected problems: making enterprise data trustworthy and
+              queryable, and putting agentic AI on top of it without giving up
+              control.
             </Typography>
             <Typography
               color="text.secondary"
@@ -71,6 +73,8 @@ const AboutSection = () => {
               production, not slideware. The same discipline runs through a SQL
               Server warehouse with SSIS and Power BI as through a lakehouse on
               S3 and Iceberg: model it right, govern it, and ship it as code.
+              AWS is home base; the same approach carries to Snowflake, Azure,
+              and GCP where the data already lives.
             </Typography>
 
             <Box display="flex" flexDirection="column" gap={2}>
