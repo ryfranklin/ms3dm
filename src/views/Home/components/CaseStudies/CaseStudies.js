@@ -8,8 +8,7 @@ import Button from '@mui/material/Button';
 
 /*
  * Selected work. Flagship engagements described at capability level. No invented
- * metrics or logos; named engagements (e.g. Plexus) cite real, delivered work,
- * and otherwise the specifics of the systems do the selling.
+ * metrics or logos; the specifics of the systems do the selling.
  *
  * To surface a live demo, set `link` on the relevant entry to its URL. Left null
  * where no public link is provided.
@@ -62,10 +61,10 @@ const work = [
     link: null,
   },
   {
-    kicker: 'Snowflake pipelines / Plexus',
-    title: 'Snowflake pipelines and Cortex forecasting at Plexus',
+    kicker: 'Snowflake pipelines and forecasting',
+    title: 'Snowflake pipelines and Cortex forecasting',
     body:
-      'Production data pipelines on Snowflake, built at Plexus: Fivetran CDC ' +
+      'Production data pipelines on Snowflake: Fivetran CDC ' +
       'ingestion transformed with Snowpark and Coalesce into governed analytics ' +
       'models, plus Snowflake Cortex churn and revenue-forecasting pipelines that ' +
       'put predictions in front of the business.',
