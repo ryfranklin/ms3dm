@@ -5,6 +5,12 @@ consultancy. It's a single-page React application that presents the practice
 (data warehousing & BI, data platforms, agentic AI, ML systems, and fractional
 CTO / advisory), selected work, and writing pulled from Substack.
 
+## Redesign plan (Sep 2026)
+
+Services-first redesign plan (Phase 0 docs): [`docs/redesign-plan-2026-09.md`](docs/redesign-plan-2026-09.md).
+
+Phase 1 is content and CTA work on the existing design system (Assessment default next step, Calendly, Crawl/Walk/Run offers). Not a visual redesign.
+
 ## Tech stack
 
 - **React 17** (Create React App / `react-scripts`)
