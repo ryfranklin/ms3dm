@@ -112,8 +112,13 @@ const Form = () => {
       resetForm();
     } catch (err) {
       setStatus('error');
+      const isNetwork =
+        err instanceof TypeError ||
+        /failed to fetch|networkerror|load failed/i.test(String(err.message || ''));
       setErrorMsg(
-        `${err.message} You can also email ${OWNER_EMAIL} directly.`,
+        isNetwork
+          ? `The browser could not confirm delivery (often a temporary network or CORS issue). If you just submitted, the message may still have arrived. You can also email ${OWNER_EMAIL} directly.`
+          : `${err.message} You can also email ${OWNER_EMAIL} directly.`,
       );
     }
   };
