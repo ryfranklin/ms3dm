@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import Logo from 'components/Logo';
+import { CALENDLY_URL, CALENDLY_LABEL } from 'config/calendly';
 
 const Footer = () => {
   return (
@@ -40,6 +41,32 @@ const Footer = () => {
           gap: { xs: 1, sm: 3 },
         }}
       >
+        <Link
+          href="/contact-page#assessment"
+          underline="none"
+          sx={{
+            fontFamily: 'var(--font-mono)',
+            fontSize: '0.78rem',
+            color: 'text.secondary',
+            '&:hover': { color: 'text.primary' },
+          }}
+        >
+          Assessment
+        </Link>
+        <Link
+          href={CALENDLY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          underline="none"
+          sx={{
+            fontFamily: 'var(--font-mono)',
+            fontSize: '0.78rem',
+            color: 'text.secondary',
+            '&:hover': { color: 'text.primary' },
+          }}
+        >
+          {CALENDLY_LABEL}
+        </Link>
         <Link
           href="mailto:ryan.franklin@ms3dm.tech"
           underline="none"

@@ -8,8 +8,8 @@ import CardContent from '@mui/material/CardContent';
 /*
  * "What I do" - five hairline cards covering the practice: the proven data
  * warehousing and BI foundation first, then data platforms, agentic AI, and ML
- * systems, closing with fractional CTO and technical advisory. Copy is grounded
- * in real capability, no adjectives standing in for specifics.
+ * systems, closing with Fractional Head of Data. Copy is grounded in real
+ * capability, no adjectives standing in for specifics.
  */
 const pillars = [
   {
@@ -48,12 +48,13 @@ const pillars = [
   },
   {
     index: '05',
-    title: 'Fractional CTO & Advisory',
+    title: 'Fractional Head of Data',
     body:
-      'Principal-level technical leadership without the headcount: architecture ' +
-      'direction, technology strategy, build-vs-buy and roadmap calls, and ' +
-      'engineering standards. Hands-on in the design and the codebase, not the ' +
-      'org chart, with clear ownership from decision to production.',
+      'Embedded data and AI leadership when you are not ready for a full-time ' +
+      'VP: architecture direction, technology strategy, build-vs-buy and roadmap ' +
+      'calls, and engineering standards. Hands-on in the design and the codebase, ' +
+      'not the org chart, with clear ownership from decision to production. Often ' +
+      'feeds an Assessment or architecture engagement.',
     tags: ['Architecture', 'Tech strategy', 'Roadmap', 'Standards', 'Due diligence'],
   },
 ];

@@ -1,6 +1,6 @@
 # ms3dm.tech services-first redesign plan (Sep 2026)
 
-**Status:** Phase 0 (this document)  
+**Status:** Phase 1 implemented on this branch (content/CTA); Phase 0 plan retained  
 **Branch:** `docs/services-first-redesign-plan`  
 **Owner:** Ryan Franklin  
 **Repo:** https://github.com/ryfranklin/ms3dm  
@@ -208,27 +208,31 @@ Those names must never appear in site output.
 
 ## 8. Phased plan
 
-### Phase 0: This docs PR (now)
+### Phase 0: This docs PR (done)
 
 - Add `docs/redesign-plan-2026-09.md`.
 - Point README at the plan.
 - Mirror into the vault campaigns folder for second-brain access.
-- No site code changes in this PR.
+- Originally docs-only; Phase 1 site changes now land on the same branch.
 
-### Phase 1: Content on the existing design system (next implementation PR)
+### Phase 1: Content on the existing design system (implemented on this branch)
 
 Goal: Assessment is the obvious default next step; Calendly is live; offers are
 named; voice stays clean.
 
-In scope:
+**Done in this PR:**
 
 - Hero, Engagements, CallToAction, Contact copy/CTA updates.
-- Fractional naming alignment on Solutions (and any About mentions).
-- Light CaseStudies reorder if needed for foundation-first scan.
-- Nav: Services anchor or entry; Assessment-oriented primary CTA.
-- Introduce a single Calendly URL (config or constant) and wire CTAs.
-- Optional: publish Assessment price range on Engagements.
-- Production build green; mobile layout intact; no dependency upgrades required.
+- Fractional Head of Data naming on Solutions, AboutSection, and About page.
+- Nav: Services → `/#engagements`; Topbar/Sidebar Assessment + discovery CTAs.
+- Single Calendly constant in `src/config/calendly.js` (placeholder URL until
+  the live discovery event is published).
+- Assessment price band ($15k to $25k) on Engagements; Walk/Run offer names;
+  Mode A managed follow-on footnote.
+- Footer Assessment / Calendly / mailto consistency.
+
+Still optional / deferred: CaseStudies reorder; live Calendly URL swap;
+production build verification in CI.
 
 Out of scope for Phase 1: see section 10.
 
@@ -350,4 +354,5 @@ Likely untouched in Phase 1: ProofSection.js, LatestWriting/, Homebase view, the
 ## Document history
 
 - 2026-09-05: Phase 0 created from local main inspection and vault campaign / offering / revamp notes.
+- 2026-09-05: Phase 1 content/CTA implementation landed on `docs/services-first-redesign-plan` (Assessment CTAs, Calendly placeholder constant, Engagements pricing/offers, Fractional Head of Data naming, Services nav).
 

@@ -145,10 +145,10 @@ const Form = () => {
           gutterBottom
           align={'center'}
         >
-          Tell Me About Your Project
+          Prefer to write it out?
         </Typography>
         <Typography color="text.secondary" align={'center'}>
-          Describe your data engineering or AI/ML challenge: lakehouse modernization, pipeline reliability, RAG, or agentic AI. I read every message myself and will reply personally.
+          Describe your Assessment ask or data/AI challenge: lakehouse modernization, pipeline reliability, RAG, or agentic AI. Prefer a live conversation? Use the discovery booking above. I read every message myself and will reply personally.
         </Typography>
       </Box>
       <Box

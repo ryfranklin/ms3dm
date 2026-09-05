@@ -6,12 +6,14 @@ import Typography from '@mui/material/Typography';
 import { alpha, useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import Logo from 'components/Logo';
+import { CALENDLY_URL, CALENDLY_LABEL } from 'config/calendly';
 
 import { NavItem } from './components';
 
 const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
   const theme = useTheme();
-  const { company: companyPages } = pages;
+  const { company: companyPages, services } = pages;
+  const linkColor = colorInvert ? 'common.white' : 'text.primary';
 
   return (
     <Box
@@ -33,8 +35,18 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
         <Box marginLeft={4}>
           <Typography
             component={'a'}
+            href={services?.href || '/#engagements'}
+            color={linkColor}
+            sx={{ textDecoration: 'none', cursor: 'pointer' }}
+          >
+            {services?.title || 'Services'}
+          </Typography>
+        </Box>
+        <Box marginLeft={4}>
+          <Typography
+            component={'a'}
             href={'/homebase'}
-            color={colorInvert ? 'common.white' : 'text.primary'}
+            color={linkColor}
             sx={{ textDecoration: 'none', cursor: 'pointer' }}
           >
             Homebase
@@ -44,7 +56,7 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
           <Typography
             component={'a'}
             href={'/compendium'}
-            color={colorInvert ? 'common.white' : 'text.primary'}
+            color={linkColor}
             sx={{ textDecoration: 'none', cursor: 'pointer' }}
           >
             Compendium
@@ -57,6 +69,32 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
             items={companyPages}
             colorInvert={colorInvert}
           />
+        </Box>
+        <Box marginLeft={3}>
+          <Button
+            component="a"
+            href="/contact-page#assessment"
+            variant="contained"
+            color="primary"
+            size="small"
+            sx={{ whiteSpace: 'nowrap' }}
+          >
+            Assessment
+          </Button>
+        </Box>
+        <Box marginLeft={1.5}>
+          <Button
+            component="a"
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="text"
+            color="primary"
+            size="small"
+            sx={{ whiteSpace: 'nowrap' }}
+          >
+            {CALENDLY_LABEL}
+          </Button>
         </Box>
       </Box>
       <Box sx={{ display: { xs: 'block', md: 'none' } }} alignItems={'center'}>

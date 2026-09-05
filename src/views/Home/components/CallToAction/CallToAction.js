@@ -4,9 +4,11 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
+import { CALENDLY_URL, CALENDLY_LABEL } from 'config/calendly';
 
 /*
- * Contact CTA. One clear next step: email the practice directly.
+ * Commercial close. Assessment is the default next step; Calendly is the
+ * discovery path. Mailto stays in the footer.
  */
 const CallToAction = () => {
   const theme = useTheme();
@@ -27,23 +29,23 @@ const CallToAction = () => {
         }}
       >
         <Typography variant="overline" component="p" color="text.secondary" gutterBottom>
-          Contact
+          Next step
         </Typography>
         <Typography
           variant="h3"
           color="text.primary"
           sx={{ fontWeight: 600, marginBottom: 2, fontSize: { xs: '2rem', md: '2.75rem' } }}
         >
-          Have a data platform or an agent to build?
+          Start with a readiness assessment.
         </Typography>
         <Typography
           color="text.secondary"
           sx={{ maxWidth: 620, margin: '0 auto 32px', lineHeight: 1.7 }}
         >
-          Tell me what you are working on: a lakehouse to modernize, a pipeline
-          to make reliable, an agentic system that has to stay inside its
-          guardrails, or fractional technical leadership to set the direction.
-          Every inquiry gets a direct, principal-level response.
+          Most engagements begin with a 2 to 4 week AI &amp; Data Readiness
+          Assessment ($15k to $25k fixed): inventory, quality and governance
+          gaps, feature readiness, and an executive roadmap. Prefer a short
+          call first? Book a 30-minute discovery.
         </Typography>
 
         <Box
@@ -59,9 +61,9 @@ const CallToAction = () => {
             color="primary"
             size="large"
             fullWidth={isMd ? false : true}
-            href="/contact-page"
+            href="/contact-page#assessment"
           >
-            Start a conversation
+            Start with a readiness assessment
           </Button>
           <Button
             component="a"
@@ -69,9 +71,11 @@ const CallToAction = () => {
             color="primary"
             size="large"
             fullWidth={isMd ? false : true}
-            href="mailto:ryan.franklin@ms3dm.tech"
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            ryan.franklin@ms3dm.tech
+            {CALENDLY_LABEL}
           </Button>
         </Box>
       </Box>

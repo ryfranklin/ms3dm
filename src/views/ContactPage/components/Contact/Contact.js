@@ -6,11 +6,11 @@ import Grid from '@mui/material/Grid';
 
 import Container from 'components/Container';
 import ServiceNetwork from 'components/ServiceNetwork';
+import { CALENDLY_URL, CALENDLY_LABEL } from 'config/calendly';
 
 /*
- * Contact hero. Homebase-styled (near-black, hairline) and email first: the
- * practice is remote and independent, so email is the single direct channel.
- * No phone, physical address, or map.
+ * Contact hero. Assessment framing with Calendly and form as equal-weight
+ * paths. Email remains available; no phone, physical address, or map.
  */
 const details = [
   { label: 'Email', value: 'ryan.franklin@ms3dm.tech' },
@@ -26,13 +26,14 @@ const Contact = () => {
             Contact
           </Typography>
           <Typography variant="h3" sx={{ fontWeight: 600, marginBottom: 2 }} color="text.primary">
-            Let&apos;s talk.
+            Start with a readiness assessment.
           </Typography>
           <Typography color="text.secondary" sx={{ marginBottom: 4, lineHeight: 1.75 }}>
-            Have a lakehouse to modernize, a pipeline to make reliable, or an
-            agentic AI system to build and guardrail? I am an independent data
-            architect and AI/ML engineer working directly with your team on AWS.
-            Send me the details and I will reply personally.
+            Book a 30-minute discovery, or send details about a lakehouse to
+            modernize, a pipeline to make reliable, or an agentic AI system to
+            build and guardrail. I am an independent data architect and AI/ML
+            engineer working directly with your team on AWS. Every inquiry gets
+            a principal-level response.
           </Typography>
 
           <Box display="flex" flexDirection="column" gap={2} marginBottom={4}>
@@ -66,15 +67,32 @@ const Contact = () => {
             ))}
           </Box>
 
-          <Button
-            component="a"
-            variant="contained"
-            color="primary"
-            size="large"
-            href="#contact-form"
+          <Box
+            display="flex"
+            flexDirection={{ xs: 'column', sm: 'row' }}
+            gap={2}
           >
-            Send a message
-          </Button>
+            <Button
+              component="a"
+              variant="contained"
+              color="primary"
+              size="large"
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {CALENDLY_LABEL}
+            </Button>
+            <Button
+              component="a"
+              variant="outlined"
+              color="primary"
+              size="large"
+              href="#contact-form"
+            >
+              Send a message
+            </Button>
+          </Box>
         </Grid>
 
         <Grid item xs={12} md={6}>
