@@ -79,6 +79,20 @@ const Form = () => {
 
     setStatus('submitting');
     try {
+      // Capture attribution at submit time (pathname + optional search; no hash).
+      const params = new URLSearchParams(window.location.search || '');
+      const attribution = {
+        page:
+          window.location.pathname +
+          (window.location.search ? window.location.search : ''),
+        referrer: document.referrer || '',
+        utm_source: params.get('utm_source') || '',
+        utm_medium: params.get('utm_medium') || '',
+        utm_campaign: params.get('utm_campaign') || '',
+        utm_content: params.get('utm_content') || '',
+        utm_term: params.get('utm_term') || '',
+      };
+
       const res = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -87,6 +101,7 @@ const Form = () => {
           email: values.email,
           message: values.message,
           company: values.company,
+          ...attribution,
         }),
       });
       const data = await res.json().catch(() => ({}));
