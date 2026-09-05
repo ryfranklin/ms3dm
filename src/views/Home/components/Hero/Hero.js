@@ -24,7 +24,7 @@ const Hero = () => {
           component="p"
           sx={{ color: 'text.secondary', marginBottom: 3 }}
         >
-          Data &amp; AI architecture / Platform engineering / Fractional CTO / AWS, Azure &amp; GCP
+          Data &amp; AI architecture / Platform engineering / Fractional Head of Data / AWS, Azure &amp; GCP
         </Typography>
 
         <Typography
@@ -52,13 +52,14 @@ const Hero = () => {
           }}
         >
           ms3dm.tech is a principal-level data and AI architecture practice. I
-          design and deliver medallion lakehouse architectures on S3 and Apache
-          Iceberg, and guardrailed agentic AI: plan-and-execute agents grounded
-          in retrieval and governed on every call. Foundations come first:
-          dimensional warehouses, governed pipelines, and the BI the business
-          runs on, with agentic AI layered on top, not in place of it. AWS is
-          home base, with the same patterns delivered on Snowflake, Azure, and
-          GCP when that is where the data already lives.
+          design and deliver fixed-scope engagements: readiness assessments,
+          medallion lakehouse architectures on S3 and Apache Iceberg, and
+          guardrailed agentic AI grounded in retrieval and governed on every
+          call. Foundations come first: dimensional warehouses, governed
+          pipelines, and the BI the business runs on, with agentic AI layered on
+          top, not in place of it. AWS is home base, with the same patterns
+          delivered on Snowflake, Azure, and GCP when that is where the data
+          already lives.
         </Typography>
 
         <Box
@@ -75,9 +76,9 @@ const Hero = () => {
             color="primary"
             size="large"
             fullWidth={isMd ? false : true}
-            href="/contact-page"
+            href="/contact-page#assessment"
           >
-            Start a conversation
+            Start with a readiness assessment
           </Button>
           <Button
             component="a"

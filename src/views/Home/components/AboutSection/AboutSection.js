@@ -57,10 +57,10 @@ const AboutSection = () => {
             >
               ms3dm.tech is an independent consultancy led by a principal data
               architect and AI/ML engineer. Engagements range from hands-on
-              delivery to fractional CTO and technical advisory work, and span
-              two connected problems: making enterprise data trustworthy and
-              queryable, and putting agentic AI on top of it without giving up
-              control.
+              build-and-deliver work to Fractional Head of Data leadership, and
+              span two connected problems: making enterprise data trustworthy
+              and queryable, and putting agentic AI on top of it without giving
+              up control.
             </Typography>
             <Typography
               color="text.secondary"

@@ -9,6 +9,11 @@ const pages = {
       href: '/contact-page',
     },
   ],
+  // Top-level commercial entry; Topbar/Sidebar render this as Services.
+  services: {
+    title: 'Services',
+    href: '/#engagements',
+  },
   portfolio: [],
 };
 

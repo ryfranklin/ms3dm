@@ -46,7 +46,7 @@ const Story = () => {
                 marginBottom: 2,
               }}
             >
-              ms3dm.tech is an independent consultancy led by a principal data architect and AI/ML engineer. Engagements run from hands-on delivery to fractional CTO and technical advisory work: architecture direction, technical strategy, and standards, without the management overhead. The work spans the full stack, from the lakehouse foundation up to the agents that run on top of it, with principal-level ownership and none of the layers that usually sit between the problem and the person solving it.
+              ms3dm.tech is an independent consultancy led by a principal data architect and AI/ML engineer. Engagements run from hands-on delivery to Fractional Head of Data leadership: architecture direction, technical strategy, and standards, without the management overhead. The work spans the full stack, from the lakehouse foundation up to the agents that run on top of it, with principal-level ownership and none of the layers that usually sit between the problem and the person solving it.
             </Typography>
             <Typography
               component={'p'}

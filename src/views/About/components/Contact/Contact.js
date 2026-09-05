@@ -33,7 +33,7 @@ const Contact = () => {
           sx={{ maxWidth: 600, margin: '0 auto 32px', lineHeight: 1.7 }}
         >
           Have a lakehouse to modernize, a pipeline to make reliable, an agentic
-          AI system to build and guardrail, or a fractional CTO to set technical
+          AI system to build and guardrail, or Fractional Head of Data leadership to set technical
           direction? Reach out. You work directly with the principal delivering
           the engagement, with no account layer in between.
         </Typography>
@@ -42,9 +42,9 @@ const Contact = () => {
           variant="contained"
           color="primary"
           size="large"
-          href="/contact-page"
+          href="/contact-page#assessment"
         >
-          Start a conversation
+          Start with a readiness assessment
         </Button>
         <Typography
           component="a"
