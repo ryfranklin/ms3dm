@@ -138,6 +138,70 @@ body::after {
   }
 }
 
+@keyframes hb-spin-reverse {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes hb-hub-glow {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.16);
+  }
+}
+
+@keyframes hb-hub-core {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.78;
+  }
+}
+
+@keyframes hb-node-idle {
+  0%,
+  100% {
+    opacity: 0.72;
+  }
+  45% {
+    opacity: 1;
+  }
+  72% {
+    opacity: 0.82;
+  }
+}
+
+.hb-hub-glow {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: hb-hub-glow 3.6s var(--ease) infinite;
+}
+
+.hb-hub-core {
+  animation: hb-hub-core 3.6s var(--ease) infinite;
+}
+
+.hb-node-idle {
+  animation: hb-node-idle 5.4s var(--ease) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hb-network .hb-hub-glow,
+  .hb-network .hb-hub-core,
+  .hb-network .hb-node-idle,
+  .hb-network .hb-network-edge {
+    animation: none !important;
+  }
+}
+
 @keyframes hb-rise {
   from {
     opacity: 0;
