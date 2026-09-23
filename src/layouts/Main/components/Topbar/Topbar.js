@@ -3,15 +3,22 @@ import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { alpha, useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import Logo from 'components/Logo';
 import { CALENDLY_URL, CALENDLY_LABEL } from 'config/calendly';
 
 import { NavItem } from './components';
 
+const navLinkSx = {
+  textDecoration: 'none',
+  cursor: 'pointer',
+  fontSize: '0.92rem',
+  letterSpacing: '0.01em',
+  transition: 'color 0.2s var(--ease)',
+  '&:hover': { color: 'secondary.main' },
+};
+
 const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
-  const theme = useTheme();
   const { company: companyPages, services } = pages;
   const linkColor = colorInvert ? 'common.white' : 'text.primary';
 
@@ -37,7 +44,7 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
             component={'a'}
             href={services?.href || '/#offers'}
             color={linkColor}
-            sx={{ textDecoration: 'none', cursor: 'pointer' }}
+            sx={navLinkSx}
           >
             {services?.title || 'Services'}
           </Typography>
@@ -47,7 +54,7 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
             component={'a'}
             href={'/homebase'}
             color={linkColor}
-            sx={{ textDecoration: 'none', cursor: 'pointer' }}
+            sx={navLinkSx}
           >
             Homebase
           </Typography>
@@ -57,7 +64,7 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
             component={'a'}
             href={'/compendium'}
             color={linkColor}
-            sx={{ textDecoration: 'none', cursor: 'pointer' }}
+            sx={navLinkSx}
           >
             Compendium
           </Typography>
@@ -88,7 +95,7 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
             href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            variant="text"
+            variant="outlined"
             color="primary"
             size="small"
             sx={{ whiteSpace: 'nowrap' }}
@@ -103,10 +110,10 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
           aria-label="Menu"
           variant={'outlined'}
           sx={{
-            borderRadius: 2,
+            borderRadius: 'var(--radius-sm)',
             minWidth: 'auto',
             padding: 1,
-            borderColor: alpha(theme.palette.divider, 0.2),
+            borderColor: 'var(--border-strong)',
           }}
         >
           <MenuIcon />

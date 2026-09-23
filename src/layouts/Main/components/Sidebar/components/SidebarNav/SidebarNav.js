@@ -8,12 +8,25 @@ import { CALENDLY_URL, CALENDLY_LABEL } from 'config/calendly';
 
 import NavItem from './components/NavItem';
 
+const sideLinkSx = {
+  textDecoration: 'none',
+  display: 'inline-block',
+  paddingY: 0.5,
+  transition: 'color 0.2s var(--ease)',
+  '&:hover': { color: 'secondary.main' },
+};
+
 const SidebarNav = ({ pages }) => {
   const { company: companyPages, services } = pages;
 
   return (
     <Box>
-      <Box width={1} paddingX={2} paddingY={1}>
+      <Box
+        width={1}
+        paddingX={2}
+        paddingY={1}
+        sx={{ borderBottom: '1px solid var(--border)' }}
+      >
         <Box
           display={'flex'}
           component="a"
@@ -31,7 +44,7 @@ const SidebarNav = ({ pages }) => {
             href={services?.href || '/#offers'}
             fontWeight={400}
             color={'text.primary'}
-            sx={{ textDecoration: 'none' }}
+            sx={sideLinkSx}
           >
             {services?.title || 'Services'}
           </Typography>
@@ -42,7 +55,7 @@ const SidebarNav = ({ pages }) => {
             href={'/homebase'}
             fontWeight={400}
             color={'text.primary'}
-            sx={{ textDecoration: 'none' }}
+            sx={sideLinkSx}
           >
             Homebase
           </Typography>
@@ -53,7 +66,7 @@ const SidebarNav = ({ pages }) => {
             href={'/compendium'}
             fontWeight={400}
             color={'text.primary'}
-            sx={{ textDecoration: 'none' }}
+            sx={sideLinkSx}
           >
             Compendium
           </Typography>

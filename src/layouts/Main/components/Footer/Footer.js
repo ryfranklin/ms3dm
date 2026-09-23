@@ -5,6 +5,13 @@ import Link from '@mui/material/Link';
 import Logo from 'components/Logo';
 import { CALENDLY_URL, CALENDLY_LABEL } from 'config/calendly';
 
+const footerLinkSx = {
+  fontFamily: 'var(--font-mono)',
+  fontSize: '0.78rem',
+  color: 'text.secondary',
+  '&:hover': { color: 'secondary.main' },
+};
+
 const Footer = () => {
   return (
     <Box
@@ -41,16 +48,7 @@ const Footer = () => {
           gap: { xs: 1, sm: 3 },
         }}
       >
-        <Link
-          href="/#offers"
-          underline="none"
-          sx={{
-            fontFamily: 'var(--font-mono)',
-            fontSize: '0.78rem',
-            color: 'text.secondary',
-            '&:hover': { color: 'text.primary' },
-          }}
-        >
+        <Link href="/#offers" underline="none" sx={footerLinkSx}>
           Offers
         </Link>
         <Link
@@ -58,24 +56,14 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
           underline="none"
-          sx={{
-            fontFamily: 'var(--font-mono)',
-            fontSize: '0.78rem',
-            color: 'text.secondary',
-            '&:hover': { color: 'text.primary' },
-          }}
+          sx={footerLinkSx}
         >
           {CALENDLY_LABEL}
         </Link>
         <Link
           href="mailto:ryan.franklin@ms3dm.tech"
           underline="none"
-          sx={{
-            fontFamily: 'var(--font-mono)',
-            fontSize: '0.78rem',
-            color: 'text.secondary',
-            '&:hover': { color: 'text.primary' },
-          }}
+          sx={footerLinkSx}
         >
           ryan.franklin@ms3dm.tech
         </Link>

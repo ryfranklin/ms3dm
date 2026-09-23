@@ -23,10 +23,20 @@ const Hero = () => {
         <Typography
           variant="overline"
           component="p"
-          sx={{ color: 'text.secondary', marginBottom: 3 }}
+          sx={{ color: 'secondary.main', marginBottom: 2 }}
         >
           Fixed-scope AI delivery / Production on AWS / Limited availability
         </Typography>
+        <Box
+          sx={{
+            width: 40,
+            height: 1,
+            backgroundColor: 'var(--accent)',
+            margin: '0 auto',
+            marginBottom: 3,
+            opacity: 0.85,
+          }}
+        />
 
         <Typography
           variant="h2"
@@ -79,7 +89,7 @@ const Hero = () => {
           </Button>
           <Button
             component="a"
-            variant="text"
+            variant="outlined"
             color="primary"
             size="large"
             fullWidth={isMd ? false : true}
@@ -92,8 +102,25 @@ const Hero = () => {
         </Box>
       </Box>
 
-      {/* The service-network node graph is the visual identity. */}
-      <Box marginTop={{ xs: 4, md: 6 }}>
+      <Box
+        id="hero-network"
+        marginTop={{ xs: 5, md: 7 }}
+        sx={{
+          position: 'relative',
+          border: '1px solid var(--border)',
+          borderRadius: 'var(--radius)',
+          backgroundColor: 'var(--surface)',
+          overflow: 'hidden',
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            inset: 0,
+            pointerEvents: 'none',
+            background:
+              'radial-gradient(55% 70% at 50% 45%, rgba(77,163,255,0.08), transparent 72%)',
+          },
+        }}
+      >
         <ServiceNetwork height={isMd ? 380 : 300} />
       </Box>
     </Box>

@@ -1,40 +1,40 @@
 /*
- * Homebase design system, global layer.
+ * Design system, global layer.
  *
- * Refined, near-black, monochrome-technical. No brand hue: the accent is white
- * on near-black. Hairline translucent-white borders, a whisper of cool
- * atmospheric glow, subtle film grain, restrained motion, generous negative
- * space. It should read as a precision instrument, not a marketing brochure.
+ * Dark, high-contrast, aerospace-adjacent. Deep blacks, crisp off-white type,
+ * one restrained electric-blue accent. Hairline borders, a faint technical
+ * grid, subtle film grain, restrained motion.
  *
- * These tokens are the single source of truth for future pages. The MUI theme
- * (src/theme/palette.js, src/theme/index.js) mirrors them so components inherit
- * the same look; author new work against var(--token) rather than hardcoded hex.
+ * These tokens are the source of truth. The MUI theme (src/theme/palette.js,
+ * src/theme/index.js) mirrors them; author new work against var(--token).
  */
 
 :root {
-  --bg: #0a0a0a;
-  --bg-soft: #0f0f10;
-  --surface: rgba(255, 255, 255, 0.028);
+  --bg: #050507;
+  --bg-soft: #0a0b0f;
+  --surface: rgba(255, 255, 255, 0.03);
   --surface-2: rgba(255, 255, 255, 0.055);
   --surface-3: rgba(255, 255, 255, 0.09);
-  --border: rgba(255, 255, 255, 0.09);
-  --border-strong: rgba(255, 255, 255, 0.18);
-  --text: #f4f4f5;
-  --muted: #9a9a9e;
-  --faint: #6a6a6e;
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.22);
+  --text: #f4f6fa;
+  --muted: #9aa3b2;
+  --faint: #6b7380;
   --white: #ffffff;
   --danger: #ff5f56;
-  --radius: 18px;
-  --radius-sm: 12px;
+  --radius: 8px;
+  --radius-sm: 6px;
   --font-sans: "Geist Variable", "Geist", -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
   --font-mono: "Geist Mono Variable", "Geist Mono", ui-monospace, "SF Mono",
     Menlo, monospace;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   color-scheme: dark;
-  /* one functional accent, used ONLY for pending / awaiting-action states: */
   --pending: #e0a83a;
   --pending-soft: rgba(224, 168, 58, 0.12);
+  --accent: #4da3ff;
+  --accent-soft: rgba(77, 163, 255, 0.12);
+  --accent-strong: rgba(77, 163, 255, 0.4);
 }
 
 html {
@@ -46,17 +46,16 @@ body {
   color: var(--text);
   font-family: var(--font-sans);
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Respect notches / home indicators. */
   padding: env(safe-area-inset-top) env(safe-area-inset-right)
     env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
 /*
  * Atmosphere. Two fixed, non-interactive layers behind all content:
- *   ::before  layered radial glows (the faint cool-blue is the only chromatic note)
+ *   ::before  electric-blue horizon glow + faint technical grid
  *   ::after   fractal-noise film grain
  */
 body::before,
@@ -71,59 +70,57 @@ body::after {
 body::before {
   background:
     radial-gradient(
-      60% 42% at 50% -8%,
-      rgba(255, 255, 255, 0.07),
-      transparent 70%
+      58% 38% at 50% -10%,
+      rgba(77, 163, 255, 0.14),
+      transparent 68%
     ),
     radial-gradient(
-      40% 30% at 85% 0%,
-      rgba(120, 160, 255, 0.05),
+      32% 24% at 92% 4%,
+      rgba(77, 163, 255, 0.07),
       transparent 70%
-    );
+    ),
+    linear-gradient(rgba(255, 255, 255, 0.016) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.016) 1px, transparent 1px);
+  background-size: auto, auto, 72px 72px, 72px 72px;
 }
 
 body::after {
-  opacity: 0.035;
+  opacity: 0.03;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-repeat: repeat;
 }
 
-/* Keep app content above the atmosphere layers. */
 #root {
   position: relative;
   z-index: 1;
 }
 
-/* Mono utility for kickers / labels / technical captions. */
 .hb-kicker {
   font-family: var(--font-mono);
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   font-size: 0.72rem;
-  color: var(--muted);
+  color: var(--accent);
 }
 
-/* Wordmark pulsing dot (see components/Logo). */
 @keyframes hb-pulse-dot {
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 0 rgba(77, 163, 255, 0.28);
     opacity: 1;
   }
   50% {
-    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 6px rgba(77, 163, 255, 0);
     opacity: 0.72;
   }
 }
 
-/* Node-graph edge flow (see components/ServiceNetwork). */
 @keyframes hb-dash-flow {
   to {
     stroke-dashoffset: -60;
   }
 }
 
-/* Expanding node halo (transform-based for broad browser support). */
 @keyframes hb-halo-scale {
   0% {
     transform: scale(1);
@@ -138,6 +135,70 @@ body::after {
 @keyframes hb-spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes hb-spin-reverse {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes hb-hub-glow {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.16);
+  }
+}
+
+@keyframes hb-hub-core {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.78;
+  }
+}
+
+@keyframes hb-node-idle {
+  0%,
+  100% {
+    opacity: 0.72;
+  }
+  45% {
+    opacity: 1;
+  }
+  72% {
+    opacity: 0.82;
+  }
+}
+
+.hb-hub-glow {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: hb-hub-glow 3.6s var(--ease) infinite;
+}
+
+.hb-hub-core {
+  animation: hb-hub-core 3.6s var(--ease) infinite;
+}
+
+.hb-node-idle {
+  animation: hb-node-idle 5.4s var(--ease) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:not([data-motion-preview='1']) .hb-network .hb-hub-glow,
+  html:not([data-motion-preview='1']) .hb-network .hb-hub-core,
+  html:not([data-motion-preview='1']) .hb-network .hb-node-idle,
+  html:not([data-motion-preview='1']) .hb-network .hb-network-edge {
+    animation: none !important;
   }
 }
 
@@ -156,17 +217,15 @@ body::after {
   animation: hb-rise 0.5s var(--ease) both;
 }
 
-/* Visible focus for keyboard users (WCAG AA). */
 :focus-visible {
-  outline: 2px solid var(--border-strong);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
-/* Restrained motion: kill animation/transition when asked. */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  html:not([data-motion-preview='1']) *,
+  html:not([data-motion-preview='1']) *::before,
+  html:not([data-motion-preview='1']) *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;

@@ -58,7 +58,12 @@ const Engagements = () => {
       {/* Back-compat for older /#engagements links. */}
       <Box id="engagements" sx={{ position: 'relative', top: 0 }} />
       <Box marginBottom={6} sx={{ maxWidth: 740 }}>
-        <Typography variant="overline" component="p" color="text.secondary" gutterBottom>
+        <Typography
+          variant="overline"
+          component="p"
+          sx={{ color: 'secondary.main' }}
+          gutterBottom
+        >
           Offers
         </Typography>
         <Typography
@@ -79,15 +84,46 @@ const Engagements = () => {
       <Grid container spacing={3}>
         {offers.map((item, i) => (
           <Grid item xs={12} md={4} key={item.index}>
-            <Card sx={{ height: '100%' }} data-aos="fade-up" data-aos-delay={i * 100}>
-              <CardContent sx={{ padding: 3.5 }}>
+            <Card
+              component="a"
+              href="/contact-page"
+              data-aos="fade-up"
+              data-aos-delay={i * 80}
+              sx={{
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                textDecoration: 'none',
+                color: 'inherit',
+                position: 'relative',
+                overflow: 'hidden',
+                '&::before': {
+                  content: '""',
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: '1px',
+                  background:
+                    'linear-gradient(90deg, var(--accent), transparent 78%)',
+                },
+              }}
+            >
+              <CardContent
+                sx={{
+                  padding: 3.5,
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                }}
+              >
                 <Typography
                   sx={{
                     fontFamily: 'var(--font-mono)',
                     fontSize: '0.72rem',
                     textTransform: 'uppercase',
-                    letterSpacing: '0.1em',
-                    color: 'text.disabled',
+                    letterSpacing: '0.12em',
+                    color: 'secondary.main',
                     marginBottom: 2,
                   }}
                 >
@@ -99,9 +135,9 @@ const Engagements = () => {
                 <Typography
                   sx={{
                     fontFamily: 'var(--font-mono)',
-                    fontSize: '0.72rem',
-                    letterSpacing: '0.04em',
-                    color: 'text.secondary',
+                    fontSize: '0.78rem',
+                    letterSpacing: '0.02em',
+                    color: 'text.primary',
                     marginBottom: 1.5,
                   }}
                 >
@@ -117,7 +153,7 @@ const Engagements = () => {
                   sx={{
                     fontFamily: 'var(--font-mono)',
                     fontSize: '0.72rem',
-                    letterSpacing: '0.04em',
+                    letterSpacing: '0.08em',
                     color: 'text.disabled',
                     marginBottom: 0.75,
                     textTransform: 'uppercase',
@@ -127,6 +163,22 @@ const Engagements = () => {
                 </Typography>
                 <Typography color="text.secondary" sx={{ lineHeight: 1.65 }}>
                   {item.deliverable}
+                </Typography>
+                <Typography
+                  sx={{
+                    marginTop: 'auto',
+                    paddingTop: 3,
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.78rem',
+                    letterSpacing: '0.04em',
+                    color: 'text.primary',
+                    transition: 'color 0.22s var(--ease)',
+                    '.MuiCard-root:hover &': {
+                      color: 'var(--accent)',
+                    },
+                  }}
+                >
+                  Talk about this offer →
                 </Typography>
               </CardContent>
             </Card>

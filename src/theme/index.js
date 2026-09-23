@@ -3,7 +3,7 @@ import { createTheme } from '@mui/material/styles';
 import shadows from './shadows';
 import { light, dark } from './palette';
 
-// Homebase font stacks. Geist / Geist Mono are loaded in public/index.html.
+// Geist / Geist Mono are loaded in public/index.html.
 const FONT_SANS =
   '"Geist Variable", "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
 const FONT_MONO =
@@ -11,41 +11,43 @@ const FONT_MONO =
 
 const EASE = 'cubic-bezier(0.22, 1, 0.36, 1)';
 
+const ACCENT = '#4DA3FF';
+const BG = '#050507';
+const BG_SOFT = '#0a0b0f';
+const TEXT = '#F4F6FA';
+
 const getTheme = (mode, themeToggler) =>
   responsiveFontSizes(
     createTheme({
-      // Homebase is dark-first; both keys resolve to the same near-black palette.
       palette: mode === 'light' ? light : dark,
       shadows: shadows(mode),
       typography: {
         fontFamily: FONT_SANS,
         fontMono: FONT_MONO,
-        // Body 15px, generous line-height, tighter heading tracking.
         fontSize: 15,
-        body1: { fontSize: '0.9375rem', lineHeight: 1.6 },
-        body2: { lineHeight: 1.6 },
-        h1: { fontWeight: 600, letterSpacing: '-0.02em', lineHeight: 1.05 },
-        h2: { fontWeight: 600, letterSpacing: '-0.02em', lineHeight: 1.08 },
-        h3: { fontWeight: 600, letterSpacing: '-0.015em', lineHeight: 1.12 },
-        h4: { fontWeight: 500, letterSpacing: '-0.015em', lineHeight: 1.2 },
-        h5: { fontWeight: 500, letterSpacing: '-0.01em', lineHeight: 1.3 },
-        h6: { fontWeight: 500, letterSpacing: '-0.01em' },
+        body1: { fontSize: '0.9375rem', lineHeight: 1.65 },
+        body2: { lineHeight: 1.65 },
+        h1: { fontWeight: 600, letterSpacing: '-0.028em', lineHeight: 1.04 },
+        h2: { fontWeight: 600, letterSpacing: '-0.024em', lineHeight: 1.06 },
+        h3: { fontWeight: 600, letterSpacing: '-0.02em', lineHeight: 1.12 },
+        h4: { fontWeight: 600, letterSpacing: '-0.018em', lineHeight: 1.18 },
+        h5: { fontWeight: 600, letterSpacing: '-0.012em', lineHeight: 1.28 },
+        h6: { fontWeight: 600, letterSpacing: '-0.01em' },
         button: {
           textTransform: 'none',
           fontWeight: 500,
           letterSpacing: 0,
         },
-        // Convenience token for mono labels/kickers/captions.
         overline: {
           fontFamily: FONT_MONO,
           textTransform: 'uppercase',
-          letterSpacing: '0.12em',
+          letterSpacing: '0.14em',
           fontSize: '0.72rem',
           fontWeight: 500,
         },
       },
       shape: {
-        borderRadius: 12,
+        borderRadius: 6,
       },
       zIndex: {
         appBar: 1200,
@@ -55,7 +57,7 @@ const getTheme = (mode, themeToggler) =>
         MuiCssBaseline: {
           styleOverrides: {
             body: {
-              backgroundColor: '#0a0a0a',
+              backgroundColor: BG,
               WebkitFontSmoothing: 'antialiased',
               MozOsxFontSmoothing: 'grayscale',
             },
@@ -68,38 +70,40 @@ const getTheme = (mode, themeToggler) =>
           styleOverrides: {
             root: {
               fontWeight: 500,
-              borderRadius: 999,
+              borderRadius: 4,
               paddingTop: 10,
               paddingBottom: 10,
               paddingLeft: 20,
               paddingRight: 20,
-              transition: `transform 0.25s ${EASE}, background-color 0.25s ${EASE}, border-color 0.25s ${EASE}`,
+              transition: `transform 0.22s ${EASE}, background-color 0.22s ${EASE}, border-color 0.22s ${EASE}, box-shadow 0.22s ${EASE}, color 0.22s ${EASE}`,
             },
-            // Primary CTA: solid white on near-black, lifts on hover.
+            // Primary CTA: solid white on near-black. Lift only — no scale.
             containedPrimary: {
               backgroundColor: '#ffffff',
-              color: '#0a0a0a',
+              color: BG,
               border: 'none',
               '&:hover': {
                 backgroundColor: '#ffffff',
-                transform: 'translateY(-1px) scale(1.04)',
+                transform: 'translateY(-1px)',
+                boxShadow: `0 0 0 1px ${ACCENT}66, 0 12px 28px rgba(0,0,0,0.45)`,
               },
             },
-            // Secondary: hairline surface, subtle lift.
             outlined: {
-              backgroundColor: 'rgba(255,255,255,0.055)',
+              backgroundColor: 'rgba(255,255,255,0.03)',
               borderColor: 'rgba(255,255,255,0.18)',
-              color: '#f4f4f5',
+              color: TEXT,
               '&:hover': {
-                backgroundColor: 'rgba(255,255,255,0.09)',
-                borderColor: 'rgba(255,255,255,0.18)',
+                backgroundColor: 'rgba(77,163,255,0.08)',
+                borderColor: ACCENT,
+                color: TEXT,
                 transform: 'translateY(-1px)',
               },
             },
             text: {
-              color: '#f4f4f5',
+              color: TEXT,
               '&:hover': {
-                backgroundColor: 'rgba(255,255,255,0.055)',
+                backgroundColor: 'rgba(77,163,255,0.08)',
+                color: ACCENT,
               },
             },
           },
@@ -111,12 +115,10 @@ const getTheme = (mode, themeToggler) =>
           styleOverrides: {
             root: {
               backgroundImage: 'none',
-              // Sticky header: translucent near-black with a blur and a single
-              // hairline base border. No Material shadow.
-              backgroundColor: 'rgba(10,10,10,0.6)',
-              backdropFilter: 'blur(14px)',
-              WebkitBackdropFilter: 'blur(14px)',
-              borderBottom: '1px solid rgba(255,255,255,0.09)',
+              backgroundColor: 'rgba(5,5,7,0.72)',
+              backdropFilter: 'blur(16px)',
+              WebkitBackdropFilter: 'blur(16px)',
+              borderBottom: '1px solid rgba(255,255,255,0.08)',
               boxShadow: 'none',
               borderRadius: 0,
             },
@@ -127,64 +129,62 @@ const getTheme = (mode, themeToggler) =>
             root: {
               backgroundImage: 'none',
             },
-            // An explicitly bordered surface: hairline on near-black, radius 18.
             outlined: {
-              backgroundColor: 'rgba(255,255,255,0.028)',
-              border: '1px solid rgba(255,255,255,0.09)',
-              borderRadius: 18,
+              backgroundColor: 'rgba(255,255,255,0.03)',
+              border: '1px solid rgba(255,255,255,0.10)',
+              borderRadius: 8,
             },
           },
         },
-        // Overlay surfaces (menus, popovers, dialogs, drawers): bg-soft with a
-        // hairline border. Depth comes from the near-flat shadow ramp.
         MuiMenu: {
           styleOverrides: {
             paper: {
-              backgroundColor: '#0f0f10',
+              backgroundColor: BG_SOFT,
               backgroundImage: 'none',
-              border: '1px solid rgba(255,255,255,0.09)',
-              borderRadius: 12,
+              border: '1px solid rgba(255,255,255,0.10)',
+              borderRadius: 6,
             },
           },
         },
         MuiPopover: {
           styleOverrides: {
             paper: {
-              backgroundColor: '#0f0f10',
+              backgroundColor: BG_SOFT,
               backgroundImage: 'none',
-              border: '1px solid rgba(255,255,255,0.09)',
-              borderRadius: 12,
+              border: '1px solid rgba(255,255,255,0.10)',
+              borderRadius: 6,
             },
           },
         },
         MuiDialog: {
           styleOverrides: {
             paper: {
-              backgroundColor: '#0f0f10',
+              backgroundColor: BG_SOFT,
               backgroundImage: 'none',
-              border: '1px solid rgba(255,255,255,0.09)',
-              borderRadius: 18,
+              border: '1px solid rgba(255,255,255,0.10)',
+              borderRadius: 8,
             },
           },
         },
         MuiDrawer: {
           styleOverrides: {
             paper: {
-              backgroundColor: '#0f0f10',
+              backgroundColor: BG_SOFT,
               backgroundImage: 'none',
-              borderRight: '1px solid rgba(255,255,255,0.09)',
+              borderRight: '1px solid rgba(255,255,255,0.10)',
             },
           },
         },
         MuiLink: {
           styleOverrides: {
             root: {
-              color: '#f4f4f5',
+              color: TEXT,
               textUnderlineOffset: '2px',
               textDecorationColor: 'rgba(255,255,255,0.18)',
               transition: `color 0.2s ${EASE}, text-decoration-color 0.2s ${EASE}`,
               '&:hover': {
-                textDecorationColor: '#f4f4f5',
+                color: ACCENT,
+                textDecorationColor: ACCENT,
               },
             },
           },
@@ -192,15 +192,17 @@ const getTheme = (mode, themeToggler) =>
         MuiCard: {
           styleOverrides: {
             root: {
-              borderRadius: 18,
-              backgroundColor: 'rgba(255,255,255,0.028)',
-              border: '1px solid rgba(255,255,255,0.09)',
+              borderRadius: 8,
+              backgroundColor: 'rgba(255,255,255,0.03)',
+              border: '1px solid rgba(255,255,255,0.10)',
               boxShadow: 'none',
               backgroundImage: 'none',
-              transition: `border-color 0.3s ${EASE}, background-color 0.3s ${EASE}, transform 0.3s ${EASE}`,
+              transition: `border-color 0.28s ${EASE}, background-color 0.28s ${EASE}, transform 0.28s ${EASE}, box-shadow 0.28s ${EASE}`,
               '&:hover': {
-                borderColor: 'rgba(255,255,255,0.18)',
-                backgroundColor: 'rgba(255,255,255,0.055)',
+                borderColor: 'rgba(77,163,255,0.42)',
+                backgroundColor: 'rgba(255,255,255,0.045)',
+                transform: 'translateY(-2px)',
+                boxShadow: '0 16px 40px rgba(0,0,0,0.35)',
               },
             },
           },
@@ -208,32 +210,31 @@ const getTheme = (mode, themeToggler) =>
         MuiChip: {
           styleOverrides: {
             root: {
-              borderRadius: 999,
+              borderRadius: 4,
               fontFamily: FONT_MONO,
               fontSize: '0.75rem',
               letterSpacing: '0.02em',
-              border: '1px solid rgba(255,255,255,0.09)',
-              backgroundColor: 'rgba(255,255,255,0.055)',
-              color: '#f4f4f5',
+              border: '1px solid rgba(255,255,255,0.10)',
+              backgroundColor: 'rgba(255,255,255,0.04)',
+              color: TEXT,
             },
             outlined: {
-              borderColor: 'rgba(255,255,255,0.09)',
+              borderColor: 'rgba(255,255,255,0.10)',
             },
           },
         },
         MuiInputBase: {
           styleOverrides: {
             root: {
-              borderRadius: 12,
-              backgroundColor: 'rgba(255,255,255,0.028)',
-              color: '#f4f4f5',
-              // 16px input font to avoid iOS zoom.
+              borderRadius: 6,
+              backgroundColor: 'rgba(255,255,255,0.03)',
+              color: TEXT,
               fontSize: '16px',
             },
             input: {
-              color: '#f4f4f5',
+              color: TEXT,
               '&::placeholder': {
-                color: '#6a6a6e',
+                color: '#6B7380',
                 opacity: 1,
               },
             },
@@ -242,29 +243,28 @@ const getTheme = (mode, themeToggler) =>
         MuiOutlinedInput: {
           styleOverrides: {
             root: {
-              borderRadius: 12,
-              backgroundColor: 'rgba(255,255,255,0.028)',
+              borderRadius: 6,
+              backgroundColor: 'rgba(255,255,255,0.03)',
               '& .MuiOutlinedInput-notchedOutline': {
-                borderColor: 'rgba(255,255,255,0.09)',
+                borderColor: 'rgba(255,255,255,0.10)',
               },
               '&:hover .MuiOutlinedInput-notchedOutline': {
-                borderColor: 'rgba(255,255,255,0.18)',
+                borderColor: 'rgba(255,255,255,0.22)',
               },
               '&.Mui-focused': {
-                boxShadow: '0 0 0 4px rgba(255,255,255,0.04)',
+                boxShadow: '0 0 0 3px rgba(77,163,255,0.16)',
               },
               '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                borderColor: 'rgba(255,255,255,0.18)',
+                borderColor: ACCENT,
                 borderWidth: 1,
               },
             },
             input: {
-              borderRadius: 12,
+              borderRadius: 6,
             },
           },
         },
       },
-      // Expose the ease + mono stack for component-level use.
       homebase: {
         ease: EASE,
         fontMono: FONT_MONO,

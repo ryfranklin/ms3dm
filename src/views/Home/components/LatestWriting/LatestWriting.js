@@ -39,7 +39,12 @@ const LatestWriting = () => {
           marginBottom={5}
         >
           <Box sx={{ maxWidth: 640 }}>
-            <Typography variant="overline" component="p" color="text.secondary" gutterBottom>
+            <Typography
+              variant="overline"
+              component="p"
+              sx={{ color: 'secondary.main' }}
+              gutterBottom
+            >
               Compendium
             </Typography>
             <Typography variant="h4" color="text.primary" sx={{ fontWeight: 600 }}>
