@@ -28,7 +28,7 @@ const SidebarNav = ({ pages }) => {
         <Box marginBottom={1}>
           <Typography
             component={'a'}
-            href={services?.href || '/#engagements'}
+            href={services?.href || '/#offers'}
             fontWeight={400}
             color={'text.primary'}
             sx={{ textDecoration: 'none' }}
@@ -64,12 +64,12 @@ const SidebarNav = ({ pages }) => {
         <Box marginTop={3} display="flex" flexDirection="column" gap={1.5}>
           <Button
             component="a"
-            href="/contact-page#assessment"
+            href="/contact-page"
             variant="contained"
             color="primary"
             fullWidth
           >
-            Start with a readiness assessment
+            Get in touch
           </Button>
           <Button
             component="a"

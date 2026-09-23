@@ -7,7 +7,7 @@ import { useTheme } from '@mui/material/styles';
 import { CALENDLY_URL, CALENDLY_LABEL } from 'config/calendly';
 
 /*
- * Commercial close. Assessment is the default next step; Calendly is the
+ * Commercial close. Offers are the default next step; Calendly is the
  * discovery path. Mailto stays in the footer.
  */
 const CallToAction = () => {
@@ -36,15 +36,15 @@ const CallToAction = () => {
           color="text.primary"
           sx={{ fontWeight: 600, marginBottom: 2, fontSize: { xs: '2rem', md: '2.75rem' } }}
         >
-          Start with a readiness assessment.
+          Pick one workflow. Ship it.
         </Typography>
         <Typography
           color="text.secondary"
           sx={{ maxWidth: 620, margin: '0 auto 32px', lineHeight: 1.7 }}
         >
-          Most engagements begin with a 2 to 4 week AI &amp; Data Readiness
-          Assessment ($15k to $25k fixed): inventory, quality and governance
-          gaps, feature readiness, and an executive roadmap. Prefer a short
+          Capacity is about 10 to 15 hours a week, so the next slot is limited.
+          Start with an AI Ops Sprint or Internal Docs Q&amp;A, then a Monthly
+          Builder Retainer if you want it kept in production. Prefer a short
           call first? Book a 30-minute discovery.
         </Typography>
 
@@ -61,9 +61,9 @@ const CallToAction = () => {
             color="primary"
             size="large"
             fullWidth={isMd ? false : true}
-            href="/contact-page#assessment"
+            href="#offers"
           >
-            Start with a readiness assessment
+            See the offers
           </Button>
           <Button
             component="a"

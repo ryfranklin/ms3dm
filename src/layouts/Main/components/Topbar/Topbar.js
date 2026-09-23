@@ -35,7 +35,7 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
         <Box marginLeft={4}>
           <Typography
             component={'a'}
-            href={services?.href || '/#engagements'}
+            href={services?.href || '/#offers'}
             color={linkColor}
             sx={{ textDecoration: 'none', cursor: 'pointer' }}
           >
@@ -73,13 +73,13 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
         <Box marginLeft={3}>
           <Button
             component="a"
-            href="/contact-page#assessment"
+            href="/contact-page"
             variant="contained"
             color="primary"
             size="small"
             sx={{ whiteSpace: 'nowrap' }}
           >
-            Assessment
+            Get in touch
           </Button>
         </Box>
         <Box marginLeft={1.5}>

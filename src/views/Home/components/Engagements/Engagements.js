@@ -7,81 +7,78 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 
 /*
- * How engagements start. Crawl-walk-run ladder plus Fractional Head of Data.
- * Website publish bands are conversion-friendly for a small practice; proposal
- * ceilings and recruiter floors stay higher off-site.
+ * Productized AI offers sized for a ~10 to 15 hour / week practice.
+ * Same hairline-card pattern as the rest of Home; prices stay as ranges.
  */
-const stages = [
+const offers = [
   {
-    stage: 'Crawl',
-    title: 'AI & Data Readiness Assessment',
-    offer: '$8,000 to $15,000 fixed · 2 to 3 weeks',
+    index: '01',
+    label: 'Sprint',
+    title: 'AI Ops Sprint',
+    offer: '$3,500 to $6,000 · 2 to 3 weeks · about 25 to 40 hours',
     body:
-      'Inventory source systems, map data flows, grade data quality and ' +
-      'governance, and assess whether the data can actually feed the AI you ' +
-      'want. You get an executive-ready roadmap with sequencing and cost, not ' +
-      'a sales deck. Default entry for most buyers. Deeper multi-domain or ' +
-      'compliance estates are quoted separately (typically up to $18k to $25k).',
+      'One painful workflow put into production. Typical targets: invoice ' +
+      'triage, support draft-and-approve, a report narrative from a warehouse, ' +
+      'or lead cleanup.',
+    deliverable:
+      'Working pipeline, a short runbook, and before/after metrics.',
   },
   {
-    stage: 'Walk',
-    title: 'Lakehouse Architecture Design',
-    offer: 'From $25,000 · typically 4 to 8 weeks · scoped after Assessment',
+    index: '02',
+    label: 'Q&A',
+    title: 'Internal Docs Q&A (RAG)',
+    offer: '$4,000 to $8,000 · 3 to 4 weeks',
     body:
-      'Design the foundation: a dimensional warehouse or a medallion lakehouse ' +
-      'on AWS (Iceberg/Glue, or Snowflake where the data lives), governed ' +
-      'pipelines, IaC, and the reporting layer the business runs on. Final fee ' +
-      'follows Assessment scope. Implementation can follow as a separate engagement.',
+      'Secure chat over your SOPs, contracts, or product docs, as a private ' +
+      'app or a Slack bot.',
+    deliverable:
+      'Working Q&A with source citations, plus an eval set of about 20 golden questions.',
   },
   {
-    stage: 'Run',
-    title: 'ML Platform Architecture',
-    offer: 'From $25,000 · scoped after Assessment',
+    index: '03',
+    label: 'Retainer',
+    title: 'Monthly Builder Retainer',
+    offer: '$2,000 to $3,500 / month · 8 to 12 hours / month',
     body:
-      'Predictive signals and agentic systems on a foundation that can support ' +
-      'them: feature store, SageMaker MLOps, retrieval done properly, and a ' +
-      'Bedrock guardrail on every call. Architecture first; build and Mode A ' +
-      'operation are scoped next.',
-  },
-  {
-    stage: 'Ongoing',
-    title: 'Fractional Head of Data',
-    offer: '$8,000 to $15,000 / month · embedded from $15,000+',
-    body:
-      'Part-time data leadership without a full-time hire: architecture ' +
-      'direction, vendor calls, hiring guidance, and exec translation. Often ' +
-      'feeds an Assessment or architecture engagement. Open to similar scoped ' +
-      'retainers (architecture advisory, platform stewardship) when the fit is clear.',
+      'After a sprint: monitoring, small improvements, and roughly one new ' +
+      'automation per month.',
+    deliverable: 'Ongoing ops on what we already shipped, plus one new automation.',
   },
 ];
 
 const Engagements = () => {
   return (
-    <Box id="engagements" sx={{ paddingY: { xs: 8, md: 12 } }}>
+    <Box
+      id="offers"
+      sx={{
+        paddingY: { xs: 8, md: 12 },
+        scrollMarginTop: { xs: 72, md: 88 },
+      }}
+    >
+      {/* Back-compat for older /#engagements links. */}
+      <Box id="engagements" sx={{ position: 'relative', top: 0 }} />
       <Box marginBottom={6} sx={{ maxWidth: 740 }}>
         <Typography variant="overline" component="p" color="text.secondary" gutterBottom>
-          How engagements start
+          Offers
         </Typography>
         <Typography
           variant="h4"
           color="text.primary"
           sx={{ fontWeight: 600, marginBottom: 2 }}
         >
-          Ground-up, in sequence.
+          Three fixed-scope packages.
         </Typography>
         <Typography color="text.secondary" sx={{ lineHeight: 1.65 }}>
-          Most work starts with a readiness assessment so the roadmap is grounded
-          before anything gets built. From there the sequence is deliberate: get
-          the data trustworthy, modernize the platform and reporting, then put
-          predictive ML and guardrailed agents on top. Fractional Head of Data
-          and other scoped retainers sit beside the ladder when you need embedded
-          leadership without a full-time hire.
+          Most teams have AI ideas and no shipping path. I take one painful
+          workflow and put it in production in 2 to 3 weeks, then can maintain
+          it on a small retainer. Capacity is about 10 to 15 hours a week, so
+          the next slot is limited.
         </Typography>
       </Box>
 
       <Grid container spacing={3}>
-        {stages.map((item, i) => (
-          <Grid item xs={12} sm={6} md={3} key={item.stage}>
+        {offers.map((item, i) => (
+          <Grid item xs={12} md={4} key={item.index}>
             <Card sx={{ height: '100%' }} data-aos="fade-up" data-aos-delay={i * 100}>
               <CardContent sx={{ padding: 3.5 }}>
                 <Typography
@@ -94,7 +91,7 @@ const Engagements = () => {
                     marginBottom: 2,
                   }}
                 >
-                  {item.stage}
+                  {item.index} · {item.label}
                 </Typography>
                 <Typography variant="h5" sx={{ fontWeight: 600, marginBottom: 1 }}>
                   {item.title}
@@ -110,8 +107,26 @@ const Engagements = () => {
                 >
                   {item.offer}
                 </Typography>
-                <Typography color="text.secondary" sx={{ lineHeight: 1.65 }}>
+                <Typography
+                  color="text.secondary"
+                  sx={{ lineHeight: 1.65, marginBottom: 2 }}
+                >
                   {item.body}
+                </Typography>
+                <Typography
+                  sx={{
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.72rem',
+                    letterSpacing: '0.04em',
+                    color: 'text.disabled',
+                    marginBottom: 0.75,
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  Deliverable
+                </Typography>
+                <Typography color="text.secondary" sx={{ lineHeight: 1.65 }}>
+                  {item.deliverable}
                 </Typography>
               </CardContent>
             </Card>
@@ -128,17 +143,13 @@ const Engagements = () => {
           fontSize: '0.95rem',
         }}
       >
-        After Walk or Run, Mode A managed delivery is available as a follow-on:
-        operate the platform in a per-client AWS Org account on a scoped
-        retainer (AWS pass-through or all-in monthly). Delivery in your account
-        and DIY handoff remain options. Open to similar scoped retainers when
-        the outcome is clear and the monthly shape fits better than a fixed
-        project.
+        This is production work: data and agent systems on AWS, evals, and a
+        human go/no-go on every release. Not slide-deck strategy consulting.
       </Typography>
 
       <Box marginTop={4}>
-        <Button component="a" href="/contact-page#assessment" variant="text" size="large">
-          Start with a readiness assessment →
+        <Button component="a" href="/contact-page" variant="text" size="large">
+          Talk about the next slot →
         </Button>
       </Box>
     </Box>
