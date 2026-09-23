@@ -1,7 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { applyMotionPreview } from 'utils/motionPreview';
 
 /*
  * ServiceNetwork: the site visual identity — a live agent / neural graph.
@@ -10,7 +11,8 @@ import useMediaQuery from '@mui/material/useMediaQuery';
  * hairline dash-flow). A small rAF loop drives occasional packets along
  * edges and a brief receive flash when a pulse arrives. No extra deps.
  *
- * prefers-reduced-motion: CSS stills keyframes; the rAF loop never starts.
+ * prefers-reduced-motion: CSS stills keyframes; the rAF loop never starts
+ * unless the temporary preview override is on (/?motion=1 or localStorage).
  */
 
 const NODES = [
@@ -66,15 +68,24 @@ let gradientSeq = 0;
 const smoothstep = (t) => t * t * (3 - 2 * t);
 
 const ServiceNetwork = ({ height = 360 }) => {
-  const reduceMotion = useMediaQuery('(prefers-reduced-motion: reduce)', {
+  const prefersReduce = useMediaQuery('(prefers-reduced-motion: reduce)', {
     defaultMatches: false,
     noSsr: true,
   });
+  const [motionPreview, setMotionPreview] = useState(() =>
+    typeof document !== 'undefined' &&
+    document.documentElement.getAttribute('data-motion-preview') === '1',
+  );
+  const reduceMotion = prefersReduce && !motionPreview;
   const gradientIdRef = useRef(`hb-hub-fill-${(gradientSeq += 1)}`);
   const rootRef = useRef(null);
   const edgeRefs = useRef([]);
   const receiveRefs = useRef({});
   const packetRefs = useRef([]);
+
+  useEffect(() => {
+    setMotionPreview(applyMotionPreview());
+  }, []);
 
   useEffect(() => {
     if (reduceMotion) {

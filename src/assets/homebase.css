@@ -194,10 +194,10 @@ body::after {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hb-network .hb-hub-glow,
-  .hb-network .hb-hub-core,
-  .hb-network .hb-node-idle,
-  .hb-network .hb-network-edge {
+  html:not([data-motion-preview='1']) .hb-network .hb-hub-glow,
+  html:not([data-motion-preview='1']) .hb-network .hb-hub-core,
+  html:not([data-motion-preview='1']) .hb-network .hb-node-idle,
+  html:not([data-motion-preview='1']) .hb-network .hb-network-edge {
     animation: none !important;
   }
 }
@@ -223,9 +223,9 @@ body::after {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  html:not([data-motion-preview='1']) *,
+  html:not([data-motion-preview='1']) *::before,
+  html:not([data-motion-preview='1']) *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;

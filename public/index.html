@@ -40,6 +40,30 @@
       href="https://cdn.jsdelivr.net/npm/@fontsource-variable/geist-mono/index.min.css"
     />
     <script src="%PUBLIC_URL%/env.js"></script>
+    <!-- Temporary preview: /?motion=1 forces hero graph motion despite Reduce Motion. -->
+    <script>
+      (function () {
+        try {
+          var q = new URLSearchParams(window.location.search).get('motion');
+          var on =
+            q === '1' ||
+            q === 'preview' ||
+            (q !== '0' &&
+              q !== 'off' &&
+              window.localStorage.getItem('ms3dm-motion-preview') === '1');
+          if (q === '1' || q === 'preview') {
+            window.localStorage.setItem('ms3dm-motion-preview', '1');
+          }
+          if (q === '0' || q === 'off') {
+            window.localStorage.removeItem('ms3dm-motion-preview');
+            on = false;
+          }
+          if (on) {
+            document.documentElement.setAttribute('data-motion-preview', '1');
+          }
+        } catch (e) {}
+      })();
+    </script>
     <title>
       ms3dm.tech
     </title>
