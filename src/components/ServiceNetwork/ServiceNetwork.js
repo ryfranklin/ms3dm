@@ -81,32 +81,11 @@ const ServiceNetwork = ({ height = 360 }) => {
       return undefined;
     }
 
-    const visible = { current: true };
-    const hidden = { current: typeof document !== 'undefined' && document.hidden };
     const pulses = [];
     const flashes = [];
-    let lastSpawn = 0;
+    let lastSpawn = -9999;
     let nextId = 1;
     let raf = 0;
-
-    const root = rootRef.current;
-    const io =
-      root && typeof IntersectionObserver !== 'undefined'
-        ? new IntersectionObserver(
-          ([entry]) => {
-            visible.current = entry.isIntersecting;
-          },
-          { threshold: 0.08 },
-        )
-        : null;
-    if (io && root) {
-      io.observe(root);
-    }
-
-    const onVis = () => {
-      hidden.current = document.hidden;
-    };
-    document.addEventListener('visibilitychange', onVis);
 
     const spawn = (now) => {
       if (pulses.length >= MAX_ACTIVE) {
@@ -141,7 +120,7 @@ const ServiceNetwork = ({ height = 360 }) => {
     };
 
     const tick = (now) => {
-      if (!visible.current || hidden.current) {
+      if (typeof document !== 'undefined' && document.visibilityState === 'hidden') {
         raf = requestAnimationFrame(tick);
         return;
       }
@@ -220,10 +199,6 @@ const ServiceNetwork = ({ height = 360 }) => {
 
     return () => {
       cancelAnimationFrame(raf);
-      document.removeEventListener('visibilitychange', onVis);
-      if (io) {
-        io.disconnect();
-      }
     };
   }, [reduceMotion]);
 
@@ -243,6 +218,7 @@ const ServiceNetwork = ({ height = 360 }) => {
     >
       <Box
         component="svg"
+        data-testid="service-network"
         viewBox="0 0 400 300"
         role="presentation"
         sx={{
@@ -383,14 +359,15 @@ const ServiceNetwork = ({ height = 360 }) => {
           Array.from({ length: PACKET_SLOTS }).map((_, i) => (
             <g
               key={`pkt-${i}`}
+              data-hb-packet="true"
               ref={(el) => {
                 packetRefs.current[i] = el;
               }}
               opacity="0"
               transform="translate(0 0)"
             >
-              <circle r="4.2" fill={ACCENT} opacity="0.22" />
-              <circle r="1.55" fill={ACCENT} />
+              <circle r="5.5" fill={ACCENT} opacity="0.28" />
+              <circle r="1.8" fill="#ffffff" />
             </g>
           ))}
       </Box>

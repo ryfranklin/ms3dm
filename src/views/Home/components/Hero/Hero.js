@@ -103,6 +103,7 @@ const Hero = () => {
       </Box>
 
       <Box
+        id="hero-network"
         marginTop={{ xs: 5, md: 7 }}
         sx={{
           position: 'relative',
