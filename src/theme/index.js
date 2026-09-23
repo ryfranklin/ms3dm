@@ -252,7 +252,7 @@ const getTheme = (mode, themeToggler) =>
                 borderColor: 'rgba(255,255,255,0.22)',
               },
               '&.Mui-focused': {
-                boxShadow: `0 0 0 3px rgba(77,163,255,0.16)`,
+                boxShadow: '0 0 0 3px rgba(77,163,255,0.16)',
               },
               '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
                 borderColor: ACCENT,
