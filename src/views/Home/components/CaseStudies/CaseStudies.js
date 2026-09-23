@@ -93,7 +93,12 @@ const CaseStudies = () => {
   return (
     <Box id="selected-work" sx={{ paddingY: { xs: 8, md: 12 } }}>
       <Box marginBottom={6} sx={{ maxWidth: 740 }}>
-        <Typography variant="overline" component="p" color="text.secondary" gutterBottom>
+        <Typography
+          variant="overline"
+          component="p"
+          sx={{ color: 'secondary.main' }}
+          gutterBottom
+        >
           Selected work
         </Typography>
         <Typography variant="h4" color="text.primary" sx={{ fontWeight: 600, marginBottom: 2 }}>
@@ -117,7 +122,12 @@ const CaseStudies = () => {
                   flexDirection: 'column',
                 }}
               >
-                <Typography variant="overline" component="p" color="text.disabled" gutterBottom>
+                <Typography
+                  variant="overline"
+                  component="p"
+                  sx={{ color: 'secondary.main' }}
+                  gutterBottom
+                >
                   {item.kicker}
                 </Typography>
                 <Typography variant="h6" sx={{ fontWeight: 600, marginBottom: 1.5 }}>

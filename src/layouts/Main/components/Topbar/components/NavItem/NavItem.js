@@ -42,8 +42,14 @@ const NavItem = ({ title, id, items, colorInvert = false }) => {
         onClick={(e) => handleClick(e, id)}
       >
         <Typography
-          fontWeight={openedPopoverId === id || hasActiveLink() ? 700 : 400}
+          fontWeight={openedPopoverId === id || hasActiveLink() ? 600 : 400}
           color={linkColor}
+          sx={{
+            fontSize: '0.92rem',
+            letterSpacing: '0.01em',
+            transition: 'color 0.2s var(--ease)',
+            '&:hover': { color: 'secondary.main' },
+          }}
         >
           {title}
         </Typography>
@@ -80,7 +86,7 @@ const NavItem = ({ title, id, items, colorInvert = false }) => {
             borderTopLeftRadius: 0,
             borderBottomRightRadius: 8,
             borderBottomLeftRadius: 8,
-            borderTop: `3px solid ${theme.palette.primary.main}`,
+            borderTop: `2px solid ${theme.palette.secondary.main}`,
           },
         }}
       >

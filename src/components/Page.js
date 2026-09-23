@@ -40,9 +40,9 @@ export default function Page({ children }) {
     AOS.init({
       once: true,
       delay: 0,
-      duration: 800,
-      offset: 0,
-      easing: 'ease-in-out',
+      duration: 520,
+      offset: 24,
+      easing: 'ease-out-cubic',
     });
   }, []);
 

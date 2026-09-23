@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Box from '@mui/material/Box';
-import Divider from '@mui/material/Divider';
 import AppBar from '@mui/material/AppBar';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 
@@ -60,7 +59,6 @@ const Main = ({ children, colorInvert = false }) => {
       />
       <main>
         {children}
-        <Divider />
       </main>
       <Container paddingY={4}>
         <Footer />

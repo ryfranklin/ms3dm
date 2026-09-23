@@ -15,6 +15,8 @@ const Sidebar = ({ pages, open, variant, onClose }) => {
         '& .MuiPaper-root': {
           width: '100%',
           maxWidth: 280,
+          backgroundColor: 'var(--bg-soft)',
+          borderRight: '1px solid var(--border)',
         },
       }}
     >

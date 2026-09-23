@@ -87,8 +87,8 @@ const tagSx = {
   paddingY: 0.6,
   transition: 'border-color 0.25s var(--ease), background-color 0.25s var(--ease)',
   '&:hover': {
-    borderColor: 'var(--border-strong)',
-    backgroundColor: 'var(--surface-2)',
+    borderColor: 'var(--accent)',
+    backgroundColor: 'var(--accent-soft)',
   },
 };
 
@@ -105,8 +105,7 @@ const ProofSection = () => {
         <Typography
           variant="overline"
           component="p"
-          color="text.secondary"
-          sx={{ marginBottom: 4 }}
+          sx={{ color: 'secondary.main', marginBottom: 4 }}
         >
           Capabilities and stack
         </Typography>

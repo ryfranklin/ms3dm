@@ -63,7 +63,12 @@ const Solutions = () => {
   return (
     <Box sx={{ paddingY: { xs: 8, md: 12 } }}>
       <Box marginBottom={6} sx={{ maxWidth: 740 }}>
-        <Typography variant="overline" component="p" color="text.secondary" gutterBottom>
+        <Typography
+          variant="overline"
+          component="p"
+          sx={{ color: 'secondary.main' }}
+          gutterBottom
+        >
           What I do
         </Typography>
         <Typography variant="h4" color="text.primary" sx={{ fontWeight: 600 }}>
@@ -83,7 +88,7 @@ const Solutions = () => {
                 <Typography
                   sx={{
                     fontFamily: 'var(--font-mono)',
-                    color: 'text.disabled',
+                    color: 'secondary.main',
                     letterSpacing: '0.08em',
                     marginBottom: 2,
                   }}

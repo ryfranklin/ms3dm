@@ -39,7 +39,7 @@ const AboutSection = () => {
             <Typography
               variant="overline"
               component="p"
-              color="text.secondary"
+              sx={{ color: 'secondary.main' }}
               gutterBottom
             >
               The practice
@@ -86,7 +86,7 @@ const AboutSection = () => {
                       width: 6,
                       height: 6,
                       borderRadius: '50%',
-                      backgroundColor: 'var(--white)',
+                      backgroundColor: 'var(--accent)',
                       marginTop: '9px',
                       flexShrink: 0,
                     }}

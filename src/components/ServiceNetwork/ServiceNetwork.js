@@ -5,9 +5,9 @@ import Box from '@mui/material/Box';
 /*
  * ServiceNetwork: the Homebase visual identity.
  *
- * An animated monochrome "service network" node-graph: white node dots, dashed
- * hairline edges with a flowing stroke-dashoffset animation, expanding halos,
- * and a slow-spinning dashed core ring. This replaces stock hero illustration.
+ * An animated service-network node-graph: electric-blue core, hairline edges
+ * with a flowing stroke-dashoffset animation, expanding halos, and a slow-
+ * spinning dashed core ring. This replaces stock hero illustration.
  *
  * All motion is CSS keyframe based (defined in src/assets/homebase.css), so the
  * global prefers-reduced-motion rule stills it automatically.
@@ -70,7 +70,7 @@ const ServiceNetwork = ({ height = 360 }) => {
       >
         {/* Dashed edges with flowing offset. */}
         <g
-          stroke="rgba(255,255,255,0.18)"
+          stroke="rgba(77,163,255,0.32)"
           strokeWidth="1"
           fill="none"
           strokeDasharray="4 6"
@@ -106,7 +106,7 @@ const ServiceNetwork = ({ height = 360 }) => {
             cy="150"
             r="34"
             fill="none"
-            stroke="rgba(255,255,255,0.18)"
+            stroke="rgba(77,163,255,0.35)"
             strokeWidth="1"
             strokeDasharray="2 8"
           />
@@ -116,7 +116,7 @@ const ServiceNetwork = ({ height = 360 }) => {
           cy="150"
           r="22"
           fill="none"
-          stroke="rgba(255,255,255,0.09)"
+          stroke="rgba(77,163,255,0.18)"
           strokeWidth="1"
         />
 
@@ -128,7 +128,7 @@ const ServiceNetwork = ({ height = 360 }) => {
             cy={n.y}
             r={n.r}
             fill="none"
-            stroke="rgba(255,255,255,0.4)"
+            stroke="rgba(77,163,255,0.55)"
             strokeWidth="1"
             style={{
               transformBox: 'fill-box',
@@ -147,7 +147,7 @@ const ServiceNetwork = ({ height = 360 }) => {
             cx={n.x}
             cy={n.y}
             r={n.r}
-            fill={n.id === 'core' ? '#ffffff' : 'rgba(244,244,245,0.9)'}
+            fill={n.id === 'core' ? '#4DA3FF' : 'rgba(244,246,250,0.9)'}
           />
         ))}
       </Box>

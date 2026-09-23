@@ -4,10 +4,9 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 /*
- * Homebase wordmark: mono text "ms3dm.tech" plus a small pulsing white dot.
- * Monochrome and near-black by design, so it sits on the instrument palette
- * without a brand hue. The dot uses the hb-pulse-dot keyframe (homebase.css),
- * which the global reduced-motion rule stills automatically.
+ * Wordmark: mono text "ms3dm.tech" plus a small pulsing electric-blue dot.
+ * The dot uses the hb-pulse-dot keyframe (homebase.css), which the global
+ * reduced-motion rule stills automatically.
  */
 
 const Logo = ({ size = 'medium' }) => {
@@ -49,8 +48,8 @@ const Logo = ({ size = 'medium' }) => {
           height: dot,
           marginLeft: '6px',
           borderRadius: '50%',
-          backgroundColor: 'var(--white)',
-          boxShadow: '0 0 0 3px rgba(255,255,255,0.08)',
+          backgroundColor: 'var(--accent)',
+          boxShadow: '0 0 0 3px var(--accent-soft)',
           animation: 'hb-pulse-dot 3s var(--ease) infinite',
         }}
       />
