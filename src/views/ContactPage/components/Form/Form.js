@@ -168,7 +168,7 @@ const Form = () => {
           Prefer to write it out?
         </Typography>
         <Typography color="text.secondary" align={'center'}>
-          Describe your Assessment ask or data/AI challenge: lakehouse modernization, pipeline reliability, RAG, or agentic AI. Prefer a live conversation? Use the discovery booking above. I read every message myself and will reply personally.
+          Describe the workflow you want in production: an AI Ops Sprint, Internal Docs Q&A, or a Monthly Builder Retainer. Prefer a live conversation? Use the discovery booking above. I read every message myself and will reply personally.
         </Typography>
       </Box>
       <Box

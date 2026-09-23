@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import ServiceNetwork from 'components/ServiceNetwork';
+import { CALENDLY_URL, CALENDLY_LABEL } from 'config/calendly';
 
 const Hero = () => {
   const theme = useTheme();
@@ -24,7 +25,7 @@ const Hero = () => {
           component="p"
           sx={{ color: 'text.secondary', marginBottom: 3 }}
         >
-          Data &amp; AI architecture / Platform engineering / Fractional Head of Data / AWS, Azure &amp; GCP
+          Fixed-scope AI delivery / Production on AWS / Limited availability
         </Typography>
 
         <Typography
@@ -51,15 +52,11 @@ const Hero = () => {
             lineHeight: 1.65,
           }}
         >
-          ms3dm.tech is a principal-level data and AI architecture practice. I
-          design and deliver fixed-scope engagements: readiness assessments,
-          medallion lakehouse architectures on S3 and Apache Iceberg, and
-          guardrailed agentic AI grounded in retrieval and governed on every
-          call. Foundations come first: dimensional warehouses, governed
-          pipelines, and the BI the business runs on, with agentic AI layered on
-          top, not in place of it. AWS is home base, with the same patterns
-          delivered on Snowflake, Azure, and GCP when that is where the data
-          already lives.
+          Most teams have AI ideas and no shipping path. I take one painful
+          workflow and put it in production in 2 to 3 weeks, then can maintain
+          it on a small retainer. The work is production data and agent systems
+          on AWS, with evals and a human go/no-go, not slide-deck strategy
+          consulting. Capacity is about 10 to 15 hours a week.
         </Typography>
 
         <Box
@@ -76,9 +73,9 @@ const Hero = () => {
             color="primary"
             size="large"
             fullWidth={isMd ? false : true}
-            href="/contact-page#assessment"
+            href="#offers"
           >
-            Start with a readiness assessment
+            See the offers
           </Button>
           <Button
             component="a"
@@ -86,9 +83,11 @@ const Hero = () => {
             color="primary"
             size="large"
             fullWidth={isMd ? false : true}
-            href="#selected-work"
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            See selected work
+            {CALENDLY_LABEL}
           </Button>
         </Box>
       </Box>

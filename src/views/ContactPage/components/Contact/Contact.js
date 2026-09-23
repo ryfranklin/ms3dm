@@ -9,7 +9,7 @@ import ServiceNetwork from 'components/ServiceNetwork';
 import { CALENDLY_URL, CALENDLY_LABEL } from 'config/calendly';
 
 /*
- * Contact hero. Assessment framing with Calendly and form as equal-weight
+ * Contact hero. Offers framing with Calendly and form as equal-weight
  * paths. Email remains available; no phone, physical address, or map.
  */
 const details = [
@@ -26,14 +26,14 @@ const Contact = () => {
             Contact
           </Typography>
           <Typography variant="h3" sx={{ fontWeight: 600, marginBottom: 2 }} color="text.primary">
-            Start with a readiness assessment.
+            Tell me about the workflow.
           </Typography>
           <Typography color="text.secondary" sx={{ marginBottom: 4, lineHeight: 1.75 }}>
-            Book a 30-minute discovery, or send details about a lakehouse to
-            modernize, a pipeline to make reliable, or an agentic AI system to
-            build and guardrail. I am an independent data architect and AI/ML
-            engineer working directly with your team on AWS. Every inquiry gets
-            a principal-level response.
+            Book a 30-minute discovery, or send details on an AI Ops Sprint,
+            Internal Docs Q&amp;A, or a Monthly Builder Retainer. I ship
+            production data and agent systems on AWS, with evals and a human
+            go/no-go. Capacity is about 10 to 15 hours a week, so the next slot
+            is limited. Every inquiry gets a principal-level response.
           </Typography>
 
           <Box display="flex" flexDirection="column" gap={2} marginBottom={4}>

@@ -42,7 +42,7 @@ const Footer = () => {
         }}
       >
         <Link
-          href="/contact-page#assessment"
+          href="/#offers"
           underline="none"
           sx={{
             fontFamily: 'var(--font-mono)',
@@ -51,7 +51,7 @@ const Footer = () => {
             '&:hover': { color: 'text.primary' },
           }}
         >
-          Assessment
+          Offers
         </Link>
         <Link
           href={CALENDLY_URL}

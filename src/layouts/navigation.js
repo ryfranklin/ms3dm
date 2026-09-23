@@ -12,7 +12,7 @@ const pages = {
   // Top-level commercial entry; Topbar/Sidebar render this as Services.
   services: {
     title: 'Services',
-    href: '/#engagements',
+    href: '/#offers',
   },
   portfolio: [],
 };
