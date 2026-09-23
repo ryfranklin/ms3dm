@@ -5,7 +5,6 @@ import Paper from '@mui/material/Paper';
 import CssBaseline from '@mui/material/CssBaseline';
 import getTheme from 'theme';
 import AOS from 'aos';
-import { applyMotionPreview } from 'utils/motionPreview';
 
 export const useDarkMode = () => {
   // Homebase is a dark-first, near-black instrument. The palette resolves to the
@@ -45,13 +44,6 @@ export default function Page({ children }) {
       offset: 24,
       easing: 'ease-out-cubic',
     });
-
-    // Temporary preview override for the hero graph (/?motion=1).
-    applyMotionPreview();
-    window.addEventListener('popstate', applyMotionPreview);
-    return () => {
-      window.removeEventListener('popstate', applyMotionPreview);
-    };
   }, []);
 
   const [themeMode, themeToggler, mountedComponent] = useDarkMode();
