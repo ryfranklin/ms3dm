@@ -76,8 +76,9 @@ const Engagements = () => {
         <Typography color="text.secondary" sx={{ lineHeight: 1.65 }}>
           Most teams have AI ideas and no shipping path. I take one painful
           workflow and put it in production in 2 to 3 weeks, then can maintain
-          it on a small retainer. Capacity is about 10 to 15 hours a week, so
-          the next slot is limited.
+          it on a small retainer. I run one build engagement at a time,
+          alongside a few retainer clients, so every project is delivered by me
+          end to end.
         </Typography>
       </Box>
 

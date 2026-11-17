@@ -32,8 +32,9 @@ const Contact = () => {
             Book a 30-minute discovery, or send details on an AI Ops Sprint,
             Internal Docs Q&amp;A, or a Monthly Builder Retainer. I ship
             production data and agent systems on AWS, with evals and a human
-            go/no-go. Capacity is about 10 to 15 hours a week, so the next slot
-            is limited. Every inquiry gets a principal-level response.
+            go/no-go. I run one build engagement at a time, alongside a few
+            retainer clients, so every project is delivered by me end to end.
+            Every inquiry gets a principal-level response.
           </Typography>
 
           <Box display="flex" flexDirection="column" gap={2} marginBottom={4}>

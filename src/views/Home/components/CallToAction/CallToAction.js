@@ -72,7 +72,8 @@ const CallToAction = () => {
             color="text.secondary"
             sx={{ maxWidth: 620, margin: '0 auto 32px', lineHeight: 1.7 }}
           >
-            Capacity is about 10 to 15 hours a week, so the next slot is limited.
+            I run one build engagement at a time, alongside a few retainer
+            clients, so every project is delivered by me end to end.
             Start with an AI Ops Sprint or Internal Docs Q&amp;A, then a Monthly
             Builder Retainer if you want it kept in production. Prefer a short
             call first? Book a 30-minute discovery.

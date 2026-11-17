@@ -66,7 +66,8 @@ const Hero = () => {
           workflow and put it in production in 2 to 3 weeks, then can maintain
           it on a small retainer. The work is production data and agent systems
           on AWS, with evals and a human go/no-go, not slide-deck strategy
-          consulting. Capacity is about 10 to 15 hours a week.
+          consulting. I run one build engagement at a time, alongside a few
+          retainer clients, so every project is delivered by me end to end.
         </Typography>
 
         <Box
