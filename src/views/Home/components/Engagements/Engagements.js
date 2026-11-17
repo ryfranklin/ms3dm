@@ -15,7 +15,7 @@ const offers = [
     index: '01',
     label: 'Sprint',
     title: 'AI Ops Sprint',
-    offer: '$3,500 to $6,000 · 2 to 3 weeks · about 25 to 40 hours',
+    offer: '$3,500 to $6,000 · 2 to 3 weeks',
     body:
       'One painful workflow put into production. Typical targets: invoice ' +
       'triage, support draft-and-approve, a report narrative from a warehouse, ' +
@@ -38,7 +38,7 @@ const offers = [
     index: '03',
     label: 'Retainer',
     title: 'Monthly Builder Retainer',
-    offer: '$2,000 to $3,500 / month · 8 to 12 hours / month',
+    offer: '$2,000 to $3,500 / month',
     body:
       'After a sprint: monitoring, small improvements, and roughly one new ' +
       'automation per month.',
