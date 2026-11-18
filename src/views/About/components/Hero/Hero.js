@@ -38,7 +38,7 @@ const Hero = () => {
             An independent data and AI practice.
           </Typography>
           <Typography color="text.secondary" sx={{ lineHeight: 1.65 }}>
-            I design and build data platforms and agentic AI systems on AWS: from
+            I design and build data platforms and agentic AI systems on AWS, Azure, Google Cloud, Snowflake and Databricks: from
             governed Iceberg lakehouses to guardrailed, plan-and-execute agents.
           </Typography>
         </Box>

@@ -196,7 +196,7 @@ const Engagements = () => {
           fontSize: '0.95rem',
         }}
       >
-        This is production work: data and agent systems on AWS, evals, and a
+        This is production work: data and agent systems on your cloud, evals, and a
         human go/no-go on every release. Not slide-deck strategy consulting.
       </Typography>
 

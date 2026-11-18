@@ -14,7 +14,7 @@ import { CALENDLY_URL, CALENDLY_LABEL } from 'config/calendly';
  */
 const details = [
   { label: 'Email', value: 'ryan.franklin@ms3dm.tech' },
-  { label: 'Working style', value: 'Remote, working with teams on AWS' },
+  { label: 'Working style', value: 'Remote, working with teams on AWS, Azure, Google Cloud, Snowflake and Databricks' },
 ];
 
 const Contact = () => {
@@ -31,7 +31,7 @@ const Contact = () => {
           <Typography color="text.secondary" sx={{ marginBottom: 4, lineHeight: 1.75 }}>
             Book a 30-minute discovery, or send details on an AI Ops Sprint,
             Internal Docs Q&amp;A, or a Monthly Builder Retainer. I ship
-            production data and agent systems on AWS, with evals and a human
+            production data and agent systems on your cloud, with evals and a human
             go/no-go. I run one build engagement at a time, alongside a few
             retainer clients, so every project is delivered by me end to end.
             Every inquiry gets a principal-level response.

@@ -25,7 +25,7 @@ const Hero = () => {
           component="p"
           sx={{ color: 'secondary.main', marginBottom: 2 }}
         >
-          Fixed-scope AI delivery / Production on AWS / Limited availability
+          Fixed-scope AI delivery / Production on any major cloud / Limited availability
         </Typography>
         <Box
           sx={{
@@ -48,7 +48,7 @@ const Hero = () => {
             fontSize: { xs: '2.4rem', md: '3.4rem' },
           }}
         >
-          Production data platforms and agentic AI systems, built on AWS.
+          Production data platforms and agentic AI systems, built on your cloud.
         </Typography>
 
         <Typography
@@ -65,7 +65,7 @@ const Hero = () => {
           Most teams have AI ideas and no shipping path. I take one painful
           workflow and put it in production in 2 to 3 weeks, then can maintain
           it on a small retainer. The work is production data and agent systems
-          on AWS, with evals and a human go/no-go, not slide-deck strategy
+          on AWS, Azure, Google Cloud, Snowflake or Databricks, with evals and a human go/no-go, not slide-deck strategy
           consulting. I run one build engagement at a time, alongside a few
           retainer clients, so every project is delivered by me end to end.
         </Typography>

@@ -67,10 +67,11 @@ const groups = [
   {
     label: 'Cloud platforms',
     tags: [
-      'AWS (primary)',
+      'AWS',
       'Azure',
       'Google Cloud',
       'Snowflake',
+      'Databricks',
     ],
   },
 ];

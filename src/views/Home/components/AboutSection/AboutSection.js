@@ -6,7 +6,7 @@ import Container from 'components/Container';
 import ServiceNetwork from 'components/ServiceNetwork';
 
 /*
- * About the practice. Independent, principal-level, AWS-native. Direct and
+ * About the practice. Independent, principal-level, cloud-agnostic. Direct and
  * precise, no consultancy filler.
  */
 const principles = [
@@ -66,15 +66,15 @@ const AboutSection = () => {
               color="text.secondary"
               sx={{ marginBottom: 4, lineHeight: 1.8 }}
             >
-              That means lakehouse modernization on AWS (S3 and Iceberg, Glue and
-              Spark, Step Functions, SageMaker Unified Studio) and agentic
-              systems built with retrieval, reranking, and Bedrock guardrails.
+              That means lakehouse modernization on AWS, Azure, Google Cloud,
+              Snowflake and Databricks (Apache Iceberg, Spark, orchestrated
+              pipelines, governed catalogs) and agentic systems built with
+              retrieval, reranking, and guardrails on every call.
               The through-line is engineering discipline: things that run in
               production, not slideware. The same discipline runs through a SQL
-              Server warehouse with SSIS and Power BI as through a lakehouse on
-              S3 and Iceberg: model it right, govern it, and ship it as code.
-              AWS is home base; the same approach carries to Snowflake, Azure,
-              and GCP where the data already lives.
+              Server warehouse with SSIS and Power BI as through an Iceberg
+              lakehouse: model it right, govern it, and ship it as code, on
+              whichever platform the data already lives.
             </Typography>
 
             <Box display="flex" flexDirection="column" gap={2}>

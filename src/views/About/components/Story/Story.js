@@ -57,7 +57,7 @@ const Story = () => {
                 marginBottom: 2,
               }}
             >
-              On the data side I build medallion lakehouse architectures on AWS: S3 and Apache Iceberg for storage, Glue and Spark for transformation, Fivetran for change data capture, Step Functions for orchestration, and Terraform to keep it all reproducible. The result is a governed catalog and pipelines you can actually trust. AWS is the main focus, but the same patterns carry to Snowflake, Azure, and GCP when that is where the data already lives.
+              On the data side I build medallion lakehouse architectures on AWS, Azure, Google Cloud, Snowflake and Databricks: Apache Iceberg for storage, Spark for transformation, Fivetran for change data capture, orchestrated pipelines, and Terraform to keep it all reproducible. The result is a governed catalog and pipelines you can actually trust, on whichever platform the data already lives.
             </Typography>
             <Typography
               component={'p'}
@@ -67,7 +67,7 @@ const Story = () => {
                 lineHeight: 1.8,
               }}
             >
-              On the AI side I work in agentic and multi-agent systems, RAG done properly (semantic retrieval with vector search and reranking), and Amazon Bedrock integrations that run guardrailed on every call. I also handle the ML signal engineering, momentum, churn, and next-best-action prediction, and the MLOps to keep those models running on SageMaker.
+              On the AI side I work in agentic and multi-agent systems, RAG done properly (semantic retrieval with vector search and reranking), and model integrations through Amazon Bedrock, Azure OpenAI or Vertex AI that run guardrailed on every call. I also handle the ML signal engineering, momentum, churn, and next-best-action prediction, and the MLOps to keep those models running on SageMaker, Azure ML, Vertex AI or Databricks.
             </Typography>
           </Box>
         </Grid>

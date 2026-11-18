@@ -36,7 +36,7 @@ const Footer = () => {
             color: 'text.disabled',
           }}
         >
-          Data platforms and agentic AI on AWS.
+          Data platforms and agentic AI on the cloud you already run.
         </Typography>
       </Box>
 

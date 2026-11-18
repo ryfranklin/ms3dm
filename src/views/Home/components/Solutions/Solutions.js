@@ -26,25 +26,24 @@ const pillars = [
     index: '02',
     title: 'Data Platforms',
     body: [
-      'Medallion lakehouse architecture, AWS-first: S3 plus Apache Iceberg tables, Glue and Spark transforms, Fivetran CDC ingestion, and Airflow orchestration. Governed catalogs and reliable pipelines, provisioned as Terraform.',
-      'Medallion lakehouse architecture, Snowflake with AWS S3 Apache Iceberg tables, transformations with Coalesce, and Cortex ML pipelines.',
-      'Experience with Azure and GCP delivery when the data lives there.',
+      'Medallion lakehouse architecture on the platform you already run: AWS, Azure, Google Cloud, Snowflake or Databricks. Apache Iceberg tables, Spark transforms, Fivetran CDC ingestion, and Airflow orchestration. Governed catalogs and reliable pipelines, provisioned as Terraform.',
+      'Delivered in production on AWS (S3, Iceberg, Glue and Spark) and on Snowflake (Iceberg tables, Coalesce transformations, and Cortex ML pipelines).',
     ],
-    tags: ['AWS', 'S3 + Iceberg', 'Glue / Spark', 'Snowflake', 'Fivetran CDC', 'Airflow', 'Terraform'],
+    tags: ['AWS', 'Azure', 'Google Cloud', 'Snowflake', 'Databricks', 'Iceberg / Spark', 'Fivetran CDC', 'Airflow', 'Terraform'],
   },
   {
     index: '03',
     title: 'Agentic AI',
     body:
-      'Multi-agent orchestration with plan-and-execute control loops. Retrieval done properly: semantic search with vector stores and reranking, Bedrock model integration, and guardrails enforced on every call.',
-    tags: ['Bedrock', 'RAG + rerank', 'Guardrails', 'Multi-agent', 'Agent Core', 'LangGraph'],
+      'Multi-agent orchestration with plan-and-execute control loops. Retrieval done properly: semantic search with vector stores and reranking, model integration through Amazon Bedrock, Azure OpenAI or Vertex AI, and guardrails enforced on every call.',
+    tags: ['Bedrock', 'Azure OpenAI', 'Vertex AI', 'RAG + rerank', 'Guardrails', 'Multi-agent', 'Agent Core', 'LangGraph'],
   },
   {
     index: '04',
     title: 'ML Systems',
     body:
-      'Signal engineering and predictive models: momentum, churn, and next-best-action style signals. Trained, tracked, and deployed with MLOps on SageMaker, from feature pipelines to monitored inference.',
-    tags: ['SageMaker', 'MLOps', 'Signal engineering', 'Monitoring'],
+      'Signal engineering and predictive models: momentum, churn, and next-best-action style signals. Trained, tracked, and deployed with MLOps on SageMaker, Azure ML, Vertex AI or Databricks, from feature pipelines to monitored inference.',
+    tags: ['SageMaker', 'Azure ML', 'Vertex AI', 'MLflow', 'MLOps', 'Signal engineering', 'Monitoring'],
   },
   {
     index: '05',

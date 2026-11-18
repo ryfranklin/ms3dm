@@ -52,7 +52,7 @@ const Newsletter = () => {
               align={'center'}
               sx={{ color: 'text.secondary', fontWeight: 400 }}
             >
-              Occasional notes on AWS lakehouses, reliable pipelines, RAG, and agentic AI, straight from the work. Subscribe on Substack to get them in your inbox.
+              Occasional notes on cloud lakehouses, reliable pipelines, RAG, and agentic AI, straight from the work. Subscribe on Substack to get them in your inbox.
             </Typography>
           </Box>
           <Button

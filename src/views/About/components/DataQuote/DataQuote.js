@@ -55,7 +55,7 @@ const DataQuote = () => {
               fontSize: { xs: '1rem', md: '1.15rem' },
             }}
           >
-            Good AI starts with a governed lakehouse and reliable pipelines, then adds retrieval that actually returns the right context and guardrails that hold on every call. I build both halves: the Iceberg-backed data foundation on AWS and the guardrailed, agentic systems that reason over it. No hand-waving, no black boxes you cannot inspect.
+            Good AI starts with a governed lakehouse and reliable pipelines, then adds retrieval that actually returns the right context and guardrails that hold on every call. I build both halves: the governed data foundation on whichever cloud you run and the guardrailed, agentic systems that reason over it. No hand-waving, no black boxes you cannot inspect.
           </Typography>
         </Box>
       </Container>
